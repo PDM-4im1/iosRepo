@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CarMapView: View {
+    @StateObject private var controller = CarMapController()
     var body: some View {
         ZStack {
                    VStack {
@@ -19,7 +20,7 @@ struct CarMapView: View {
                                    .frame(width: 33, height: 33)
                                    .background(Color.clear)
                                
-                               TextField("your location", text: .constant(""))
+                               TextField("your location", text: $controller.locationText)
                                    .textFieldStyle(RoundedBorderTextFieldStyle())
                            }
                            .padding()
@@ -29,7 +30,7 @@ struct CarMapView: View {
                                    .resizable()
                                    .frame(width: 33, height: 33)
                                
-                               Text("Where to go ?")
+                               Text("Where to go ?").id("DisinationText")
                                    .frame(maxWidth: .infinity, alignment: .leading)
                                    .background(Color.clear)
                            }

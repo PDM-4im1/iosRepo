@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 @main
 struct ShareCommutApp: App {
     let persistenceController = PersistenceController.shared

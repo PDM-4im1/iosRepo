@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62CBC7117D6AF2D81E6E425D /* libPods-ShareCommut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C98E8861C97FF41A07CB87 /* libPods-ShareCommut.a */; };
+		CE4C2F322B161D4000552FA6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C2F312B161D4000552FA6 /* MapViewController.swift */; };
 		CE6A01D82B14E81E00EAED28 /* CovoiturageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */; };
 		CE6A01DD2B14EE4E00EAED28 /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */; };
 		CE6A01DF2B14F38B00EAED28 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DE2B14F38B00EAED28 /* Driver.swift */; };
@@ -21,6 +23,8 @@
 		CE8C6C182B14B2EF0043007B /* ShareCommutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6C172B14B2EF0043007B /* ShareCommutUITestsLaunchTests.swift */; };
 		CE8C6C292B14B34C0043007B /* EmergencyRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6C282B14B34C0043007B /* EmergencyRideView.swift */; };
 		CE8C6C2B2B14C55C0043007B /* CarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6C2A2B14C55C0043007B /* CarMapView.swift */; };
+		CED918612B160396000F66CC /* EmgCovoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED918602B160396000F66CC /* EmgCovoiturage.swift */; };
+		CED918632B1612F3000F66CC /* CarMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED918622B1612F3000F66CC /* CarMapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F7E15333C345CE5CF973A74 /* Pods-ShareCommut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommut.release.xcconfig"; path = "../ShareCommut/Pods/Target Support Files/Pods-ShareCommut/Pods-ShareCommut.release.xcconfig"; sourceTree = "<group>"; };
+		4D9D58D6B431F606302B8B9B /* Pods-ShareCommut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommut.debug.xcconfig"; path = "../ShareCommut/Pods/Target Support Files/Pods-ShareCommut/Pods-ShareCommut.debug.xcconfig"; sourceTree = "<group>"; };
+		C2C98E8861C97FF41A07CB87 /* libPods-ShareCommut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareCommut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4C2F312B161D4000552FA6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageView.swift; sourceTree = "<group>"; };
 		CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgDriverCell.swift; sourceTree = "<group>"; };
 		CE6A01DE2B14F38B00EAED28 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
@@ -59,6 +67,8 @@
 		CE8C6C172B14B2EF0043007B /* ShareCommutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommutUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE8C6C282B14B34C0043007B /* EmergencyRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyRideView.swift; sourceTree = "<group>"; };
 		CE8C6C2A2B14C55C0043007B /* CarMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapView.swift; sourceTree = "<group>"; };
+		CED918602B160396000F66CC /* EmgCovoiturage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgCovoiturage.swift; sourceTree = "<group>"; };
+		CED918622B1612F3000F66CC /* CarMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarMapController.swift; path = "../../../../Users/rihem/Desktop/Rihem 4Sim1/ShareCommut/ShareCommut/View Models/CarMapController.swift"; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CBC7117D6AF2D81E6E425D /* libPods-ShareCommut.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B19469402A90013095EC7EAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2C98E8861C97FF41A07CB87 /* libPods-ShareCommut.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE8C6BE82B14B2EE0043007B = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +112,8 @@
 				CE8C6C0A2B14B2EE0043007B /* ShareCommutTests */,
 				CE8C6C142B14B2EF0043007B /* ShareCommutUITests */,
 				CE8C6BF22B14B2EE0043007B /* Products */,
+				DD89670290790AEF7DA1BCEE /* Pods */,
+				B19469402A90013095EC7EAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				CE6A01DE2B14F38B00EAED28 /* Driver.swift */,
+				CED918602B160396000F66CC /* EmgCovoiturage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,8 +192,19 @@
 			isa = PBXGroup;
 			children = (
 				CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */,
+				CED918622B1612F3000F66CC /* CarMapController.swift */,
+				CE4C2F312B161D4000552FA6 /* MapViewController.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		DD89670290790AEF7DA1BCEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D9D58D6B431F606302B8B9B /* Pods-ShareCommut.debug.xcconfig */,
+				0F7E15333C345CE5CF973A74 /* Pods-ShareCommut.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE8C6C1B2B14B2EF0043007B /* Build configuration list for PBXNativeTarget "ShareCommut" */;
 			buildPhases = (
+				88ED9CA16B695B80CE5A4B84 /* [CP] Check Pods Manifest.lock */,
 				CE8C6BED2B14B2EE0043007B /* Sources */,
 				CE8C6BEE2B14B2EE0043007B /* Frameworks */,
 				CE8C6BEF2B14B2EE0043007B /* Resources */,
+				855783F0D123F0C532B87FD6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,16 +334,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		855783F0D123F0C532B87FD6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShareCommut/Pods-ShareCommut-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShareCommut/Pods-ShareCommut-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShareCommut/Pods-ShareCommut-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88ED9CA16B695B80CE5A4B84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShareCommut-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE8C6BED2B14B2EE0043007B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED918632B1612F3000F66CC /* CarMapController.swift in Sources */,
 				CE8C6C012B14B2EE0043007B /* ShareCommut.xcdatamodeld in Sources */,
 				CE8C6C292B14B34C0043007B /* EmergencyRideView.swift in Sources */,
 				CE8C6BFE2B14B2EE0043007B /* Persistence.swift in Sources */,
 				CE6A01DD2B14EE4E00EAED28 /* EmgDriverCell.swift in Sources */,
+				CED918612B160396000F66CC /* EmgCovoiturage.swift in Sources */,
 				CE8C6BF72B14B2EE0043007B /* ContentView.swift in Sources */,
+				CE4C2F322B161D4000552FA6 /* MapViewController.swift in Sources */,
 				CE6A01D82B14E81E00EAED28 /* CovoiturageView.swift in Sources */,
 				CE6A01DF2B14F38B00EAED28 /* Driver.swift in Sources */,
 				CE8C6C2B2B14C55C0043007B /* CarMapView.swift in Sources */,
@@ -465,6 +545,7 @@
 		};
 		CE8C6C1C2B14B2EF0043007B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D9D58D6B431F606302B8B9B /* Pods-ShareCommut.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -493,6 +574,7 @@
 		};
 		CE8C6C1D2B14B2EF0043007B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F7E15333C345CE5CF973A74 /* Pods-ShareCommut.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
