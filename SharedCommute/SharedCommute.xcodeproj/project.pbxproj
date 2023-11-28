@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5135CB932B160A7100AA742A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CB922B160A7100AA742A /* MappingView.swift */; };
 		51A157CA2B14BD0900C6F3CD /* conducteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C72B14BD0900C6F3CD /* conducteur.swift */; };
 		51A157CB2B14BD0900C6F3CD /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C82B14BD0900C6F3CD /* MoyenDeTransport.swift */; };
 		51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C92B14BD0900C6F3CD /* covoiturage.swift */; };
@@ -19,9 +20,11 @@
 		51CE80822B14B5D00058BE35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CE80812B14B5D00058BE35 /* Preview Assets.xcassets */; };
 		51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE80832B14B5D00058BE35 /* Persistence.swift */; };
 		51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */; };
+		CEED388E485B090201075281 /* libPods-SharedCommute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C35374BAA7196F67B64219 /* libPods-SharedCommute.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5135CB922B160A7100AA742A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
 		51A157C72B14BD0900C6F3CD /* conducteur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conducteur.swift; sourceTree = "<group>"; };
 		51A157C82B14BD0900C6F3CD /* MoyenDeTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyenDeTransport.swift; sourceTree = "<group>"; };
 		51A157C92B14BD0900C6F3CD /* covoiturage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = covoiturage.swift; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		51CE80832B14B5D00058BE35 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		51CE80862B14B5D00058BE35 /* SharedCommute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SharedCommute.xcdatamodel; sourceTree = "<group>"; };
 		51CE80882B14B5D00058BE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54C35374BAA7196F67B64219 /* libPods-SharedCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SharedCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ECA26F735DD1227AE85342A /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.release.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
+		FDF3D4E8A263C7F9AF618152 /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.debug.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +49,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEED388E485B090201075281 /* libPods-SharedCommute.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		015122568093497E3BC7A8F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54C35374BAA7196F67B64219 /* libPods-SharedCommute.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		51A157C62B14BD0900C6F3CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				51A157CE2B14BD1F00C6F3CD /* CovoiturageTableView.swift */,
+				5135CB922B160A7100AA742A /* MappingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -81,6 +97,8 @@
 			children = (
 				51CE80792B14B5CF0058BE35 /* SharedCommute */,
 				51CE80782B14B5CF0058BE35 /* Products */,
+				015122568093497E3BC7A8F1 /* Frameworks */,
+				C8EBD68856C7E997C5C3DA7A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +135,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C8EBD68856C7E997C5C3DA7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDF3D4E8A263C7F9AF618152 /* Pods-SharedCommute.debug.xcconfig */,
+				6ECA26F735DD1227AE85342A /* Pods-SharedCommute.release.xcconfig */,
+			);
+			name = Pods;
+			path = SharedCommute/Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51CE808B2B14B5D00058BE35 /* Build configuration list for PBXNativeTarget "SharedCommute" */;
 			buildPhases = (
+				5E376379D762A23EF4F04492 /* [CP] Check Pods Manifest.lock */,
 				51CE80732B14B5CF0058BE35 /* Sources */,
 				51CE80742B14B5CF0058BE35 /* Frameworks */,
 				51CE80752B14B5CF0058BE35 /* Resources */,
+				D05B9FCD5AF124126AB07740 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +189,47 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				he,
+				en_AU,
+				ar,
+				el,
+				ja,
+				uk,
+				es_419,
+				es_MX,
+				zh_CN,
+				nb,
+				es,
+				pt_BR,
+				da,
+				it,
+				sk,
+				pt_PT,
+				ms,
+				sv,
+				cs,
+				en_IN,
+				ko,
+				hu,
+				zh_HK,
+				tr,
+				pl,
+				zh_TW,
+				en_GB,
+				vi,
+				ru,
+				fr_CA,
+				fr,
+				fi,
+				id,
+				nl,
+				th,
+				pt,
+				ro,
+				hr,
+				hi,
+				ca,
 			);
 			mainGroup = 51CE806E2B14B5CF0058BE35;
 			productRefGroup = 51CE80782B14B5CF0058BE35 /* Products */;
@@ -182,11 +253,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E376379D762A23EF4F04492 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SharedCommute-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D05B9FCD5AF124126AB07740 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		51CE80732B14B5CF0058BE35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5135CB932B160A7100AA742A /* MappingView.swift in Sources */,
 				51A157CF2B14BD2000C6F3CD /* CovoiturageTableView.swift in Sources */,
 				51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */,
 				51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */,
@@ -319,6 +433,7 @@
 		};
 		51CE808C2B14B5D00058BE35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDF3D4E8A263C7F9AF618152 /* Pods-SharedCommute.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -347,6 +462,7 @@
 		};
 		51CE808D2B14B5D00058BE35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ECA26F735DD1227AE85342A /* Pods-SharedCommute.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
