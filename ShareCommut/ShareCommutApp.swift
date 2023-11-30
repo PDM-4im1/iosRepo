@@ -10,11 +10,12 @@ import SwiftUI
 
 @main
 struct ShareCommutApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            CarMapView()
+           EmergencyRideView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

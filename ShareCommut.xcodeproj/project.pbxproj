@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		62CBC7117D6AF2D81E6E425D /* libPods-ShareCommut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C98E8861C97FF41A07CB87 /* libPods-ShareCommut.a */; };
 		CE4C2F322B161D4000552FA6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C2F312B161D4000552FA6 /* MapViewController.swift */; };
+		CE52DE142B18B8F10030670E /* MapViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52DE132B18B8F10030670E /* MapViewControllerRepresentable.swift */; };
+		CE52DE162B18BA920030670E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52DE152B18BA920030670E /* MapView.swift */; };
+		CE52DE182B18C1440030670E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52DE172B18C1440030670E /* AppDelegate.swift */; };
 		CE6A01D82B14E81E00EAED28 /* CovoiturageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */; };
 		CE6A01DD2B14EE4E00EAED28 /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */; };
 		CE6A01DF2B14F38B00EAED28 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DE2B14F38B00EAED28 /* Driver.swift */; };
 		CE8C6BF52B14B2EE0043007B /* ShareCommutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6BF42B14B2EE0043007B /* ShareCommutApp.swift */; };
-		CE8C6BF72B14B2EE0043007B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6BF62B14B2EE0043007B /* ContentView.swift */; };
 		CE8C6BF92B14B2EE0043007B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C6BF82B14B2EE0043007B /* Assets.xcassets */; };
 		CE8C6BFC2B14B2EE0043007B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C6BFB2B14B2EE0043007B /* Preview Assets.xcassets */; };
 		CE8C6BFE2B14B2EE0043007B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6BFD2B14B2EE0043007B /* Persistence.swift */; };
@@ -45,16 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F7E15333C345CE5CF973A74 /* Pods-ShareCommut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommut.release.xcconfig"; path = "../ShareCommut/Pods/Target Support Files/Pods-ShareCommut/Pods-ShareCommut.release.xcconfig"; sourceTree = "<group>"; };
-		4D9D58D6B431F606302B8B9B /* Pods-ShareCommut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommut.debug.xcconfig"; path = "../ShareCommut/Pods/Target Support Files/Pods-ShareCommut/Pods-ShareCommut.debug.xcconfig"; sourceTree = "<group>"; };
+		0F7E15333C345CE5CF973A74 /* Pods-ShareCommut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommut.release.xcconfig"; path = "../ShareCommut/Pods/Target Support Files/Pods-ShareCommut/Pods-ShareCommut.release.xcconfig"; sourceTree = SDKROOT; };
+		4D9D58D6B431F606302B8B9B /* Pods-ShareCommut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommut.debug.xcconfig"; path = "../ShareCommut/Pods/Target Support Files/Pods-ShareCommut/Pods-ShareCommut.debug.xcconfig"; sourceTree = SDKROOT; };
 		C2C98E8861C97FF41A07CB87 /* libPods-ShareCommut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareCommut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4C2F312B161D4000552FA6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CE52DE132B18B8F10030670E /* MapViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		CE52DE152B18BA920030670E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CE52DE172B18C1440030670E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageView.swift; sourceTree = "<group>"; };
 		CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgDriverCell.swift; sourceTree = "<group>"; };
 		CE6A01DE2B14F38B00EAED28 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		CE8C6BF12B14B2EE0043007B /* ShareCommut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCommut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8C6BF42B14B2EE0043007B /* ShareCommutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommutApp.swift; sourceTree = "<group>"; };
-		CE8C6BF62B14B2EE0043007B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE8C6BF82B14B2EE0043007B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8C6BFB2B14B2EE0043007B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8C6BFD2B14B2EE0043007B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -134,7 +138,7 @@
 				CE8C6C252B14B31B0043007B /* Models */,
 				CE8C6C242B14B30D0043007B /* View */,
 				CE8C6BF42B14B2EE0043007B /* ShareCommutApp.swift */,
-				CE8C6BF62B14B2EE0043007B /* ContentView.swift */,
+				CE52DE172B18C1440030670E /* AppDelegate.swift */,
 				CE8C6BF82B14B2EE0043007B /* Assets.xcassets */,
 				CE8C6BFD2B14B2EE0043007B /* Persistence.swift */,
 				CE8C6C022B14B2EE0043007B /* Info.plist */,
@@ -175,6 +179,7 @@
 				CE8C6C282B14B34C0043007B /* EmergencyRideView.swift */,
 				CE8C6C2A2B14C55C0043007B /* CarMapView.swift */,
 				CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */,
+				CE52DE152B18BA920030670E /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */,
 				CED918622B1612F3000F66CC /* CarMapController.swift */,
 				CE4C2F312B161D4000552FA6 /* MapViewController.swift */,
+				CE52DE132B18B8F10030670E /* MapViewControllerRepresentable.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -385,11 +391,13 @@
 				CE8C6C012B14B2EE0043007B /* ShareCommut.xcdatamodeld in Sources */,
 				CE8C6C292B14B34C0043007B /* EmergencyRideView.swift in Sources */,
 				CE8C6BFE2B14B2EE0043007B /* Persistence.swift in Sources */,
+				CE52DE182B18C1440030670E /* AppDelegate.swift in Sources */,
 				CE6A01DD2B14EE4E00EAED28 /* EmgDriverCell.swift in Sources */,
 				CED918612B160396000F66CC /* EmgCovoiturage.swift in Sources */,
-				CE8C6BF72B14B2EE0043007B /* ContentView.swift in Sources */,
+				CE52DE162B18BA920030670E /* MapView.swift in Sources */,
 				CE4C2F322B161D4000552FA6 /* MapViewController.swift in Sources */,
 				CE6A01D82B14E81E00EAED28 /* CovoiturageView.swift in Sources */,
+				CE52DE142B18B8F10030670E /* MapViewControllerRepresentable.swift in Sources */,
 				CE6A01DF2B14F38B00EAED28 /* Driver.swift in Sources */,
 				CE8C6C2B2B14C55C0043007B /* CarMapView.swift in Sources */,
 				CE8C6BF52B14B2EE0043007B /* ShareCommutApp.swift in Sources */,

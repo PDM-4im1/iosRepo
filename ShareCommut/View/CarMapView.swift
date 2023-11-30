@@ -50,7 +50,7 @@ struct CarMapView: View {
                        .cornerRadius(20)
                        // MapView
                        MapView()
-                           .ignoresSafeArea()
+                           .edgesIgnoringSafeArea(.all)
                        HStack {
                            Text("Duration")
                                .foregroundColor(.red)
@@ -60,32 +60,24 @@ struct CarMapView: View {
                            
                            Text("Price")
                                .hidden()
+                           Spacer()
+                           NavigationLink(destination: CovoiturageView()) {
+                               Text("Ride")
+                                   .foregroundColor(.white)
+                                   .padding()
+                                   .background(Color.green)
+                                   .cornerRadius(8)
+                           }
                        }
                        
-                       Button(action: {}) {
-                        Text("Ride")
-                        .foregroundColor(.white)
-                        .padding()
-                .background(Color.green)
-                .cornerRadius(8)
-                 .padding(.trailing, 11)
-                                           }
+                       
                    }
                }
                .navigationBarHidden(true)
                .statusBar(hidden: true)
            }
     }
-struct MapView: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIView {
-        // Replace with your MapView implementation
-        return UIView()
-    }
-    
-    func updateUIView(_ uiView: UIView, context: Context) {
-        // Update the MapView if needed
-    }
-}
+ 
 struct ImageButton: View {
     let imageName: String
     

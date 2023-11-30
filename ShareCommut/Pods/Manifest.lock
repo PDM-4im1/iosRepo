@@ -1,20 +1,20 @@
 PODS:
-  - GoogleMaps (8.0.0):
-    - GoogleMaps/Maps (= 8.0.0)
-  - GoogleMaps/Base (8.0.0)
-  - GoogleMaps/Maps (8.0.0):
+  - GoogleMaps (8.3.0):
+    - GoogleMaps/Maps (= 8.3.0)
+  - GoogleMaps/Base (8.3.0)
+  - GoogleMaps/Maps (8.3.0):
     - GoogleMaps/Base
 
 DEPENDENCIES:
-  - GoogleMaps (= 8.0.0)
+  - GoogleMaps (= 8.3.0)
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
 
 SPEC CHECKSUMS:
-  GoogleMaps: 0dce473ab18742d0f327887853630927cbee9127
+  GoogleMaps: 54762190c9741867d03e4e4218672ab5a0a8096b
 
-PODFILE CHECKSUM: 9553dd75fca56baed8895ae38d9f9c4c00f6f95a
+PODFILE CHECKSUM: 7c94ba85641a27722b54b34d131ccb2711b48823
 
 COCOAPODS: 1.14.3
