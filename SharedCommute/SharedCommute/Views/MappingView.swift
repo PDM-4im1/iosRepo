@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import GoogleMaps
+
 
 struct MappingView: View {
     @State private var source: String = ""
     @State private var destination: String = ""
+    @State private var routes: [GMSPolyline] = []
+
     
     var body: some View {
         VStack {
@@ -34,7 +38,10 @@ struct MappingView: View {
             
             Spacer()
             
-                .padding()
+            
+                    GoogleMapsView(source: $source, destination: $destination, routes: $routes)
+                        .edgesIgnoringSafeArea(.all)
+                        .padding()
         }
     }
 }

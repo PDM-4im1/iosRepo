@@ -8,13 +8,13 @@ import SwiftUI
 
 @main
 struct SharedCommuteApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            CovoiturageTableView()
-        
-          //      .environment(\.managedObjectContext, persistenceController.container.viewContext)
+MappingView()                // .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
