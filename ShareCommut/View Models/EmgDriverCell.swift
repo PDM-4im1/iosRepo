@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmgDriverCell: View {
     let driver: Driver
-       
+    @State private var showPaymentView = false
     var body: some View {
         VStack {
             HStack {
@@ -32,24 +32,31 @@ struct EmgDriverCell: View {
                         Image(systemName: "car")
                         Text(driver.car)
                     }
+                    HStack {
+                                       Image(systemName: "dollarsign.circle")
+                                       Text("7.500 DT")
+                                   }
+                                   .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 
                 
                 
-                HStack {
-                    Image(systemName: "dollarsign.circle")
-                    Text("7.500 DT")
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
+               
             }
             
-            Button(action: {}) {
+            Button(action: {
+                showPaymentView = true
+            }) {
                 Text("Confirm")
                     .foregroundColor(.white)
             }
-            .frame(height: 33)
+            .frame(height: 35)
             .background(Color.green)
-            .cornerRadius(8)
+            .cornerRadius(5)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .sheet(isPresented: $showPaymentView) {
+                PaymentSelectionView()
+            }
         }
         .padding()
         .background(Color.white)

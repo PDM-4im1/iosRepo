@@ -27,6 +27,10 @@
 		CE8C6C2B2B14C55C0043007B /* CarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6C2A2B14C55C0043007B /* CarMapView.swift */; };
 		CED918612B160396000F66CC /* EmgCovoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED918602B160396000F66CC /* EmgCovoiturage.swift */; };
 		CED918632B1612F3000F66CC /* CarMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED918622B1612F3000F66CC /* CarMapController.swift */; };
+		CEF0EEA22B19CE0700AA6F6E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0EEA12B19CE0700AA6F6E /* User.swift */; };
+		CEF0EEA42B19DBEA00AA6F6E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0EEA32B19DBEA00AA6F6E /* NotificationView.swift */; };
+		CEF0EEA62B19DC9400AA6F6E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0EEA52B19DC9400AA6F6E /* PaymentView.swift */; };
+		CEF0EEA82B19E5B800AA6F6E /* PaymentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0EEA72B19E5B800AA6F6E /* PaymentSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		CE8C6C2A2B14C55C0043007B /* CarMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapView.swift; sourceTree = "<group>"; };
 		CED918602B160396000F66CC /* EmgCovoiturage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgCovoiturage.swift; sourceTree = "<group>"; };
 		CED918622B1612F3000F66CC /* CarMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarMapController.swift; path = "../../../../Users/rihem/Desktop/Rihem 4Sim1/ShareCommut/ShareCommut/View Models/CarMapController.swift"; sourceTree = DEVELOPER_DIR; };
+		CEF0EEA12B19CE0700AA6F6E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEF0EEA32B19DBEA00AA6F6E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		CEF0EEA52B19DC9400AA6F6E /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		CEF0EEA72B19E5B800AA6F6E /* PaymentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +188,9 @@
 				CE8C6C2A2B14C55C0043007B /* CarMapView.swift */,
 				CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */,
 				CE52DE152B18BA920030670E /* MapView.swift */,
+				CEF0EEA32B19DBEA00AA6F6E /* NotificationView.swift */,
+				CEF0EEA52B19DC9400AA6F6E /* PaymentView.swift */,
+				CEF0EEA72B19E5B800AA6F6E /* PaymentSelectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +200,7 @@
 			children = (
 				CE6A01DE2B14F38B00EAED28 /* Driver.swift */,
 				CED918602B160396000F66CC /* EmgCovoiturage.swift */,
+				CEF0EEA12B19CE0700AA6F6E /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,12 +402,16 @@
 				CED918632B1612F3000F66CC /* CarMapController.swift in Sources */,
 				CE8C6C012B14B2EE0043007B /* ShareCommut.xcdatamodeld in Sources */,
 				CE8C6C292B14B34C0043007B /* EmergencyRideView.swift in Sources */,
+				CEF0EEA42B19DBEA00AA6F6E /* NotificationView.swift in Sources */,
 				CE8C6BFE2B14B2EE0043007B /* Persistence.swift in Sources */,
 				CE52DE182B18C1440030670E /* AppDelegate.swift in Sources */,
 				CE6A01DD2B14EE4E00EAED28 /* EmgDriverCell.swift in Sources */,
 				CED918612B160396000F66CC /* EmgCovoiturage.swift in Sources */,
 				CE52DE162B18BA920030670E /* MapView.swift in Sources */,
+				CEF0EEA62B19DC9400AA6F6E /* PaymentView.swift in Sources */,
+				CEF0EEA22B19CE0700AA6F6E /* User.swift in Sources */,
 				CE4C2F322B161D4000552FA6 /* MapViewController.swift in Sources */,
+				CEF0EEA82B19E5B800AA6F6E /* PaymentSelectionView.swift in Sources */,
 				CE6A01D82B14E81E00EAED28 /* CovoiturageView.swift in Sources */,
 				CE52DE142B18B8F10030670E /* MapViewControllerRepresentable.swift in Sources */,
 				CE6A01DF2B14F38B00EAED28 /* Driver.swift in Sources */,

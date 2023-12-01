@@ -12,6 +12,9 @@ struct EmergencyRideView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
+        let user = User(name: "Mahmoud", mail: "azerty@gmail.com", phone: "25 365 487")
+            
+
         NavigationView {
             VStack(spacing: 20) {
                 Text("Hi")
@@ -19,7 +22,7 @@ struct EmergencyRideView: View {
                     .padding(.top, 40)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("Rihem")
+                Text(user.name)
                     .font(.headline)
                     .frame(maxWidth: 300, alignment: .leading)
                     .padding(.bottom, 4)
