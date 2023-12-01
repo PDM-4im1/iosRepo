@@ -16,11 +16,13 @@ struct MappingView: View {
 
     
     var body: some View {
+        
         VStack {
             Spacer()
             ZStack(alignment: .trailing) {
-                       TextField("Source", text: $source)
-                           .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Source", text: $source)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .id("sourceTextField")
                        
                
                 Image(systemName: "location.circle.fill")
@@ -34,7 +36,8 @@ struct MappingView: View {
             Spacer()
 
             TextField("Destination", text: $destination)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                          .textFieldStyle(RoundedBorderTextFieldStyle())
+                          .id("destinationTextField")
             
             Spacer()
             
@@ -42,7 +45,7 @@ struct MappingView: View {
                     GoogleMapsView(source: $source, destination: $destination, routes: $routes)
                         .edgesIgnoringSafeArea(.all)
                         .padding()
-        }
+        }  
     }
 }
 

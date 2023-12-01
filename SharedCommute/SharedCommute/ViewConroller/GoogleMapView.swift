@@ -22,7 +22,7 @@ struct GoogleMapsView: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<GoogleMapsView>) -> GMSMapView {
         locationManager.requestWhenInUseAuthorization()
         
-        let camera = GMSCameraPosition.camera(withLatitude: 22.58093148156094, longitude: 88.48038569479492, zoom: zoom)
+        let camera = GMSCameraPosition.camera(withLatitude: 36.89771, longitude: 10.18962, zoom: zoom)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.delegate = context.coordinator
         
@@ -33,7 +33,7 @@ struct GoogleMapsView: UIViewRepresentable {
         let geocoder = CLGeocoder()
         
         // Delay between geocoding requests
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
             self.geocodeAddress(geocoder, address: self.source) { sourceLocation in
                 self.geocodeAddress(geocoder, address: self.destination) { destinationLocation in
                     guard let sourceLocation = sourceLocation, let destinationLocation = destinationLocation else {
