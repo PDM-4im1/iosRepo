@@ -14,6 +14,7 @@ struct GoogleMapsView: UIViewRepresentable {
     @Binding var source: String
     @Binding var destination: String
     @Binding var routes: [GMSPolyline]
+    @Binding var isButtonTapped : Bool
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -30,86 +31,84 @@ struct GoogleMapsView: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: GMSMapView, context: UIViewRepresentableContext<GoogleMapsView>) {
-        let geocoder = CLGeocoder()
-        
-        // Delay between geocoding requests
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            self.geocodeAddress(geocoder, address: self.source) { sourceLocation in
-                self.geocodeAddress(geocoder, address: self.destination) { destinationLocation in
-                    guard let sourceLocation = sourceLocation, let destinationLocation = destinationLocation else {
-                        return
-                    }
-                    mapView.clear()
+        if isButtonTapped {
+            let geocoder = CLGeocoder()
 
-                    let sourceMarker = GMSMarker()
-                    sourceMarker.position = sourceLocation
-                    sourceMarker.map = mapView
-                    
-                    let destinationMarker = GMSMarker()
-                    destinationMarker.position = destinationLocation
-                    destinationMarker.map = mapView
-                    
-                    if self.routes.isEmpty {
-                        self.fetchRoutes(from: sourceLocation, to: destinationLocation, mapView: mapView) { polylines in
-                            self.routes = polylines
+            // Delay between geocoding requests
+            DispatchQueue.main.asyncAfter(deadline: .now() ) {
+                self.geocodeAddress(address: self.source) { sourceLocation in
+                    self.geocodeAddress(address: self.destination) { destinationLocation in
+                        guard let sourceLocation = sourceLocation, let destinationLocation = destinationLocation else {
+                            return
+                        }
+                        
+                        // Move mapView.clear() here
+                        mapView.clear()
+                        let sourceMarker = GMSMarker()
+                        sourceMarker.position = sourceLocation
+                        sourceMarker.map = mapView
+
+                        let destinationMarker = GMSMarker()
+                        destinationMarker.position = destinationLocation
+                        destinationMarker.map = mapView
+
+                        if self.routes.isEmpty {
                             
-                            for polyline in polylines {
-                                polyline.map = mapView
+                            self.fetchRoutes(from: sourceLocation, to: destinationLocation, mapView: mapView) { polylines in
+                                // Perform UI-related tasks on the main thread
+                                DispatchQueue.main.async {
+                                    
+                                    self.routes = polylines
+
+                                    for polyline in polylines {
+                                        polyline.map = mapView
+                                    }
+
+                                    var bounds = GMSCoordinateBounds()
+                                    bounds = bounds.includingCoordinate(sourceLocation)
+                                    bounds = bounds.includingCoordinate(destinationLocation)
+
+                                    for polyline in polylines {
+                                        if let path = polyline.path {
+                                            for index in 0 ..< path.count() {
+                                                let coordinate = path.coordinate(at: index)
+                                                bounds = bounds.includingCoordinate(coordinate)
+                                            }
+                                        }
+                                    }
+
+                                    let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
+                                    mapView.moveCamera(update)
+                                }
                             }
-                            
-                            var bounds = GMSCoordinateBounds()
-                            bounds = bounds.includingCoordinate(sourceLocation)
-                            bounds = bounds.includingCoordinate(destinationLocation)
-                            
-                            for polyline in polylines {
-                                if let path = polyline.path {
-                                    for index in 0 ..< path.count() {
-                                        let coordinate = path.coordinate(at: index)
-                                        bounds = bounds.includingCoordinate(coordinate)
+                        } else {
+                           
+                            DispatchQueue.main.async { mapView.clear()
+                                var bounds = GMSCoordinateBounds()
+                                bounds = bounds.includingCoordinate(sourceLocation)
+                                bounds = bounds.includingCoordinate(destinationLocation)
+
+                                for polyline in self.routes {
+                                    if let path = polyline.path {
+                                        for index in 0 ..< path.count() {
+                                            let coordinate = path.coordinate(at: index)
+                                            bounds = bounds.includingCoordinate(coordinate)
+                                        }
                                     }
                                 }
-                            }
-                            
-                            let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
-                            mapView.moveCamera(update)
-                        }
-                    } else {
-                        var bounds = GMSCoordinateBounds()
-                        bounds = bounds.includingCoordinate(sourceLocation)
-                        bounds = bounds.includingCoordinate(destinationLocation)
-                        
-                        for polyline in self.routes {
-                            if let path = polyline.path {
-                                for index in 0 ..< path.count() {
-                                    let coordinate = path.coordinate(at: index)
-                                    bounds = bounds.includingCoordinate(coordinate)
-                                }
+
+                                let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
+                                mapView.moveCamera(update)
+                                self.isButtonTapped = false
                             }
                         }
-                        
-                        let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
-                        mapView.moveCamera(update)
                     }
                 }
             }
         }
     }
-    func geocodeAddress(_ geocoder: CLGeocoder, address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
-       geocoder.geocodeAddressString(address) { placemarks, error in
-           if let error = error {
-               print("Geocoding error: \(error.localizedDescription)")
-               completion(nil)
-               return
-           }
-           
-           if let placemark = placemarks?.first {
-               let coordinates = placemark.location?.coordinate
-               completion(coordinates)
-           } else {
-               completion(nil)
-           }
-       }
-   }
+
+    
     
     
     
@@ -118,7 +117,7 @@ struct GoogleMapsView: UIViewRepresentable {
         let origin = "\(source.latitude),\(source.longitude)"
         let destination = "\(destination.latitude),\(destination.longitude)"
         
-        let apiKey = "AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74"
+        let apiKey = getGoogleMapsAPIKey()!
         let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&key=\(apiKey)"
         
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -162,7 +161,75 @@ struct GoogleMapsView: UIViewRepresentable {
             }
         }.resume()
     }
-    
+    func geocodeAddress(address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
+        
+        guard let apiKey = getGoogleMapsAPIKey() else {
+            print("API key is missing")
+            completion(nil)
+            return
+        }
+
+        let addressEncoded = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=\(addressEncoded)&key=\(apiKey)"
+
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Geocoding error: \(error.localizedDescription)")
+                // Ensure completion is called on the main thread
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                return
+            }
+
+            guard let data = data else {
+                print("Geocoding data is nil")
+                // Ensure completion is called on the main thread
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                return
+            }
+
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let results = json["results"] as? [[String: Any]],
+                   let geometry = results.first?["geometry"] as? [String: Any],
+                   let location = geometry["location"] as? [String: Any],
+                   let lat = location["lat"] as? Double,
+                   let lng = location["lng"] as? Double {
+                    let coordinates = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                    // Ensure completion is called on the main thread
+                    DispatchQueue.main.async {
+                        completion(coordinates)
+                    }
+                } else {
+                    print("Error parsing geocoding response")
+                    // Ensure completion is called on the main thread
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                }
+            } catch {
+                print("Error parsing geocoding JSON: \(error.localizedDescription)")
+                // Ensure completion is called on the main thread
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }.resume()
+    }
+
+
+    // Function to retrieve the Google Maps API key from a secure location
+  
+
     class Coordinator: NSObject, GMSMapViewDelegate {
         var parent: GoogleMapsView
         
@@ -170,4 +237,8 @@ struct GoogleMapsView: UIViewRepresentable {
             self.parent = parent
         }
     }
+}
+func getGoogleMapsAPIKey() -> String? {
+    // Implement the logic to securely retrieve your API key
+    return "AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74"
 }

@@ -13,6 +13,7 @@ struct MappingView: View {
     @State private var source: String = ""
     @State private var destination: String = ""
     @State private var routes: [GMSPolyline] = []
+    @State private var isButtonTapped: Bool = false
 
     
     var body: some View {
@@ -40,12 +41,24 @@ struct MappingView: View {
                           .id("destinationTextField")
             
             Spacer()
+            Spacer()
+
+            Button(action: {
+                isButtonTapped = true
+            }) {
+                Text("Confirm Direction")
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 16)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
             
-            
-                    GoogleMapsView(source: $source, destination: $destination, routes: $routes)
+            GoogleMapsView(source: $source, destination: $destination, routes: $routes,isButtonTapped:$isButtonTapped)
                         .edgesIgnoringSafeArea(.all)
                         .padding()
-        }  
+        }
     }
 }
 
