@@ -7,49 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B0518917-CE62-4122-86E8-7E099A70B677"
-            shouldBeEnabled = "No"
+            uuid = "2C0A4291-785B-43BC-97E9-6C2DCB73BC52"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Views/MappingView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "MappingView"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "B0518917-CE62-4122-86E8-7E099A70B677 - 7133322849a99585"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of SharedCommute.MappingView.destination : Swift.String"
-                  moduleName = "SharedCommute"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nasrimootez/Desktop/SharedCommute/SharedCommute/SharedCommute/Views/MappingView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "B0518917-CE62-4122-86E8-7E099A70B677 - 1772692f06c220ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SharedCommute.MappingView.init() -&gt; SharedCommute.MappingView"
-                  moduleName = "SharedCommute"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nasrimootez/Desktop/SharedCommute/SharedCommute/SharedCommute/Views/MappingView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "152">
-               </Location>
-            </Locations>
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getUserLocation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

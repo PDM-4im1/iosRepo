@@ -9,8 +9,7 @@
 
 import SwiftUI
 import GoogleMaps
-
-
+import GooglePlaces
 
 struct MappingView: View {
     @State private var source: String = ""
@@ -19,6 +18,10 @@ struct MappingView: View {
     @State private var isButtonTapped: Bool = false
 
     @StateObject private var locationManager = LocationManager()
+    @StateObject private var coordinator = Coordinator()
+
+    @State private var showingAutocomplete = false
+
     private func getUserLocation() {
         if let userLocation = locationManager.userLocation {
             let apiKey = "AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74"
@@ -40,6 +43,13 @@ struct MappingView: View {
         }
     }
 
+    private func showAutocomplete(for field: String) {
+        coordinator.selectedField = field
+        coordinator.parent = self
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = coordinator
+        UIApplication.shared.windows.first?.rootViewController?.present(autocompleteController, animated: true, completion: nil)
+    }
 
     var body: some View {
         VStack {
@@ -48,9 +58,11 @@ struct MappingView: View {
                 TextField("Source", text: $source)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .id("sourceTextField")
+                    .onTapGesture {
+                        showAutocomplete(for: "source")
+                    }
 
                 Button(action: {
-                    // Call the function to get user's location and update source
                     getUserLocation()
                 }) {
                     Image(systemName: "location.circle.fill")
@@ -59,13 +71,14 @@ struct MappingView: View {
                 }
             }
             Spacer()
-            Spacer()
 
             TextField("Destination", text: $destination)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .id("destinationTextField")
+                .onTapGesture {
+                    showAutocomplete(for: "destination")
+                }
 
-            Spacer()
             Spacer()
 
             Button(action: {
@@ -86,7 +99,31 @@ struct MappingView: View {
         }
     }
 
-    
+    // Coordinator to handle Google Places autocomplete callbacks
+    class Coordinator: NSObject, GMSAutocompleteViewControllerDelegate, ObservableObject {
+        var selectedField: String = ""
+        var parent: MappingView?
+
+        func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+            guard let parent = parent else { return }
+
+            if selectedField == "source" {
+                parent.source = place.formattedAddress ?? ""
+            } else if selectedField == "destination" {
+                parent.destination = place.formattedAddress ?? ""
+            }
+
+            viewController.dismiss(animated: true, completion: nil)
+        }
+
+        func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+            print("Error: \(error.localizedDescription)")
+        }
+
+        func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+            viewController.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 struct MappingView_Previews: PreviewProvider {
