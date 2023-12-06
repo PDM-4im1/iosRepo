@@ -19,13 +19,8 @@ struct CovoiturageView: View {
         }
             .listStyle(PlainListStyle())
             .padding(.bottom, 8).padding()
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [.green, .white]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
+            
+            
        
     }
 }

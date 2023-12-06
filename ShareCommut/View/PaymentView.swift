@@ -54,7 +54,7 @@ struct PaymentView: View {
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.blue)
+                    .background(Color.green)
                     .cornerRadius(10)
             }
             .padding(.horizontal, 40)

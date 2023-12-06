@@ -6,5 +6,7 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription </key>
+	<string>We need your location to provide accurate directions and nearby services.</string>
 </dict>
 </plist>
