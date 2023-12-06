@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5135CB932B160A7100AA742A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CB922B160A7100AA742A /* MappingView.swift */; };
+		513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513C72B52B20B9C900E662AC /* LocationManager.swift */; };
 		5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */; };
 		5194FAB22B18C096006B1CCC /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAB12B18C096006B1CCC /* GoogleMapView.swift */; };
 		51A157CA2B14BD0900C6F3CD /* conducteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C72B14BD0900C6F3CD /* conducteur.swift */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		5135CB922B160A7100AA742A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
+		513C72B32B20A89700E662AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513C72B52B20B9C900E662AC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelagte.swift; sourceTree = "<group>"; };
 		5194FAB12B18C096006B1CCC /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		51A157C72B14BD0900C6F3CD /* conducteur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conducteur.swift; sourceTree = "<group>"; };
@@ -42,7 +45,6 @@
 		51CE80812B14B5D00058BE35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51CE80832B14B5D00058BE35 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		51CE80862B14B5D00058BE35 /* SharedCommute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SharedCommute.xcdatamodel; sourceTree = "<group>"; };
-		51CE80882B14B5D00058BE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C35374BAA7196F67B64219 /* libPods-SharedCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SharedCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECA26F735DD1227AE85342A /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.release.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
 		FDF3D4E8A263C7F9AF618152 /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.debug.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				5194FAB12B18C096006B1CCC /* GoogleMapView.swift */,
 				51A157D32B14ED6B00C6F3CD /* CovoiturageCell.swift */,
+				513C72B52B20B9C900E662AC /* LocationManager.swift */,
 			);
 			path = ViewConroller;
 			sourceTree = "<group>";
@@ -126,7 +129,7 @@
 				51CE807C2B14B5CF0058BE35 /* ContentView.swift */,
 				51CE807E2B14B5D00058BE35 /* Assets.xcassets */,
 				51CE80832B14B5D00058BE35 /* Persistence.swift */,
-				51CE80882B14B5D00058BE35 /* Info.plist */,
+				513C72B32B20A89700E662AC /* Info.plist */,
 				51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */,
 				51CE80802B14B5D00058BE35 /* Preview Content */,
 			);
@@ -316,6 +319,7 @@
 				51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */,
 				51A157D22B14C46500C6F3CD /* User.swift in Sources */,
 				51A157CB2B14BD0900C6F3CD /* MoyenDeTransport.swift in Sources */,
+				513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */,
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
 				51A157D42B14ED6B00C6F3CD /* CovoiturageCell.swift in Sources */,
 				51A157CA2B14BD0900C6F3CD /* conducteur.swift in Sources */,
@@ -375,6 +379,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -429,6 +435,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -450,6 +458,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SharedCommute/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide accurate directions";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide accurate directions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -479,6 +490,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SharedCommute/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide accurate directions";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide accurate directions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

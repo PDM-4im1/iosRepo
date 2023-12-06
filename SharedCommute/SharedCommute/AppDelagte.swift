@@ -5,15 +5,22 @@
 //  Created by Nasri Mootez on 30/11/2023.
 import UIKit
 import GoogleMaps
+import CoreLocation
 
-class AppDelegate: NSObject , UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74")
+
+        requestLocationPermission()
+
         return true
     }
 
-
-  
+    func requestLocationPermission() {
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+    }
 }

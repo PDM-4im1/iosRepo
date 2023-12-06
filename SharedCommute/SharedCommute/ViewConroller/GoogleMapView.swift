@@ -27,85 +27,66 @@ struct GoogleMapsView: UIViewRepresentable {
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.delegate = context.coordinator
         
+        
         return mapView
     }
     
     func updateUIView(_ mapView: GMSMapView, context: UIViewRepresentableContext<GoogleMapsView>) {
-        if isButtonTapped {
-            let geocoder = CLGeocoder()
+        guard isButtonTapped else {
+            return
+        }
 
-            // Delay between geocoding requests
-            DispatchQueue.main.asyncAfter(deadline: .now() ) {
-                self.geocodeAddress(address: self.source) { sourceLocation in
-                    self.geocodeAddress(address: self.destination) { destinationLocation in
-                        guard let sourceLocation = sourceLocation, let destinationLocation = destinationLocation else {
-                            return
+        let geocoder = CLGeocoder()
+
+        self.geocodeAddress(address: self.source) { sourceLocation in
+            self.geocodeAddress(address: self.destination) { destinationLocation in
+                guard let sourceLocation = sourceLocation, let destinationLocation = destinationLocation else {
+                    return
+                }
+
+                // Clear the map before adding new markers and routes
+                mapView.clear()
+
+                let sourceMarker = GMSMarker()
+                sourceMarker.position = sourceLocation
+                sourceMarker.map = mapView
+
+                let destinationMarker = GMSMarker()
+                destinationMarker.position = destinationLocation
+                destinationMarker.map = mapView
+
+                self.fetchRoutes(from: sourceLocation, to: destinationLocation, mapView: mapView) { polylines in
+                    DispatchQueue.main.async {
+                        self.routes = polylines
+
+                        for polyline in polylines {
+                            polyline.map = mapView
                         }
-                        
-                        // Move mapView.clear() here
-                        mapView.clear()
-                        let sourceMarker = GMSMarker()
-                        sourceMarker.position = sourceLocation
-                        sourceMarker.map = mapView
 
-                        let destinationMarker = GMSMarker()
-                        destinationMarker.position = destinationLocation
-                        destinationMarker.map = mapView
+                        var bounds = GMSCoordinateBounds()
+                        bounds = bounds.includingCoordinate(sourceLocation)
+                        bounds = bounds.includingCoordinate(destinationLocation)
 
-                        if self.routes.isEmpty {
-                            
-                            self.fetchRoutes(from: sourceLocation, to: destinationLocation, mapView: mapView) { polylines in
-                                // Perform UI-related tasks on the main thread
-                                DispatchQueue.main.async {
-                                    
-                                    self.routes = polylines
-
-                                    for polyline in polylines {
-                                        polyline.map = mapView
-                                    }
-
-                                    var bounds = GMSCoordinateBounds()
-                                    bounds = bounds.includingCoordinate(sourceLocation)
-                                    bounds = bounds.includingCoordinate(destinationLocation)
-
-                                    for polyline in polylines {
-                                        if let path = polyline.path {
-                                            for index in 0 ..< path.count() {
-                                                let coordinate = path.coordinate(at: index)
-                                                bounds = bounds.includingCoordinate(coordinate)
-                                            }
-                                        }
-                                    }
-
-                                    let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
-                                    mapView.moveCamera(update)
+                        for polyline in polylines {
+                            if let path = polyline.path {
+                                for index in 0 ..< path.count() {
+                                    let coordinate = path.coordinate(at: index)
+                                    bounds = bounds.includingCoordinate(coordinate)
                                 }
                             }
-                        } else {
-                           
-                            DispatchQueue.main.async { mapView.clear()
-                                var bounds = GMSCoordinateBounds()
-                                bounds = bounds.includingCoordinate(sourceLocation)
-                                bounds = bounds.includingCoordinate(destinationLocation)
-
-                                for polyline in self.routes {
-                                    if let path = polyline.path {
-                                        for index in 0 ..< path.count() {
-                                            let coordinate = path.coordinate(at: index)
-                                            bounds = bounds.includingCoordinate(coordinate)
-                                        }
-                                    }
-                                }
-
-                                let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
-                                mapView.moveCamera(update)
-                                self.isButtonTapped = false
-                            }
                         }
+
+                        let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
+                        mapView.moveCamera(update)
+
+                        self.isButtonTapped = false
                     }
                 }
             }
         }
+
+    
+
     }
 
     
