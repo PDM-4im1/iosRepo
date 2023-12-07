@@ -68,5 +68,98 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A657CF2-13BD-4495-9904-29369125EACF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "View Models/CarMapController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "5A657CF2-13BD-4495-9904-29369125EACF - 43479c0c153d0cdd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShareCommut.CarMapController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ShareCommut.CarMapController"
+                  moduleName = "ShareCommut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rihem/Desktop/Rihem%204Sim1/ShareCommut/ShareCommut/View%20Models/CarMapController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "5A657CF2-13BD-4495-9904-29369125EACF - 5e9c319a361b02cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShareCommut.CarMapController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ShareCommut.CarMapController"
+                  moduleName = "ShareCommut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rihem/Desktop/Rihem%204Sim1/ShareCommut/ShareCommut/View%20Models/CarMapController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "157">
+               </Location>
+               <Location
+                  uuid = "5A657CF2-13BD-4495-9904-29369125EACF - 66523da2b9afb79a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShareCommut.CarMapController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ShareCommut.CarMapController&gt;"
+                  moduleName = "ShareCommut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rihem/Desktop/Rihem%204Sim1/ShareCommut/ShareCommut/View%20Models/CarMapController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "5A657CF2-13BD-4495-9904-29369125EACF - 7746d36217bb9cc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShareCommut.CarMapController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ShareCommut.CarMapController&gt;"
+                  moduleName = "ShareCommut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rihem/Desktop/Rihem%204Sim1/ShareCommut/ShareCommut/View%20Models/CarMapController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "123">
+               </Location>
+               <Location
+                  uuid = "5A657CF2-13BD-4495-9904-29369125EACF - 244cc99e2637011d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShareCommut.CarMapController.__deallocating_deinit"
+                  moduleName = "ShareCommut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rihem/Desktop/Rihem%204Sim1/ShareCommut/ShareCommut/View%20Models/CarMapController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
