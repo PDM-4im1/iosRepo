@@ -29,7 +29,6 @@ class CustomMarkersViewController: UIViewController {
     navigationController?.navigationBar.isTranslucent = false
     let addButton = UIBarButtonItem(
       barButtonSystemItem: .add, target: self, action: #selector(tapAdd))
-    addButton.accessibilityLabel = "Add Markers"
     let clearButton = UIBarButtonItem(
       title: "Clear Markers", style: .plain, target: self, action: #selector(tapClear))
     navigationItem.rightBarButtonItems = [addButton, clearButton]

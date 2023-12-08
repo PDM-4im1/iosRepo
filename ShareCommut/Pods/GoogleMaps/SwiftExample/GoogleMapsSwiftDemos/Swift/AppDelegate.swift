@@ -15,9 +15,9 @@ import GoogleMaps
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  private var services: Any?
+  var window: UIWindow?
 
   func application(
     _ application: UIApplication,
@@ -27,18 +27,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
     GMSServices.provideAPIKey(SDKConstants.apiKey)
     // Metal is the preferred renderer.
     GMSServices.setMetalRendererEnabled(true)
-    services = GMSServices.sharedServices()
+
+    // On iOS 15, continue to use opaque navigation bars like earlier iOS versions.
+    if #available(iOS 15.0, *) {
+      let navBarAppearance = UINavigationBarAppearance()
+      navBarAppearance.configureWithOpaqueBackground()
+      UINavigationBar.appearance().standardAppearance = navBarAppearance
+      UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+    }
+
+    let sampleListViewController = SampleListViewController()
+    let frame = UIScreen.main.bounds
+    let window = UIWindow(frame: frame)
+    let navigationController = UINavigationController(rootViewController: sampleListViewController)
+    window.rootViewController = navigationController
+    window.makeKeyAndVisible()
+    self.window = window
 
     return true
-  }
-
-  func application(
-    _ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession,
-    options: UIScene.ConnectionOptions
-  ) -> UISceneConfiguration {
-    let config = UISceneConfiguration(
-      name: "Default configuration", sessionRole: connectingSceneSession.role)
-    config.delegateClass = SceneDelegate.self
-    return config
   }
 }

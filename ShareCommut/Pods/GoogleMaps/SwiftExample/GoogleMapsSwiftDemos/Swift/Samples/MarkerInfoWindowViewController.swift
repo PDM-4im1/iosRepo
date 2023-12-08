@@ -72,3 +72,16 @@ extension MarkerInfoWindowViewController: GMSMapViewDelegate {
     showToast(message: "Info window for marker \(marker.title ?? "") long pressed.")
   }
 }
+
+extension UIViewController {
+  func showToast(message: String) {
+    let toast = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    present(
+      toast, animated: true,
+      completion: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+          toast.dismiss(animated: true)
+        }
+      })
+  }
+}

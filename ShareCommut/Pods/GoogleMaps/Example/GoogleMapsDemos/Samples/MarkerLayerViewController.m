@@ -15,14 +15,9 @@
 
 #import "GoogleMapsDemos/Samples/MarkerLayerViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 @interface CoordsList : NSObject
-
 @property(nonatomic, readonly, copy) GMSPath *path;
 @property(nonatomic, readonly) NSUInteger target;
 
@@ -109,14 +104,10 @@
   CLLocationDirection heading = GMSGeometryHeading(previous, coord);
   CLLocationDistance distance = GMSGeometryDistance(previous, coord);
 
-  // If this marker is flat, implicitly trigger a change in rotation, which will finish quickly.
-  if (marker.flat) {
-    marker.rotation = heading;
-  }
-
   // Use CATransaction to set a custom duration for this animation. By default, changes to the
   // position are already animated, but with a very short default duration. When the animation is
   // complete, trigger another animation step.
+
   [CATransaction begin];
   [CATransaction setAnimationDuration:(distance / (50 * 1000))];  // custom duration, 50km/sec
 
@@ -129,6 +120,10 @@
 
   [CATransaction commit];
 
+  // If this marker is flat, implicitly trigger a change in rotation, which will finish quickly.
+  if (marker.flat) {
+    marker.rotation = heading;
+  }
 }
 
 - (void)fadeMarker:(GMSMarker *)marker {

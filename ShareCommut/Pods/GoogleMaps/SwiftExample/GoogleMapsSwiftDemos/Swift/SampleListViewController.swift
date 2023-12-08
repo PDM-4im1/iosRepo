@@ -17,9 +17,8 @@ import UIKit
 class SampleListViewController: UIViewController {
   static let sampleCellIdentifier = "sampleCellIdentifier"
 
-  var sampleSections = Samples.allSamples()
+  let sampleSections = Samples.allSamples()
   lazy var tableView: UITableView = UITableView()
-  var shouldCollapseDetailViewController = true
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,13 +35,6 @@ class SampleListViewController: UIViewController {
       UITableViewCell.self, forCellReuseIdentifier: SampleListViewController.sampleCellIdentifier)
     tableView.dataSource = self
     tableView.delegate = self
-
-    let searchController = UISearchController()
-    searchController.searchResultsUpdater = self
-    searchController.searchBar.autocapitalizationType = .none
-    searchController.searchBar.accessibilityIdentifier = "SamplesTableViewSearchBar"
-    searchController.obscuresBackgroundDuringPresentation = false
-    self.navigationItem.searchController = searchController
   }
 }
 
@@ -77,65 +69,11 @@ extension SampleListViewController: UITableViewDataSource {
 
 extension SampleListViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    shouldCollapseDetailViewController = false
     tableView.deselectRow(at: indexPath, animated: true)
     if let sample = sample(at: indexPath) {
       let viewController = sample.viewControllerClass.init()
       viewController.title = sample.title
-      let navController = UINavigationController(rootViewController: viewController)
-      navController.navigationBar.isTranslucent = false
-      showDetailViewController(navController, sender: self)
+      navigationController?.pushViewController(viewController, animated: true)
     }
-  }
-}
-
-extension SampleListViewController: UISplitViewControllerDelegate {
-  func primaryViewController(forExpanding splitViewController: UISplitViewController)
-    -> UIViewController?
-  {
-    tableView.reloadData()
-    return nil
-  }
-
-  func primaryViewController(forCollapsing splitViewController: UISplitViewController)
-    -> UIViewController?
-  {
-    tableView.reloadData()
-    return nil
-  }
-
-  func splitViewController(
-    _ splitViewController: UISplitViewController,
-    collapseSecondary secondaryViewController: UIViewController,
-    onto primaryViewController: UIViewController
-  ) -> Bool {
-    return shouldCollapseDetailViewController
-  }
-}
-
-extension SampleListViewController: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    defer { tableView.reloadData() }
-
-    let text = searchController.searchBar.text
-    guard let filterString = text?.trimmingCharacters(in: .whitespaces).lowercased(),
-      !filterString.isEmpty
-    else {
-      sampleSections = Samples.allSamples()
-      return
-    }
-
-    sampleSections = Samples.allSamples().reduce(into: []) { samples, section in
-      guard section.samples.contains(where: { $0.matches(filterString) }) else { return }
-      let filteredSamples = section.samples.filter({ $0.matches(filterString) })
-      samples.append(Section(name: section.name, samples: filteredSamples))
-    }
-  }
-}
-
-extension Sample {
-  func matches(_ filter: String) -> Bool {
-    return title.lowercased().contains(filter)
-      || String(describing: viewControllerClass).lowercased().contains(filter)
   }
 }

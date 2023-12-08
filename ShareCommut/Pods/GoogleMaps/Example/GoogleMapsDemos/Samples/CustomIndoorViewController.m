@@ -15,11 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/CustomIndoorViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 @interface CustomIndoorViewController () <GMSIndoorDisplayDelegate,
                                           UIPickerViewDelegate,
@@ -39,7 +35,7 @@
                                                           longitude:-122.403874
                                                                zoom:18];
 
-  // Set backgroundColor, otherwise UIPickerView fades into the background
+  // set backgroundColor, otherwise UIPickerView fades into the background
   self.view.backgroundColor = [UIColor grayColor];
 
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
@@ -63,16 +59,17 @@
   NSDictionary *metrics = @{@"height" : @180.0};
   NSDictionary *views = NSDictionaryOfVariableBindings(_mapView, _levelPickerView);
 
-  // Constraining the map to the full width of the display. The |_levelPickerView| is constrained
-  // below with the NSLayoutFormatAlignAll*. See
+  // Constraining the map to the full width of the display.
+  // The |_levelPickerView| is constrained below with the NSLayoutFormatAlignAll*
+  // See
   // http://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Articles/formatLanguage.html
   [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[_mapView]|"
                                                                     options:0
                                                                     metrics:metrics
                                                                       views:views]];
 
-  // Constraining the _mapView and the _levelPickerView as siblings taking the full height of the
-  // display, with _levelPickerView at 200 points high
+  // Constraining the _mapView and the _levelPickerView as siblings taking
+  // the full height of the display, with _levelPickerView at 200 points high
   [self.view
       addConstraints:[NSLayoutConstraint
                          constraintsWithVisualFormat:@"V:|[_mapView][_levelPickerView(height)]|"
@@ -97,7 +94,7 @@
   _levels = [levels copy];
 
   [_levelPickerView reloadAllComponents];
-  [_levelPickerView selectRow:0 inComponent:0 animated:NO];
+  [_levelPickerView selectRow:-1 inComponent:0 animated:NO];
 
   // UIPickerView insists on having some data; disable interaction if there's no levels.
   _levelPickerView.userInteractionEnabled = (_levels.count > 0);

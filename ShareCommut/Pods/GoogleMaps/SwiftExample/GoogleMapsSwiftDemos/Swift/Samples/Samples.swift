@@ -64,15 +64,6 @@ enum Samples {
       Sample(
         viewControllerClass: GradientPolylinesViewController.self, title: "Gradient Polylines"),
     ]
-    let datadrivenStylingSamples = [
-      Sample(
-        viewControllerClass: DataDrivenStylingBasicViewController.self, title: "Basic"),
-      Sample(
-        viewControllerClass: DataDrivenStylingEventsViewController.self, title: "Events"),
-      Sample(
-        viewControllerClass: DataDrivenStylingSearchViewController.self,
-        title: "Places from text search"),
-    ]
     let panoramaSamples = [
       Sample(viewControllerClass: PanoramaServiceController.self, title: "Panorama Service"),
       Sample(viewControllerClass: PanoramaViewController.self, title: "Street View"),
@@ -92,7 +83,6 @@ enum Samples {
       Section(name: "Map", samples: mapSamples),
       Section(name: "Panorama", samples: panoramaSamples),
       Section(name: "Overlays", samples: overlaySamples),
-      Section(name: "Data-driven Styling", samples: datadrivenStylingSamples),
       Section(name: "Camera", samples: cameraSamples),
       Section(name: "Services", samples: serviceSamples),
     ]

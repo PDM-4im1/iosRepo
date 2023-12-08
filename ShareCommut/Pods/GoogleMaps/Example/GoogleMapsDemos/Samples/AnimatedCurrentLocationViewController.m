@@ -15,11 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/AnimatedCurrentLocationViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 @implementation AnimatedCurrentLocationViewController {
   CLLocationManager *_manager;
@@ -79,7 +75,7 @@
     _locationMarker = [[GMSMarker alloc] init];
     _locationMarker.position = location.coordinate;
 
-    // Animated walker images derived from a www.angryanimator.com tutorial.
+    // Animated walker images derived from an www.angryanimator.com tutorial.
     // See: http://www.angryanimator.com/word/2010/11/26/tutorial-2-walk-cycle/
 
     NSArray *frames = @[

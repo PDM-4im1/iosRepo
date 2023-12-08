@@ -15,11 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/SnapshotReadyViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 @interface SnapshotReadyViewController () <GMSMapViewDelegate>
 @end
@@ -48,8 +44,8 @@
   _statusLabel.textColor = [UIColor whiteColor];
   _statusLabel.textAlignment = NSTextAlignmentCenter;
 
-  // Add a wait button to signify on the next SnapshotReady event, a screenshot of the map will be
-  // taken.
+  // Add a wait button to signify on the next SnapshotReady event, a screenshot of the map will
+  // be taken.
   _waitButton = [[UIBarButtonItem alloc] initWithTitle:@"Wait for snapshot"
                                                  style:UIBarButtonItemStylePlain
                                                 target:self
@@ -70,7 +66,6 @@
 
   _statusLabel.alpha = 0.8f;
   _statusLabel.text = @"Snapshot Ready";
-
   // Remove status label after 1 second.
   UILabel *statusLabel = _statusLabel;
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{

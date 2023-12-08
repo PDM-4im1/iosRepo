@@ -33,7 +33,6 @@ class MapTypesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    segmentedControl.selectedSegmentIndex = 0
     segmentedControl.addTarget(self, action: #selector(changeMapType), for: .valueChanged)
     navigationItem.titleView = segmentedControl
   }

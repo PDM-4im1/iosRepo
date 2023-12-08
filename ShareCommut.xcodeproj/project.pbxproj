@@ -14,8 +14,6 @@
 		CE6A01DD2B14EE4E00EAED28 /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */; };
 		CE6A01DF2B14F38B00EAED28 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DE2B14F38B00EAED28 /* Driver.swift */; };
 		CE88A2992B22FC4E002C1E6B /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A2982B22FC4E002C1E6B /* MoyenDeTransport.swift */; };
-		CE88A2A12B2318D0002C1E6B /* libPods-ShareCommut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88A2A02B2318D0002C1E6B /* libPods-ShareCommut.a */; };
-		CE88A2AE2B231A3B002C1E6B /* libPods-ShareCommut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88A2A32B231A3B002C1E6B /* libPods-ShareCommut.a */; };
 		CE8C6BF52B14B2EE0043007B /* ShareCommutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6BF42B14B2EE0043007B /* ShareCommutApp.swift */; };
 		CE8C6BF92B14B2EE0043007B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C6BF82B14B2EE0043007B /* Assets.xcassets */; };
 		CE8C6BFC2B14B2EE0043007B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C6BFB2B14B2EE0043007B /* Preview Assets.xcassets */; };
@@ -88,8 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE88A2A12B2318D0002C1E6B /* libPods-ShareCommut.a in Frameworks */,
-				CE88A2AE2B231A3B002C1E6B /* libPods-ShareCommut.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,18 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/PolygonsViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
-
-@interface PolygonsViewController ()
-
-@property(nonatomic) GMSPolygon *polygonOfNewYork;
-@property(nonatomic) GMSPolygon *polygonOfNorthCarolina;
-
-@end
 
 @implementation PolygonsViewController
 
@@ -44,8 +33,8 @@
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
 
-  // Create renderer related objects after view appears, so a renderer will be available; otherwise,
-  // behavior is undefined (may result in null ptr derefs).
+  // Create renderer related objects after view appears, so a renderer will be available;
+  // otherwise, behavior is undefined (may result in null ptr derefs).
   GMSMapView *mapView = (GMSMapView *)self.view;
 
   // Create the first polygon.
@@ -58,15 +47,14 @@
   polygon.strokeWidth = 2;
   polygon.tappable = YES;
   polygon.map = mapView;
-  self.polygonOfNewYork = polygon;
 
-  // Copy the existing polygon and its settings and use it as a base for the second polygon.
+  // Copy the existing polygon and its settings and use it as a base for the
+  // second polygon.
   polygon = [polygon copy];
   polygon.title = @"North Carolina";
   polygon.path = [self pathOfNorthCarolina];
   polygon.fillColor = [UIColor colorWithRed:0 green:0.25 blue:0 alpha:0.5];
   polygon.map = mapView;
-  self.polygonOfNorthCarolina = polygon;
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapOverlay:(GMSOverlay *)overlay {

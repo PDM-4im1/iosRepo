@@ -95,11 +95,6 @@ final class MarkerLayerViewController: UIViewController {
     let heading = GMSGeometryHeading(previous, coordinate)
     let distance = GMSGeometryDistance(previous, coordinate)
 
-    // If this marker is flat, implicitly trigger a change in rotation, which will finish quickly.
-    if marker.isFlat {
-      marker.rotation = heading
-    }
-
     // Use CATransaction to set a custom duration for this animation. By default, changes to the
     // position are already animated, but with a very short default duration. When the animation is
     // complete, trigger another animation step.
@@ -110,6 +105,11 @@ final class MarkerLayerViewController: UIViewController {
     }
     marker.position = coordinate
     CATransaction.commit()
+
+    // If this marker is flat, implicitly trigger a change in rotation, which will finish quickly.
+    if marker.isFlat {
+      marker.rotation = heading
+    }
   }
 }
 

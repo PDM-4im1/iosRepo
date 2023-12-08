@@ -15,17 +15,12 @@
 
 #import "GoogleMapsDemos/Samples/PanoramaViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
 static CLLocationCoordinate2D kMarkerAt = {40.761455, -73.977814};
 
 @interface PanoramaViewController () <GMSPanoramaViewDelegate>
-
 @end
 
 @implementation PanoramaViewController {

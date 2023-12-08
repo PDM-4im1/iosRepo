@@ -15,11 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/FixedPanoramaViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 static CLLocationCoordinate2D kPanoramaNear = {-33.732022, 150.312114};
 

@@ -15,11 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/TileLayerViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 @implementation TileLayerViewController {
   UISegmentedControl *_switcher;
@@ -54,13 +50,6 @@
                 action:@selector(didChangeSwitcher)
       forControlEvents:UIControlEventValueChanged];
   [self didChangeSwitcher];
-}
-
-- (void)viewWillLayoutSubviews {
-  [super viewWillLayoutSubviews];
-  // Re-show level picker.
-  self.navigationItem.titleView = nil;
-  self.navigationItem.titleView = _switcher;
 }
 
 - (void)didChangeSwitcher {

@@ -15,11 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/StyledMapViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 static NSString *const kNormalType = @"Normal";
 static NSString *const kRetroType = @"Retro";

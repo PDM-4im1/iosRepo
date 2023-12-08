@@ -15,11 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/MarkersViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 @implementation MarkersViewController {
   GMSMarker *_sydneyMarker;
@@ -71,6 +67,7 @@
 - (void)didTapAdd {
   if (_sydneyMarker.map == nil) {
     _sydneyMarker.map = (GMSMapView *)self.view;
+    //    _sydneyMarker.rotation += 45.0;
   } else {
     _sydneyMarker.map = nil;
   }

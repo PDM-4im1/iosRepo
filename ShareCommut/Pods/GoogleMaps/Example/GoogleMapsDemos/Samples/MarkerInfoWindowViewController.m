@@ -15,15 +15,10 @@
 
 #import "GoogleMapsDemos/Samples/MarkerInfoWindowViewController.h"
 
-#import "GoogleMapsDemos/Common/UIViewController+GMSModals.h"
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
+#import "GoogleMapsDemos/UIViewController+GMSToastMessages.h"
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
 @interface MarkerInfoWindowViewController () <GMSMapViewDelegate>
-
 @end
 
 @implementation MarkerInfoWindowViewController {

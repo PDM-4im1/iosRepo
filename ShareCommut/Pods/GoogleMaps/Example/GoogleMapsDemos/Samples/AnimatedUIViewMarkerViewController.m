@@ -15,13 +15,9 @@
 
 #import "GoogleMapsDemos/Samples/AnimatedUIViewMarkerViewController.h"
 
-#if __has_feature(modules)
-@import GoogleMaps;
-#else
 #import <GoogleMaps/GoogleMaps.h>
-#endif
 
-/** Returns a random value from 0-1.0f. */
+// Returns a random value from 0-1.0f.
 static CGFloat randf() { return (((float)arc4random() / 0x100000000) * 1.0f); }
 
 @interface AnimatedUIViewMarkerViewController () <GMSMapViewDelegate>
