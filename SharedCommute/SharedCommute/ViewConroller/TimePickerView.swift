@@ -236,42 +236,41 @@ struct TimePickerView: View {
            
             
             NavigationLink(
-                              destination: CovoiturageListView(),
-                              isActive: $isShowingPicker
-                          ) {
-                              EmptyView()
-                          }
-                          .hidden()
+                destination: CovoiturageListView(),
+                isActive: $isShowingPicker
+            ) {
+                EmptyView()
+            }
+            .hidden()
+            
 
-                          Button(action: {
-                              if idcovoiturage.isEmpty {
-                                  saveTrip()
-                              } else {
-                                  editTrip()
-                              }
+            Button(action: {
+                if idcovoiturage.isEmpty {
+                    saveTrip()
+                } else {
+                    editTrip()
+                }
 
-                              isShowingPicker = true
-
-                          }) {
-                              Text("Set Time")
-                                  .font(.headline)
-                                  .foregroundColor(.white)
-                                  .padding(.vertical, 12)
-                                  .padding(.horizontal, 24)
-                                  .background(Color.blue)
-                                  .cornerRadius(8)
-                          }
-                          .padding(.top, 16)
-                      }
-                      .padding()
-                      .background(Color.gray.opacity(0.1))
-                      .cornerRadius(16)
-                      .padding(16)
-                      .alert(isPresented: $showAlert) {
-                          Alert(title: Text("Success"), message: Text(alertText), dismissButton: .default(Text("OK")))
-                      }
-                      // Hide the navigation bar
-                      .navigationBarHidden(true)
-                  }
-              }
+                isShowingPicker = true
+                
+            }) {
+                Text("Set Time")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 24)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+            .padding(.top, 16)
+        }
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(16)
+        .padding(16)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Success"), message: Text(alertText), dismissButton: .default(Text("OK")))
+        }
+    }
+}
     

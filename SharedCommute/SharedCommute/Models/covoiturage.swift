@@ -1,5 +1,5 @@
 import Foundation
-struct Covoiturage: Identifiable, Decodable,Encodable {
+struct Covoiturage: Identifiable, Decodable,Encodable,Equatable {
     let id: String?
     let id_cond: String
     let id_user: String

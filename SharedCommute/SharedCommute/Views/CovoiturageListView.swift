@@ -9,6 +9,10 @@ import SwiftUI
 
 struct CovoiturageListView: View {
     @State private var covoiturages: [Covoiturage] = []
+    @State private var isShowingDeleteAlert = false
+    @State private var selectedCovoiturage: Covoiturage?
+
+    
     private func reverseFormattedDate(dateString: String) -> (hour: Int, minute: Int)? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -30,89 +34,143 @@ struct CovoiturageListView: View {
     }
     
 
+    
     var body: some View {
-         NavigationView {
-             VStack {
-                 // Plus button to add a new trip
-                 HStack {
-                     Spacer()
-                     NavigationLink(destination: MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))) {
-                         Image(systemName: "plus.circle")
-                             .font(.title)
-                             .foregroundColor(.blue)
-                             .padding()
-                     }
-                 }
+          NavigationView {
+              VStack {
+                  // Plus button to add a new trip
+                  HStack {
+                      Spacer()
+                      NavigationLink(destination: MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))) {
+                          Image(systemName: "plus.circle")
+                              .font(.title)
+                              .foregroundColor(.blue)
+                              .padding()
+                      }
+                  }
+                  List {
+                      ForEach(covoiturages) { covoiturage in
+                          if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage) {
+                              NavigationLink(
+                                  destination: MappingView(
+                                      internalsource: .constant(covoiturage.pointDepart),
+                                      internaldestination: .constant(covoiturage.pointArrivee),
+                                      selectedHoursMapping: .constant(reverseDate.hour),
+                                      selectedMinutesMapping: .constant(reverseDate.minute),
+                                      initialidcovoiturage: .constant(covoiturage.id!)
+                                  )    .navigationBarHidden(true)  // Hide
+                              ) {
+                                  HStack(spacing: 16) {
+                                      Image(systemName: "car.fill") // Placeholder car image, replace with an actual carpooling image
+                                          .resizable()
+                                          .aspectRatio(contentMode: .fit)
+                                          .frame(width: 40, height: 40)
+                                          .foregroundColor(.blue)
 
-                 List(covoiturages) { covoiturage in
-                     if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage) {
-                         NavigationLink(
-                             destination: MappingView(
-                                 internalsource: .constant(covoiturage.pointDepart),
-                                 internaldestination: .constant(covoiturage.pointArrivee),
-                                 selectedHoursMapping: .constant(reverseDate.hour),
-                                 selectedMinutesMapping: .constant(reverseDate.minute),
-                                 initialidcovoiturage: .constant(covoiturage.id!)
-                             )    .navigationBarHidden(true)  // Hide
-                         ) {
-                             HStack(spacing: 16) {
-                                 Image(systemName: "car.fill") // Placeholder car image, replace with actual carpooling image
-                                     .resizable()
-                                     .aspectRatio(contentMode: .fit)
-                                     .frame(width: 40, height: 40)
-                                     .foregroundColor(.blue)
+                                      VStack(alignment: .leading, spacing: 8) {
+                                          Text("Departure: \(covoiturage.pointDepart)")
+                                              .font(.headline)
+                                          Text("Destination: \(covoiturage.pointArrivee)")
+                                              .font(.subheadline)
+                                          Text("Date: \(covoiturage.dateCovoiturage)")
+                                              .font(.subheadline)
+                                      }
 
-                                 VStack(alignment: .leading, spacing: 8) {
-                                     Text("Departure: \(covoiturage.pointDepart)")
-                                         .font(.headline)
-                                     Text("Destination: \(covoiturage.pointArrivee)")
-                                         .font(.subheadline)
-                                     Text("Date: \(covoiturage.dateCovoiturage)")
-                                         .font(.subheadline)
-                                 }
-                             }
-                             .padding()
-                             .background(Color.white)
-                             .cornerRadius(10)
-                             .shadow(radius: 3)
-                         }
-                     }
-                 }
-                 .listStyle(PlainListStyle())
-                 .navigationBarTitle("Carpooling")
-                
+                                      Spacer()
 
-                 .onAppear {
-                     fetchCovoiturages()
-                 }
-                 Spacer()
-             }
-             .padding()
-         }
-     }
+                                      // Delete icon with confirmation alert
+                                      Image(systemName: "trash")
+                                          .foregroundColor(.red)
+                                          .onTapGesture {
+                                              selectedCovoiturage = covoiturage
+                                              isShowingDeleteAlert = true
+                                          }
+                                  }
+                                  .padding()
+                                  .background(Color.white)
+                                  .cornerRadius(10)
+                                  .shadow(radius: 3)
+                              }
+                          }
+                      }
+                      // Remove .onDelete here
+                  }
+                  .listStyle(PlainListStyle())
+                  .navigationBarTitle("Carpooling")
+                  .alert(isPresented: $isShowingDeleteAlert) {
+                      Alert(
+                          title: Text("Confirm Deletion"),
+                          message: Text("Are you sure you want to delete this Covoiturage?"),
+                          primaryButton: .destructive(Text("Delete")) {
+                              if let selectedCovoiturage = selectedCovoiturage {
+                                  deleteCovoiturage(covoiturage: selectedCovoiturage)
+                                  // Reload data after successful delete
+                              }
+                          },
+                          secondaryButton: .cancel()
+                      )
+                  }
+                  .onAppear {
+                      fetchCovoiturages()
+                  }
+                  Spacer()
+              }
+              .padding()
+          }
+      }
+
+      private func deleteCovoiturage(covoiturage: Covoiturage) {
+          // Make a delete request to your server
+          let deleteURL = URL(string: "http://localhost:9090/covoiturage/delete/\(covoiturage.id!)")!
+          
+          var request = URLRequest(url: deleteURL)
+          request.httpMethod = "DELETE"
+          
+          URLSession.shared.dataTask(with: request) { data, response, error in
+              if let data = data {
+                  do {
+                      // Check if the response indicates success
+                      let successResponse = try JSONDecoder().decode([String: String].self, from: data)
+                      if let message = successResponse["message"] {
+                          print(message)
+                          fetchCovoiturages()
+                          // Update the local array to trigger view refresh
+                          DispatchQueue.main.async {
+                              covoiturages.removeAll { $0.id == covoiturage.id }
+                          }
+                      }
+                  } catch {
+                      print("Error decoding JSON: \(error)")
+                  }
+              } else if let error = error {
+                  print("Error deleting data: \(error)")
+              }
+          }.resume()
+      }
     private func fetchCovoiturages() {
-        // Example URL:
-        let findAllCovoituragesURL = URL(string: "http://localhost:9090/moyenDeTransport/findAllCovoiturages/2")!
+            // Example URL:
+            let findAllCovoituragesURL = URL(string: "http://localhost:9090/moyenDeTransport/findAllCovoiturages/2")!
 
-        URLSession.shared.dataTask(with: findAllCovoituragesURL) { data, response, error in
-            if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    var covoituragesData = try decoder.decode([Covoiturage].self, from: data)
+            URLSession.shared.dataTask(with: findAllCovoituragesURL) { data, response, error in
+                if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let covoituragesData = try decoder.decode([Covoiturage].self, from: data)
 
-                 
-                    DispatchQueue.main.async {
-                        self.covoiturages = covoituragesData
+                        DispatchQueue.main.async {
+                                              // Update the @State property to trigger view refresh
+                                              self.covoiturages = covoituragesData
+                                          }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
                     }
-                } catch {
-                    print("Error decoding JSON: \(error)")
+                } else if let error = error {
+                    print("Error fetching data: \(error)")
                 }
-            } else if let error = error {
-                print("Error fetching data: \(error)")
-            }
-        }.resume()
- 
-    }   }
+            }.resume()
+        }
+    }
+
 
 struct CovoiturageListViewpreview: PreviewProvider {
     static var previews: some View {

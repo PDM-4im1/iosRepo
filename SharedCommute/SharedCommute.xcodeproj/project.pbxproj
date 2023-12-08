@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512A42392B22E6F2001A026C /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A42382B22E6F2001A026C /* SharedData.swift */; };
 		5135CB932B160A7100AA742A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CB922B160A7100AA742A /* MappingView.swift */; };
+		513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A31A12B221DEC0043CBC9 /* TimePickerView.swift */; };
 		513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513C72B52B20B9C900E662AC /* LocationManager.swift */; };
+		513D16A72B22868D00EAC845 /* CovoiturageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D16A62B22868D00EAC845 /* CovoiturageListView.swift */; };
 		5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */; };
 		5194FAB22B18C096006B1CCC /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAB12B18C096006B1CCC /* GoogleMapView.swift */; };
 		51A157CA2B14BD0900C6F3CD /* conducteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C72B14BD0900C6F3CD /* conducteur.swift */; };
@@ -27,9 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		512A42382B22E6F2001A026C /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		5135CB922B160A7100AA742A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
+		513A31A12B221DEC0043CBC9 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		513C72B32B20A89700E662AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513C72B52B20B9C900E662AC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		513D16A62B22868D00EAC845 /* CovoiturageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageListView.swift; sourceTree = "<group>"; };
 		5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelagte.swift; sourceTree = "<group>"; };
 		5194FAB12B18C096006B1CCC /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		51A157C72B14BD0900C6F3CD /* conducteur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conducteur.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 			children = (
 				51A157CE2B14BD1F00C6F3CD /* CovoiturageTableView.swift */,
 				5135CB922B160A7100AA742A /* MappingView.swift */,
+				513D16A62B22868D00EAC845 /* CovoiturageListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +103,8 @@
 				5194FAB12B18C096006B1CCC /* GoogleMapView.swift */,
 				51A157D32B14ED6B00C6F3CD /* CovoiturageCell.swift */,
 				513C72B52B20B9C900E662AC /* LocationManager.swift */,
+				513A31A12B221DEC0043CBC9 /* TimePickerView.swift */,
+				512A42382B22E6F2001A026C /* SharedData.swift */,
 			);
 			path = ViewConroller;
 			sourceTree = "<group>";
@@ -312,16 +321,19 @@
 				5194FAB22B18C096006B1CCC /* GoogleMapView.swift in Sources */,
 				5135CB932B160A7100AA742A /* MappingView.swift in Sources */,
 				51A157CF2B14BD2000C6F3CD /* CovoiturageTableView.swift in Sources */,
+				513D16A72B22868D00EAC845 /* CovoiturageListView.swift in Sources */,
 				5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */,
 				51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */,
 				51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */,
 				51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */,
 				51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */,
 				51A157D22B14C46500C6F3CD /* User.swift in Sources */,
+				512A42392B22E6F2001A026C /* SharedData.swift in Sources */,
 				51A157CB2B14BD0900C6F3CD /* MoyenDeTransport.swift in Sources */,
 				513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */,
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
 				51A157D42B14ED6B00C6F3CD /* CovoiturageCell.swift in Sources */,
+				513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */,
 				51A157CA2B14BD0900C6F3CD /* conducteur.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
