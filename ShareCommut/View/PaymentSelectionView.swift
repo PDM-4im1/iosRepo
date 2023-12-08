@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PaymentSelectionView: View {
     let driver =
-        Driver(name: "Driver 1",phone: "22 555 888", car: "cito")
+    User(email:"caytouta", password: "String", phoneNumber: 25365487, role: "client", name: "Mahmoud", firstName: "25365487", age: 22)
         
     @State private var showPaymentView = false
     @State private var paymentMethod = 0
@@ -29,12 +29,12 @@ struct PaymentSelectionView: View {
                     
                     HStack {
                         Image(systemName: "phone")
-                        Text(driver.phone)
+                        Text(driver.firstName)
                     }
                     
                     HStack {
                         Image(systemName: "car")
-                        Text(driver.car)
+                        Text(driver.email)
                     }
                 }
             }

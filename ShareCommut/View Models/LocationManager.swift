@@ -5,80 +5,51 @@
 //  Created by Rihem Drissi on 6/12/2023.
 //
 
-import SwiftUI
+import Foundation
 import CoreLocation
-import MapKit
-// combin Framework to watch textfield change
-import Combine
 
-class LocationManager: NSObject,ObservableObject,MKMapViewDelegate,CLLocationManagerDelegate {
-   @Published var mapView: MKMapView = .init()
-    @Published var manager: CLLocationManager = .init()
-    
-    //search bar
-    @Published var searchText: String = ""
-    var cancellable: AnyCancellable?
-    @Published var fetchedPlaces: [CLPlacemark]?
-    
-    override init(){
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    private var locationManager = CLLocationManager()
+
+    @Published var userLocation: CLLocationCoordinate2D?
+
+    override init() {
         super.init()
-        //Setting Delegates
-        manager.delegate = self
-        mapView.delegate = self
-        
-        //Requesting Location Access
-        manager.requestWhenInUseAuthorization()
-        
-        //Search Texfield Watching
-        cancellable = $searchText
-            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .removeDuplicates()
-            .sink(receiveValue: { value in
-                self.fetchPlaces(value: value)
-            })
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
     }
-    func fetchPlaces(value: String){
-        //print(value)
-        //fetching places using MKLoaclSearch
-        Task{
-            do{
-                let request = MKLocalSearch.Request()
-                request.naturalLanguageQuery = value.lowercased()
-                
-                let response = try await MKLocalSearch(request: request).start()
-                //Mainactor to publidh chnges
-                await MainActor.run(body: {
-                    self.fetchedPlaces = response.mapItems.compactMap({item -> CLPlacemark? in
-                        return item.placemark
-                        
-                    })
-                })
-            }
-            catch{
-                //handle error
-            }
+
+
+    // Check if location services are enabled
+    func isLocationServicesEnabled() -> Bool {
+        return CLLocationManager.locationServicesEnabled()
+    }
+
+    // Check if the app has location authorization
+    func hasLocationAuthorization() -> Bool {
+        return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
+    }
+
+    // Request location authorization
+    func requestLocationAuthorization() {
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+
+    // Start updating location
+    func startUpdatingLocation() {
+        if isLocationServicesEnabled() && !hasLocationAuthorization() {
+            requestLocationAuthorization()
+        } else {
+            self.locationManager.startUpdatingLocation()
         }
     }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        //
-    }
-    
+
+    // CLLocationManagerDelegate method - called when the location is updated
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let _ = locations.last else{return}
-    }
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus{
-        case .authorizedAlways: manager.requestLocation()
-        case .authorizedWhenInUse: manager.requestLocation()
-        case .denied: handleLocationError()
-        case .notDetermined: manager.requestWhenInUseAuthorization()
-        default: ()
+        if let location = locations.first?.coordinate {
+            userLocation = location
         }
-    }
-    
-    func handleLocationError(){
-        //
     }
 }
 

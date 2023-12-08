@@ -6,9 +6,22 @@
 //
 
 import Foundation
-struct Driver: Identifiable {
-    let id = UUID()
-    let name: String
-    let phone: String
-    let car: String
+struct Driver: Identifiable,Decodable {
+    let id :String
+       let idMoyenTransport: String
+       let idUser: String
+       let pointDepart: String
+       let pointArrivee: String
+       let localisation: String
+    
+    
+    private enum CodingKeys: String, CodingKey {
+           case id = "_id"
+           case idMoyenTransport
+           case idUser
+           case pointDepart
+           case pointArrivee
+           case localisation
+       }
+    
 }

@@ -20,17 +20,17 @@ struct EmgDriverCell: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Image(systemName: "person")
-                        Text(driver.name)
+                        Text(driver.idUser)
                     }
                     
                     HStack {
                         Image(systemName: "phone")
-                        Text(driver.phone)
+                        Text(driver.idUser)
                     }
                     
                     HStack {
                         Image(systemName: "car")
-                        Text(driver.car)
+                        Text(driver.idMoyenTransport)
                     }
                     HStack {
                                        Image(systemName: "dollarsign.circle")

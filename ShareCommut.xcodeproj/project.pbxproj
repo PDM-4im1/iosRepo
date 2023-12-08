@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62CBC7117D6AF2D81E6E425D /* libPods-ShareCommut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C98E8861C97FF41A07CB87 /* libPods-ShareCommut.a */; };
 		CE4C2F322B161D4000552FA6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C2F312B161D4000552FA6 /* MapViewController.swift */; };
 		CE52DE162B18BA920030670E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52DE152B18BA920030670E /* MapView.swift */; };
 		CE52DE182B18C1440030670E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52DE172B18C1440030670E /* AppDelegate.swift */; };
 		CE6A01D82B14E81E00EAED28 /* CovoiturageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */; };
 		CE6A01DD2B14EE4E00EAED28 /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */; };
 		CE6A01DF2B14F38B00EAED28 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A01DE2B14F38B00EAED28 /* Driver.swift */; };
+		CE88A2992B22FC4E002C1E6B /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A2982B22FC4E002C1E6B /* MoyenDeTransport.swift */; };
+		CE88A2A12B2318D0002C1E6B /* libPods-ShareCommut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88A2A02B2318D0002C1E6B /* libPods-ShareCommut.a */; };
+		CE88A2AE2B231A3B002C1E6B /* libPods-ShareCommut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88A2A32B231A3B002C1E6B /* libPods-ShareCommut.a */; };
 		CE8C6BF52B14B2EE0043007B /* ShareCommutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6BF42B14B2EE0043007B /* ShareCommutApp.swift */; };
 		CE8C6BF92B14B2EE0043007B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C6BF82B14B2EE0043007B /* Assets.xcassets */; };
 		CE8C6BFC2B14B2EE0043007B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C6BFB2B14B2EE0043007B /* Preview Assets.xcassets */; };
@@ -26,7 +28,6 @@
 		CED918612B160396000F66CC /* EmgCovoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED918602B160396000F66CC /* EmgCovoiturage.swift */; };
 		CED918632B1612F3000F66CC /* CarMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED918622B1612F3000F66CC /* CarMapController.swift */; };
 		CEDA217B2B20A680009AC217 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA217A2B20A680009AC217 /* LocationManager.swift */; };
-		CEDA217D2B20A9AC009AC217 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA217C2B20A9AC009AC217 /* SearchView.swift */; };
 		CEF0EEA22B19CE0700AA6F6E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0EEA12B19CE0700AA6F6E /* User.swift */; };
 		CEF0EEA42B19DBEA00AA6F6E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0EEA32B19DBEA00AA6F6E /* NotificationView.swift */; };
 		CEF0EEA62B19DC9400AA6F6E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0EEA52B19DC9400AA6F6E /* PaymentView.swift */; };
@@ -53,6 +54,13 @@
 		CE6A01D72B14E81E00EAED28 /* CovoiturageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageView.swift; sourceTree = "<group>"; };
 		CE6A01DC2B14EE4E00EAED28 /* EmgDriverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgDriverCell.swift; sourceTree = "<group>"; };
 		CE6A01DE2B14F38B00EAED28 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		CE88A2982B22FC4E002C1E6B /* MoyenDeTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyenDeTransport.swift; sourceTree = "<group>"; };
+		CE88A29A2B2318D0002C1E6B /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = ShareCommut/Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
+		CE88A29C2B2318D0002C1E6B /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = ShareCommut/Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
+		CE88A29E2B2318D0002C1E6B /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsCore.xcframework; path = ShareCommut/Pods/GoogleMaps/Maps/Frameworks/GoogleMapsCore.xcframework; sourceTree = "<group>"; };
+		CE88A2A02B2318D0002C1E6B /* libPods-ShareCommut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-ShareCommut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE88A2A22B231A3B002C1E6B /* GoogleMapsResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = GoogleMapsResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE88A2A32B231A3B002C1E6B /* libPods-ShareCommut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-ShareCommut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8C6BF12B14B2EE0043007B /* ShareCommut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCommut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8C6BF42B14B2EE0043007B /* ShareCommutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommutApp.swift; sourceTree = "<group>"; };
 		CE8C6BF82B14B2EE0043007B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +77,6 @@
 		CED918602B160396000F66CC /* EmgCovoiturage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgCovoiturage.swift; sourceTree = "<group>"; };
 		CED918622B1612F3000F66CC /* CarMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarMapController.swift; path = "../../../../Users/rihem/Desktop/Rihem 4Sim1/ShareCommut/ShareCommut/View Models/CarMapController.swift"; sourceTree = DEVELOPER_DIR; };
 		CEDA217A2B20A680009AC217 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		CEDA217C2B20A9AC009AC217 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CEF0EEA12B19CE0700AA6F6E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEF0EEA32B19DBEA00AA6F6E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		CEF0EEA52B19DC9400AA6F6E /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
@@ -81,7 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62CBC7117D6AF2D81E6E425D /* libPods-ShareCommut.a in Frameworks */,
+				CE88A2A12B2318D0002C1E6B /* libPods-ShareCommut.a in Frameworks */,
+				CE88A2AE2B231A3B002C1E6B /* libPods-ShareCommut.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +106,12 @@
 		B19469402A90013095EC7EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE88A2A22B231A3B002C1E6B /* GoogleMapsResources.bundle */,
+				CE88A2A32B231A3B002C1E6B /* libPods-ShareCommut.a */,
+				CE88A29A2B2318D0002C1E6B /* GoogleMaps.xcframework */,
+				CE88A29C2B2318D0002C1E6B /* GoogleMapsBase.xcframework */,
+				CE88A29E2B2318D0002C1E6B /* GoogleMapsCore.xcframework */,
+				CE88A2A02B2318D0002C1E6B /* libPods-ShareCommut.a */,
 				C2C98E8861C97FF41A07CB87 /* libPods-ShareCommut.a */,
 			);
 			name = Frameworks;
@@ -176,7 +190,6 @@
 				CEF0EEA32B19DBEA00AA6F6E /* NotificationView.swift */,
 				CEF0EEA52B19DC9400AA6F6E /* PaymentView.swift */,
 				CEF0EEA72B19E5B800AA6F6E /* PaymentSelectionView.swift */,
-				CEDA217C2B20A9AC009AC217 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 				CE6A01DE2B14F38B00EAED28 /* Driver.swift */,
 				CED918602B160396000F66CC /* EmgCovoiturage.swift */,
 				CEF0EEA12B19CE0700AA6F6E /* User.swift */,
+				CE88A2982B22FC4E002C1E6B /* MoyenDeTransport.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,7 +370,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED918632B1612F3000F66CC /* CarMapController.swift in Sources */,
-				CEDA217D2B20A9AC009AC217 /* SearchView.swift in Sources */,
 				CE8C6C012B14B2EE0043007B /* ShareCommut.xcdatamodeld in Sources */,
 				CE8C6C292B14B34C0043007B /* EmergencyRideView.swift in Sources */,
 				CEF0EEA42B19DBEA00AA6F6E /* NotificationView.swift in Sources */,
@@ -367,6 +380,7 @@
 				CEDA217B2B20A680009AC217 /* LocationManager.swift in Sources */,
 				CE52DE162B18BA920030670E /* MapView.swift in Sources */,
 				CEF0EEA62B19DC9400AA6F6E /* PaymentView.swift in Sources */,
+				CE88A2992B22FC4E002C1E6B /* MoyenDeTransport.swift in Sources */,
 				CEF0EEA22B19CE0700AA6F6E /* User.swift in Sources */,
 				CE4C2F322B161D4000552FA6 /* MapViewController.swift in Sources */,
 				CEF0EEA82B19E5B800AA6F6E /* PaymentSelectionView.swift in Sources */,

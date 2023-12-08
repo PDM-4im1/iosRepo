@@ -20,61 +20,37 @@ struct CarMapView: View {
     @State private var showPolice: Bool = false
     @State private var showDoctor: Bool = false
     @State private var Traceroute: Bool = false
+    @State private var showactivetrue: Bool = false
 
+    @State private var routes: [GMSPolyline] = []
+    
+    
     @StateObject private var controller = CarMapController()
     @StateObject private var coordinator = Coordinator()
-    /*func showHospitals() {
-        guard let mapView = controller.getMap() else {
-                    print("Error fetching nearby places: mapView is nil",controller.getMap())
-                       return
-                   }
-                    print("showHospitals - mapView: \(mapView)")
-                   // Call Google Places API to get nearby hospitals
-                   let placesClient = GMSPlacesClient.shared()
+    @StateObject private var locationManager = LocationManager()
+ 
+    private func getUserLocation() {
+           if let userLocation = locationManager.userLocation {
+               print("userloction",userLocation)
+               let apiKey = "AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74"
+               let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(userLocation.latitude),\(userLocation.longitude)&key=\(apiKey)"
 
-                   // Replace with the appropriate coordinate based on your logic
-                   guard let location = mapView.myLocation?.coordinate else {
-                       print("Error fetching nearby places: User's location is nil")
-                       return
-                   }
-
-                   let filter = GMSAutocompleteFilter()
-                   filter.type = .establishment
-
-                   placesClient.findAutocompletePredictions(
-                       fromQuery: "hospital",  // You can use "hospital", "police", "pharmacy", etc.
-                       filter: filter,
-                       sessionToken: nil
-                   ) { (results, error) in
-                       if let error = error {
-                           print("Error fetching nearby places: \(error.localizedDescription)")
-                           return
-                       }
-
-                       // Clear existing markers on the map
-                       mapView.clear()
-
-                       // Add markers for each place
-                       for result in results ?? [] {
-                           placesClient.fetchPlace(
-                               fromPlaceID: result.placeID ,
-                               placeFields: GMSPlaceField.all,
-                               sessionToken: nil
-                           ) { (place, error) in
-                               if let error = error {
-                                   print("Error fetching place details: \(error.localizedDescription)")
-                                   return
-                               }
-
-                               if let place = place {
-                                   let marker = GMSMarker()
-                                   marker.position = place.coordinate
-                                   marker.title = place.name
-                                   marker.map = mapView
-                               }
+               if let url = URL(string: url) {
+                   let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                       if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                          let results = json["results"] as? [[String: Any]],
+                          let address = results.first?["formatted_address"] as? String {
+                           // Update the source with the real location name
+                           DispatchQueue.main.async {
+                               self.source = address
                            }
                        }
-                   } }*/
+                   }
+                   task.resume()
+               }
+           }
+       }
+    
     private func showAutocomplete(for field: String) {
         coordinator.selectedField = field
         coordinator.parent = self
@@ -88,6 +64,9 @@ struct CarMapView: View {
                 VStack {
                     HStack(spacing: 10){
                         Image(systemName: "mappin.and.ellipse")
+                            .onTapGesture{
+                                getUserLocation()
+                            }
                             .foregroundColor(.gray)
                         TextField("Find location here", text: $source).onTapGesture {
                             showAutocomplete(for: "source")
@@ -124,8 +103,9 @@ struct CarMapView: View {
                         
                         Text(destination.isEmpty ? "Where to go?" : destination)
                             .onTapGesture {
-                                Traceroute = true
+                               
                                 showAutocomplete(for: "destination")
+                                
                             }
                         
                         
@@ -157,7 +137,7 @@ struct CarMapView: View {
                 .cornerRadius(20)
                 
                 // MapView
-                MapView(showhospitals:$showhospitals,showPolice: $showPolice,showPharmacy: $showPharmacy ,showDoctor: $showDoctor ,Traceroute: $Traceroute)
+                MapView(showhospitals:$showhospitals,showPolice: $showPolice,showPharmacy: $showPharmacy ,showDoctor: $showDoctor ,Traceroute: $Traceroute,source: $source, destination: $destination, routes: $routes)
                     .edgesIgnoringSafeArea(.all)
                 
                 HStack {
@@ -171,12 +151,17 @@ struct CarMapView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: CovoiturageView()) {
-                        Text("Ride")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.green)
-                            .cornerRadius(10)
+                    NavigationLink(destination: CovoiturageView(),isActive: $showactivetrue) {
+                        Button(action: {
+                            controller.saveEMG(source: source, distination: destination)
+                            showactivetrue = true
+                                            }) {
+                                                Text("Ride")
+                                                                            .foregroundColor(.white)
+                                                                            .padding()
+                                                                            .background(Color.green)
+                                                                            .cornerRadius(10)
+                                            }
                     }
                 }
             }
@@ -198,6 +183,7 @@ struct CarMapView: View {
                 parent.source = place.formattedAddress ?? ""
             } else if selectedField == "destination" {
                 parent.destination = place.formattedAddress ?? ""
+                parent.Traceroute = true
             }
             
             viewController.dismiss(animated: true, completion: nil)
