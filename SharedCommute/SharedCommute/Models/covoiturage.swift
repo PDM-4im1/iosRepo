@@ -1,19 +1,24 @@
 import Foundation
+struct Covoiturage: Identifiable, Decodable,Encodable {
+    let id: String?
+    let id_cond: String
+    let id_user: String
+    let pointDepart: String
+    let pointArrivee: String
+    let dateCovoiturage: String
+    let Tarif: Int
 
-struct covoiturage:Identifiable{
-    let id = UUID()
-    let idCond: String
-        let idUser: String
-        let pointDepart: String
-        let pointArrivee: String
-        let date: String
-        let tarif: String
-    init(idCond: String, idUser: String, pointDepart: String, pointArrivee: String, date: String, tarif: String) {
-        self.idCond = idCond
-        self.idUser = idUser
-        self.pointDepart = pointDepart
-        self.pointArrivee = pointArrivee
-        self.date = date
-        self.tarif = tarif
+
+    private enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case id_cond
+        case id_user
+        case pointDepart
+        case pointArrivee
+        case dateCovoiturage
+        case Tarif
     }
 }
+
+
+

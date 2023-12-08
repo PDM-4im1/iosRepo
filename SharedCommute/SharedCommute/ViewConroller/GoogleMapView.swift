@@ -16,6 +16,11 @@ struct GoogleMapsView: UIViewRepresentable {
     @Binding var routes: [GMSPolyline]
     @Binding var isButtonTapped : Bool
     
+    @Binding var showAlert: Bool
+    @Binding var alertText: String
+    @State private var estimatedDuration: String = ""
+    @State private var isLoading: Bool = false
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -30,13 +35,12 @@ struct GoogleMapsView: UIViewRepresentable {
         
         return mapView
     }
-    
     func updateUIView(_ mapView: GMSMapView, context: UIViewRepresentableContext<GoogleMapsView>) {
         guard isButtonTapped else {
             return
         }
 
-        let geocoder = CLGeocoder()
+        _ = CLGeocoder()
 
         self.geocodeAddress(address: self.source) { sourceLocation in
             self.geocodeAddress(address: self.destination) { destinationLocation in
@@ -55,46 +59,52 @@ struct GoogleMapsView: UIViewRepresentable {
                 destinationMarker.position = destinationLocation
                 destinationMarker.map = mapView
 
-                self.fetchRoutes(from: sourceLocation, to: destinationLocation, mapView: mapView) { polylines in
-                    DispatchQueue.main.async {
-                        self.routes = polylines
+                self.fetchRoutes(from: sourceLocation, to: destinationLocation, mapView: mapView) { polylines, duration in
+                        DispatchQueue.main.async {
+                            self.routes = polylines
 
-                        for polyline in polylines {
-                            polyline.map = mapView
-                        }
+                            for polyline in polylines {
+                                polyline.map = mapView
+                            }
 
-                        var bounds = GMSCoordinateBounds()
-                        bounds = bounds.includingCoordinate(sourceLocation)
-                        bounds = bounds.includingCoordinate(destinationLocation)
+                            var bounds = GMSCoordinateBounds()
+                            bounds = bounds.includingCoordinate(sourceLocation)
+                            bounds = bounds.includingCoordinate(destinationLocation)
 
-                        for polyline in polylines {
-                            if let path = polyline.path {
-                                for index in 0 ..< path.count() {
-                                    let coordinate = path.coordinate(at: index)
-                                    bounds = bounds.includingCoordinate(coordinate)
+                            for polyline in polylines {
+                                if let path = polyline.path {
+                                    for index in 0 ..< path.count() {
+                                        let coordinate = path.coordinate(at: index)
+                                        bounds = bounds.includingCoordinate(coordinate)
+                                    }
                                 }
                             }
+
+                            let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
+                            mapView.moveCamera(update)
+
+                            // Ensure these updates are performed on the main thread
+                            DispatchQueue.main.async {
+                                self.estimatedDuration = "Estimated Duration: \(duration)"
+                                self.isLoading = false // Stop loading indicator
+                                self.isButtonTapped = false
+
+                                // Show the alert with the estimated duration
+                                self.alertText = "Estimated Duration: \(duration)"
+                                self.showAlert = true
+                            }
                         }
-
-                        let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
-                        mapView.moveCamera(update)
-
-                        self.isButtonTapped = false
                     }
                 }
             }
-        }
-
-    
-
     }
 
+
     
     
     
     
-    
-    private func fetchRoutes(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, mapView: GMSMapView, completion: @escaping ([GMSPolyline]) -> Void) {
+    private func fetchRoutes(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, mapView: GMSMapView, completion: @escaping ([GMSPolyline], String) -> Void) {
         let origin = "\(source.latitude),\(source.longitude)"
         let destination = "\(destination.latitude),\(destination.longitude)"
         
@@ -117,7 +127,8 @@ struct GoogleMapsView: UIViewRepresentable {
                 
                 if let routes = json?["routes"] as? [[String: Any]] {
                     var polylines: [GMSPolyline] = []
-                    
+                    var durationText = ""
+
                     for route in routes {
                         if let routeOverviewPolyline = route["overview_polyline"] as? [String: Any],
                            let points = routeOverviewPolyline["points"] as? String {
@@ -131,10 +142,17 @@ struct GoogleMapsView: UIViewRepresentable {
                                 }
                             }
                         }
+
+                        if let legs = route["legs"] as? [[String: Any]],
+                           let duration = legs.first?["duration"] as? [String: Any],
+                           let text = duration["text"] as? String {
+                            durationText = text
+                            print(durationText)
+                        }
                     }
-                    
-                    DispatchQueue.main.async { // Dispatch completion to the main thread
-                        completion(polylines)
+
+                    DispatchQueue.main.async {
+                        completion(polylines, durationText)
                     }
                 }
             } catch {

@@ -11,16 +11,32 @@ import SwiftUI
 import GoogleMaps
 import GooglePlaces
 
-struct MappingView: View {
+public struct MappingView: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    @Binding var internalsource: String
+       @Binding var internaldestination: String
+       @Binding var selectedHoursMapping: Int
+       @Binding var selectedMinutesMapping: Int
     @State private var source: String = ""
-    @State private var destination: String = ""
-    @State private var routes: [GMSPolyline] = []
-    @State private var isButtonTapped: Bool = false
+       @State private var destination: String = ""
+    @State private var selectedHourMapping: Int = 0
+       @State private var selectedMinuteMapping: Int = 0
+      
+     @State private var routes: [GMSPolyline] = []
 
-    @StateObject private var locationManager = LocationManager()
-    @StateObject private var coordinator = Coordinator()
+     @State private var isButtonTapped: Bool = false
+     @State private var showAlert: Bool = false
+     @State private var alertText: String = ""
+     @StateObject private var locationManager = LocationManager()
+     @StateObject private var coordinator = Coordinator()
 
-    @State private var showingAutocomplete = false
+     @State private var showPicker: Bool = false
+    @Binding var initialidcovoiturage : String
+    @State private var idcovoiturage: String = ""
+
+  
+ 
 
     private func getUserLocation() {
         if let userLocation = locationManager.userLocation {
@@ -51,53 +67,93 @@ struct MappingView: View {
         UIApplication.shared.windows.first?.rootViewController?.present(autocompleteController, animated: true, completion: nil)
     }
 
-    var body: some View {
-        VStack {
-            Spacer()
-            ZStack(alignment: .trailing) {
-                TextField("Source", text: $source)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .id("sourceTextField")
-                    .onTapGesture {
-                        showAutocomplete(for: "source")
+    public var body: some View {
+            NavigationView {
+                VStack {
+                    ZStack(alignment: .trailing) {
+                        TextField("Source", text: $source)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .id("sourceTextField")
+                            .onTapGesture {
+                                showAutocomplete(for: "source")
+                            }
+
+                        Button(action: {
+                            getUserLocation()
+                        }) {
+                            Image(systemName: "location.circle.fill")
+                                .foregroundColor(.green)
+                                .font(.title)
+                        }
                     }
 
-                Button(action: {
-                    getUserLocation()
-                }) {
-                    Image(systemName: "location.circle.fill")
-                        .foregroundColor(.green)
-                        .font(.title)
+                    TextField("Destination", text: $destination)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .id("destinationTextField")
+                        .onTapGesture {
+                            showAutocomplete(for: "destination")
+                        }
+
+                    Button(action: {
+                        isButtonTapped = true
+                    }) {
+                        Text("Confirm Direction")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 16)
+                            .background(Color.blue)
+                            .cornerRadius(8)
+                    }
+
+                    GoogleMapsView(source: $source, destination: $destination, routes: $routes, isButtonTapped: $isButtonTapped, showAlert: $showAlert, alertText: $alertText)
+                        .edgesIgnoringSafeArea(.all)
+                        .padding()
+                        .alert(isPresented: $showAlert) {
+                            Alert(title: Text("Route Information"), message: Text(alertText), dismissButton: .default(Text("OK")))
+                        }
+
+                    Spacer()
+
+                    NavigationLink(destination: TimePickerView(selectedHour: $selectedHourMapping,selectedMinute: $selectedMinuteMapping,source: $source,destination: $destination, idcovoiturage: $idcovoiturage), isActive: $showPicker) {
+                        EmptyView()
+                    }
+                    .hidden()
+
+                    Button(action: {
+                        showPicker = true
+                    }) {
+                        Text("Confirm Your Trip")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.gray)
+                            .cornerRadius(8)
+                    }
+                    .padding()
                 }
-            }
-            Spacer()
-
-            TextField("Destination", text: $destination)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .id("destinationTextField")
-                .onTapGesture {
-                    showAutocomplete(for: "destination")
-                }
-
-            Spacer()
-
-            Button(action: {
-                isButtonTapped = true
-            }) {
-                Text("Confirm Direction")
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 16)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            }
-
-            GoogleMapsView(source: $source, destination: $destination, routes: $routes, isButtonTapped: $isButtonTapped)
-                .edgesIgnoringSafeArea(.all)
                 .padding()
+                .navigationBarTitle("Creating a Trip", displayMode: .inline)
+                .navigationBarItems(
+                               leading: Button(action: {
+                                   presentationMode.wrappedValue.dismiss()
+                               }) {
+                                   Text("Back")
+                               },
+                               trailing: EmptyView()
+                           )
+                       }.onAppear {
+                source = internalsource
+                destination = internaldestination
+                selectedHourMapping = selectedHoursMapping
+                selectedMinuteMapping = selectedMinutesMapping
+                idcovoiturage = initialidcovoiturage
+            }
         }
-    }
+
+     
+ 
+   
 
     // Coordinator to handle Google Places autocomplete callbacks
     class Coordinator: NSObject, GMSAutocompleteViewControllerDelegate, ObservableObject {
@@ -128,6 +184,6 @@ struct MappingView: View {
 
 struct MappingView_Previews: PreviewProvider {
     static var previews: some View {
-        MappingView()
+        MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))
     }
 }
