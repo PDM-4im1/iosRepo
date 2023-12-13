@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmgDriverCell: View {
-    let driver: Driver
+    @Binding var driver: Driver
     @State private var showPaymentView = false
     var body: some View {
         VStack {
@@ -64,6 +64,7 @@ struct EmgDriverCell: View {
         .shadow(radius: 4)
     }
 }
+
 
  
 

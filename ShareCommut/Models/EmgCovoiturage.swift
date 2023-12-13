@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct EmgCovoiturage: Identifiable {
+struct EmgCovoiturage: Identifiable,Decodable {
     let id: String?
         let id_cond: String
         let id_user: String

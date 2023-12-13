@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PaymentSelectionView: View {
     let driver =
-    User(email:"caytouta", password: "String", phoneNumber: 25365487, role: "client", name: "Mahmoud", firstName: "25365487", age: 22)
+    User(id: "6553930f68eacc72a80f547a", email:"caytouta", password: "String", phoneNumber: "25365487", role: "client", name: "Mahmoud", firstName: "25365487", age: 22)
         
     @State private var showPaymentView = false
     @State private var paymentMethod = 0

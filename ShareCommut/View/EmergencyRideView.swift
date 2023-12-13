@@ -12,7 +12,7 @@ struct EmergencyRideView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        let user = User(email: "String", password: "String", phoneNumber: 25365487, role: "client", name: "Mahmoud", firstName: "Mnsour", age: 22)
+        let user = User(id: "6553930f68eacc72a80f547a", email: "String", password: "String", phoneNumber: "25365487", role: "client", name: "Mahmoud", firstName: "Mnsour", age: 22)
             
 
         NavigationView {
