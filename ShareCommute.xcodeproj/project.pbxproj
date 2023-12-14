@@ -1,0 +1,780 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEBFAF992B2B793500DF40F8 /* ShareCommuteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAF982B2B793500DF40F8 /* ShareCommuteApp.swift */; };
+		CEBFAF9D2B2B793600DF40F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBFAF9C2B2B793600DF40F8 /* Assets.xcassets */; };
+		CEBFAFA02B2B793600DF40F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBFAF9F2B2B793600DF40F8 /* Preview Assets.xcassets */; };
+		CEBFAFA22B2B793600DF40F8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFA12B2B793600DF40F8 /* Persistence.swift */; };
+		CEBFAFA52B2B793600DF40F8 /* ShareCommute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFA32B2B793600DF40F8 /* ShareCommute.xcdatamodeld */; };
+		CEBFAFB02B2B793600DF40F8 /* ShareCommuteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFAF2B2B793600DF40F8 /* ShareCommuteTests.swift */; };
+		CEBFAFBA2B2B793600DF40F8 /* ShareCommuteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFB92B2B793600DF40F8 /* ShareCommuteUITests.swift */; };
+		CEBFAFBC2B2B793600DF40F8 /* ShareCommuteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFBB2B2B793600DF40F8 /* ShareCommuteUITestsLaunchTests.swift */; };
+		CEBFAFC92B2B797300DF40F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFC82B2B797300DF40F8 /* AppDelegate.swift */; };
+		CEBFAFCE2B2B79F900DF40F8 /* CarMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFCD2B2B79F900DF40F8 /* CarMapController.swift */; };
+		CEBFAFD02B2B7A0B00DF40F8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFCF2B2B7A0B00DF40F8 /* MapViewController.swift */; };
+		CEBFAFD22B2B7A1A00DF40F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFD12B2B7A1A00DF40F8 /* LocationManager.swift */; };
+		CEBFAFD42B2B7A2C00DF40F8 /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFD32B2B7A2C00DF40F8 /* EmgDriverCell.swift */; };
+		CEBFAFD62B2B7A4500DF40F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFD52B2B7A4500DF40F8 /* User.swift */; };
+		CEBFAFD82B2B7A5000DF40F8 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFD72B2B7A5000DF40F8 /* Driver.swift */; };
+		CEBFAFDA2B2B7A6000DF40F8 /* EmgCovoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFD92B2B7A6000DF40F8 /* EmgCovoiturage.swift */; };
+		CEBFAFDC2B2B7A7800DF40F8 /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFDB2B2B7A7800DF40F8 /* MoyenDeTransport.swift */; };
+		CEBFAFDE2B2B7A8B00DF40F8 /* CarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFDD2B2B7A8B00DF40F8 /* CarMapView.swift */; };
+		CEBFAFE02B2B7AA100DF40F8 /* CovoiturageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFDF2B2B7AA100DF40F8 /* CovoiturageView.swift */; };
+		CEBFAFE22B2B7AB100DF40F8 /* EmergencyRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFE12B2B7AB100DF40F8 /* EmergencyRideView.swift */; };
+		CEBFAFE42B2B7AC300DF40F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFE32B2B7AC300DF40F8 /* MapView.swift */; };
+		CEBFAFE62B2B7AD000DF40F8 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFE52B2B7AD000DF40F8 /* NotificationView.swift */; };
+		CEBFAFE82B2B7ADF00DF40F8 /* PaymentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFE72B2B7ADF00DF40F8 /* PaymentSelectionView.swift */; };
+		CEBFAFEA2B2B7AED00DF40F8 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAFE92B2B7AED00DF40F8 /* PaymentView.swift */; };
+		DD2986EBF8E5FC66FAC921C9 /* libPods-ShareCommute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB7773293E832552BFF0243 /* libPods-ShareCommute.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEBFAFAC2B2B793600DF40F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBFAF8D2B2B793500DF40F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEBFAF942B2B793500DF40F8;
+			remoteInfo = ShareCommute;
+		};
+		CEBFAFB62B2B793600DF40F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBFAF8D2B2B793500DF40F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEBFAF942B2B793500DF40F8;
+			remoteInfo = ShareCommute;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5FB7773293E832552BFF0243 /* libPods-ShareCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C2AAFF1D483E78935542322 /* Pods-ShareCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommute.debug.xcconfig"; path = "Target Support Files/Pods-ShareCommute/Pods-ShareCommute.debug.xcconfig"; sourceTree = "<group>"; };
+		7FED4BE824EEA11EEBF7EB74 /* Pods-ShareCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommute.release.xcconfig"; path = "Target Support Files/Pods-ShareCommute/Pods-ShareCommute.release.xcconfig"; sourceTree = "<group>"; };
+		CEBFAF952B2B793500DF40F8 /* ShareCommute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCommute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEBFAF982B2B793500DF40F8 /* ShareCommuteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommuteApp.swift; sourceTree = "<group>"; };
+		CEBFAF9C2B2B793600DF40F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEBFAF9F2B2B793600DF40F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEBFAFA12B2B793600DF40F8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		CEBFAFA42B2B793600DF40F8 /* ShareCommute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShareCommute.xcdatamodel; sourceTree = "<group>"; };
+		CEBFAFA62B2B793600DF40F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEBFAFAB2B2B793600DF40F8 /* ShareCommuteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareCommuteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEBFAFAF2B2B793600DF40F8 /* ShareCommuteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommuteTests.swift; sourceTree = "<group>"; };
+		CEBFAFB52B2B793600DF40F8 /* ShareCommuteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareCommuteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEBFAFB92B2B793600DF40F8 /* ShareCommuteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommuteUITests.swift; sourceTree = "<group>"; };
+		CEBFAFBB2B2B793600DF40F8 /* ShareCommuteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommuteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEBFAFC82B2B797300DF40F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEBFAFCD2B2B79F900DF40F8 /* CarMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapController.swift; sourceTree = "<group>"; };
+		CEBFAFCF2B2B7A0B00DF40F8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CEBFAFD12B2B7A1A00DF40F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CEBFAFD32B2B7A2C00DF40F8 /* EmgDriverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgDriverCell.swift; sourceTree = "<group>"; };
+		CEBFAFD52B2B7A4500DF40F8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEBFAFD72B2B7A5000DF40F8 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		CEBFAFD92B2B7A6000DF40F8 /* EmgCovoiturage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmgCovoiturage.swift; sourceTree = "<group>"; };
+		CEBFAFDB2B2B7A7800DF40F8 /* MoyenDeTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyenDeTransport.swift; sourceTree = "<group>"; };
+		CEBFAFDD2B2B7A8B00DF40F8 /* CarMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapView.swift; sourceTree = "<group>"; };
+		CEBFAFDF2B2B7AA100DF40F8 /* CovoiturageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageView.swift; sourceTree = "<group>"; };
+		CEBFAFE12B2B7AB100DF40F8 /* EmergencyRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyRideView.swift; sourceTree = "<group>"; };
+		CEBFAFE32B2B7AC300DF40F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CEBFAFE52B2B7AD000DF40F8 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		CEBFAFE72B2B7ADF00DF40F8 /* PaymentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionView.swift; sourceTree = "<group>"; };
+		CEBFAFE92B2B7AED00DF40F8 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEBFAF922B2B793500DF40F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2986EBF8E5FC66FAC921C9 /* libPods-ShareCommute.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBFAFA82B2B793600DF40F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBFAFB22B2B793600DF40F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11598DB0A8C8AABE1273C7A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C2AAFF1D483E78935542322 /* Pods-ShareCommute.debug.xcconfig */,
+				7FED4BE824EEA11EEBF7EB74 /* Pods-ShareCommute.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		384C3BC2D61B4BB740E372D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FB7773293E832552BFF0243 /* libPods-ShareCommute.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEBFAF8C2B2B793500DF40F8 = {
+			isa = PBXGroup;
+			children = (
+				CEBFAF972B2B793500DF40F8 /* ShareCommute */,
+				CEBFAFAE2B2B793600DF40F8 /* ShareCommuteTests */,
+				CEBFAFB82B2B793600DF40F8 /* ShareCommuteUITests */,
+				CEBFAF962B2B793500DF40F8 /* Products */,
+				11598DB0A8C8AABE1273C7A7 /* Pods */,
+				384C3BC2D61B4BB740E372D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEBFAF962B2B793500DF40F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAF952B2B793500DF40F8 /* ShareCommute.app */,
+				CEBFAFAB2B2B793600DF40F8 /* ShareCommuteTests.xctest */,
+				CEBFAFB52B2B793600DF40F8 /* ShareCommuteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEBFAF972B2B793500DF40F8 /* ShareCommute */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAFCC2B2B79C000DF40F8 /* View Models */,
+				CEBFAFCA2B2B79AD00DF40F8 /* Models */,
+				CEBFAFCB2B2B79B600DF40F8 /* View */,
+				CEBFAF982B2B793500DF40F8 /* ShareCommuteApp.swift */,
+				CEBFAFC82B2B797300DF40F8 /* AppDelegate.swift */,
+				CEBFAF9C2B2B793600DF40F8 /* Assets.xcassets */,
+				CEBFAFA12B2B793600DF40F8 /* Persistence.swift */,
+				CEBFAFA62B2B793600DF40F8 /* Info.plist */,
+				CEBFAFA32B2B793600DF40F8 /* ShareCommute.xcdatamodeld */,
+				CEBFAF9E2B2B793600DF40F8 /* Preview Content */,
+			);
+			path = ShareCommute;
+			sourceTree = "<group>";
+		};
+		CEBFAF9E2B2B793600DF40F8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAF9F2B2B793600DF40F8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEBFAFAE2B2B793600DF40F8 /* ShareCommuteTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAFAF2B2B793600DF40F8 /* ShareCommuteTests.swift */,
+			);
+			path = ShareCommuteTests;
+			sourceTree = "<group>";
+		};
+		CEBFAFB82B2B793600DF40F8 /* ShareCommuteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAFB92B2B793600DF40F8 /* ShareCommuteUITests.swift */,
+				CEBFAFBB2B2B793600DF40F8 /* ShareCommuteUITestsLaunchTests.swift */,
+			);
+			path = ShareCommuteUITests;
+			sourceTree = "<group>";
+		};
+		CEBFAFCA2B2B79AD00DF40F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAFD52B2B7A4500DF40F8 /* User.swift */,
+				CEBFAFD72B2B7A5000DF40F8 /* Driver.swift */,
+				CEBFAFD92B2B7A6000DF40F8 /* EmgCovoiturage.swift */,
+				CEBFAFDB2B2B7A7800DF40F8 /* MoyenDeTransport.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEBFAFCB2B2B79B600DF40F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAFDD2B2B7A8B00DF40F8 /* CarMapView.swift */,
+				CEBFAFDF2B2B7AA100DF40F8 /* CovoiturageView.swift */,
+				CEBFAFE12B2B7AB100DF40F8 /* EmergencyRideView.swift */,
+				CEBFAFE32B2B7AC300DF40F8 /* MapView.swift */,
+				CEBFAFE52B2B7AD000DF40F8 /* NotificationView.swift */,
+				CEBFAFE72B2B7ADF00DF40F8 /* PaymentSelectionView.swift */,
+				CEBFAFE92B2B7AED00DF40F8 /* PaymentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEBFAFCC2B2B79C000DF40F8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAFCD2B2B79F900DF40F8 /* CarMapController.swift */,
+				CEBFAFCF2B2B7A0B00DF40F8 /* MapViewController.swift */,
+				CEBFAFD12B2B7A1A00DF40F8 /* LocationManager.swift */,
+				CEBFAFD32B2B7A2C00DF40F8 /* EmgDriverCell.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEBFAF942B2B793500DF40F8 /* ShareCommute */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEBFAFBF2B2B793600DF40F8 /* Build configuration list for PBXNativeTarget "ShareCommute" */;
+			buildPhases = (
+				B56D13AF3C01456DC1621E81 /* [CP] Check Pods Manifest.lock */,
+				CEBFAF912B2B793500DF40F8 /* Sources */,
+				CEBFAF922B2B793500DF40F8 /* Frameworks */,
+				CEBFAF932B2B793500DF40F8 /* Resources */,
+				1F6E3694A94F1478D3C24303 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareCommute;
+			productName = ShareCommute;
+			productReference = CEBFAF952B2B793500DF40F8 /* ShareCommute.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEBFAFAA2B2B793600DF40F8 /* ShareCommuteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEBFAFC22B2B793600DF40F8 /* Build configuration list for PBXNativeTarget "ShareCommuteTests" */;
+			buildPhases = (
+				CEBFAFA72B2B793600DF40F8 /* Sources */,
+				CEBFAFA82B2B793600DF40F8 /* Frameworks */,
+				CEBFAFA92B2B793600DF40F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEBFAFAD2B2B793600DF40F8 /* PBXTargetDependency */,
+			);
+			name = ShareCommuteTests;
+			productName = ShareCommuteTests;
+			productReference = CEBFAFAB2B2B793600DF40F8 /* ShareCommuteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEBFAFB42B2B793600DF40F8 /* ShareCommuteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEBFAFC52B2B793600DF40F8 /* Build configuration list for PBXNativeTarget "ShareCommuteUITests" */;
+			buildPhases = (
+				CEBFAFB12B2B793600DF40F8 /* Sources */,
+				CEBFAFB22B2B793600DF40F8 /* Frameworks */,
+				CEBFAFB32B2B793600DF40F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEBFAFB72B2B793600DF40F8 /* PBXTargetDependency */,
+			);
+			name = ShareCommuteUITests;
+			productName = ShareCommuteUITests;
+			productReference = CEBFAFB52B2B793600DF40F8 /* ShareCommuteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEBFAF8D2B2B793500DF40F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					CEBFAF942B2B793500DF40F8 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					CEBFAFAA2B2B793600DF40F8 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = CEBFAF942B2B793500DF40F8;
+					};
+					CEBFAFB42B2B793600DF40F8 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = CEBFAF942B2B793500DF40F8;
+					};
+				};
+			};
+			buildConfigurationList = CEBFAF902B2B793500DF40F8 /* Build configuration list for PBXProject "ShareCommute" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEBFAF8C2B2B793500DF40F8;
+			productRefGroup = CEBFAF962B2B793500DF40F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEBFAF942B2B793500DF40F8 /* ShareCommute */,
+				CEBFAFAA2B2B793600DF40F8 /* ShareCommuteTests */,
+				CEBFAFB42B2B793600DF40F8 /* ShareCommuteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEBFAF932B2B793500DF40F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBFAFA02B2B793600DF40F8 /* Preview Assets.xcassets in Resources */,
+				CEBFAF9D2B2B793600DF40F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBFAFA92B2B793600DF40F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBFAFB32B2B793600DF40F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F6E3694A94F1478D3C24303 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShareCommute/Pods-ShareCommute-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShareCommute/Pods-ShareCommute-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShareCommute/Pods-ShareCommute-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B56D13AF3C01456DC1621E81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShareCommute-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEBFAF912B2B793500DF40F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBFAFE22B2B7AB100DF40F8 /* EmergencyRideView.swift in Sources */,
+				CEBFAFDA2B2B7A6000DF40F8 /* EmgCovoiturage.swift in Sources */,
+				CEBFAFE82B2B7ADF00DF40F8 /* PaymentSelectionView.swift in Sources */,
+				CEBFAFD82B2B7A5000DF40F8 /* Driver.swift in Sources */,
+				CEBFAFDE2B2B7A8B00DF40F8 /* CarMapView.swift in Sources */,
+				CEBFAFA22B2B793600DF40F8 /* Persistence.swift in Sources */,
+				CEBFAFA52B2B793600DF40F8 /* ShareCommute.xcdatamodeld in Sources */,
+				CEBFAFC92B2B797300DF40F8 /* AppDelegate.swift in Sources */,
+				CEBFAFD22B2B7A1A00DF40F8 /* LocationManager.swift in Sources */,
+				CEBFAFE42B2B7AC300DF40F8 /* MapView.swift in Sources */,
+				CEBFAF992B2B793500DF40F8 /* ShareCommuteApp.swift in Sources */,
+				CEBFAFD42B2B7A2C00DF40F8 /* EmgDriverCell.swift in Sources */,
+				CEBFAFEA2B2B7AED00DF40F8 /* PaymentView.swift in Sources */,
+				CEBFAFCE2B2B79F900DF40F8 /* CarMapController.swift in Sources */,
+				CEBFAFD62B2B7A4500DF40F8 /* User.swift in Sources */,
+				CEBFAFE02B2B7AA100DF40F8 /* CovoiturageView.swift in Sources */,
+				CEBFAFDC2B2B7A7800DF40F8 /* MoyenDeTransport.swift in Sources */,
+				CEBFAFD02B2B7A0B00DF40F8 /* MapViewController.swift in Sources */,
+				CEBFAFE62B2B7AD000DF40F8 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBFAFA72B2B793600DF40F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBFAFB02B2B793600DF40F8 /* ShareCommuteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBFAFB12B2B793600DF40F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBFAFBA2B2B793600DF40F8 /* ShareCommuteUITests.swift in Sources */,
+				CEBFAFBC2B2B793600DF40F8 /* ShareCommuteUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEBFAFAD2B2B793600DF40F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEBFAF942B2B793500DF40F8 /* ShareCommute */;
+			targetProxy = CEBFAFAC2B2B793600DF40F8 /* PBXContainerItemProxy */;
+		};
+		CEBFAFB72B2B793600DF40F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEBFAF942B2B793500DF40F8 /* ShareCommute */;
+			targetProxy = CEBFAFB62B2B793600DF40F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CEBFAFBD2B2B793600DF40F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEBFAFBE2B2B793600DF40F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEBFAFC02B2B793600DF40F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C2AAFF1D483E78935542322 /* Pods-ShareCommute.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ShareCommute/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommute;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEBFAFC12B2B793600DF40F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FED4BE824EEA11EEBF7EB74 /* Pods-ShareCommute.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ShareCommute/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommute;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEBFAFC32B2B793600DF40F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommuteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareCommute.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShareCommute";
+			};
+			name = Debug;
+		};
+		CEBFAFC42B2B793600DF40F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommuteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareCommute.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShareCommute";
+			};
+			name = Release;
+		};
+		CEBFAFC62B2B793600DF40F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommuteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ShareCommute;
+			};
+			name = Debug;
+		};
+		CEBFAFC72B2B793600DF40F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommuteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ShareCommute;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEBFAF902B2B793500DF40F8 /* Build configuration list for PBXProject "ShareCommute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEBFAFBD2B2B793600DF40F8 /* Debug */,
+				CEBFAFBE2B2B793600DF40F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEBFAFBF2B2B793600DF40F8 /* Build configuration list for PBXNativeTarget "ShareCommute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEBFAFC02B2B793600DF40F8 /* Debug */,
+				CEBFAFC12B2B793600DF40F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEBFAFC22B2B793600DF40F8 /* Build configuration list for PBXNativeTarget "ShareCommuteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEBFAFC32B2B793600DF40F8 /* Debug */,
+				CEBFAFC42B2B793600DF40F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEBFAFC52B2B793600DF40F8 /* Build configuration list for PBXNativeTarget "ShareCommuteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEBFAFC62B2B793600DF40F8 /* Debug */,
+				CEBFAFC72B2B793600DF40F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEBFAFA32B2B793600DF40F8 /* ShareCommute.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEBFAFA42B2B793600DF40F8 /* ShareCommute.xcdatamodel */,
+			);
+			currentVersion = CEBFAFA42B2B793600DF40F8 /* ShareCommute.xcdatamodel */;
+			path = ShareCommute.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CEBFAF8D2B2B793500DF40F8 /* Project object */;
+}
