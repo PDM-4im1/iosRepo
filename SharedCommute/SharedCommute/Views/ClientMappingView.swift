@@ -1,17 +1,15 @@
 //
-//  MappingView.swift
+//  ClientMappingView.swift
 //  SharedCommute
 //
-//  Created by Nasri Mootez on 28/11/2023.
+//  Created by Nasri Mootez on 14/12/2023.
 //
-
 
 
 import SwiftUI
 import GoogleMaps
 import GooglePlaces
-
-public struct MappingView: View {
+public struct ClientMappingView: View {
 
     @Binding var internalsource: String
        @Binding var internaldestination: String
@@ -124,6 +122,7 @@ public struct MappingView: View {
                                 Color.blue)
                                         .cornerRadius(12)
                                 }
+                
                                 .padding(.horizontal)
 
                 GoogleMapsView(source: $source, destination: $destination, routes: $routes, isButtonTapped: $isButtonTapped, showAlert: $showAlert, alertText: $alertText)
@@ -132,45 +131,36 @@ public struct MappingView: View {
                 
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
-
-
-                          
-
-                          Button(action: {
-                              withAnimation {
-                                  showPicker = true
-                              }
-                          }) {
-                              NavigationLink(destination:( TimePickerView(selectedHour: $selectedHourMapping, selectedMinute: $selectedMinuteMapping, source: $source, destination: $destination, idcovoiturage: $idcovoiturage)), isActive: $showPicker ) {
-                                  Text("Confirm Your Trip")
-                                      .font(.headline)
-                                      .foregroundColor(.white)
-                                      .padding()
-                                      .frame(maxWidth: .infinity)
-                                      .background(
-                                          !Confirmdisabled
-                                              ? Color.blue.opacity(0.0) // Adjust the opacity as needed
-                                              : Color.blue
-                                      )
-                                      .cornerRadius(12)
-                              }
-                          }
-                          .padding()
-                          .disabled(!Confirmdisabled)
-                      }
+                
+                Button(action: {
+                    withAnimation {
+                        showPicker = true
+                    }
+                }) {
+                    NavigationLink(destination:( TimePickerView(selectedHour: $selectedHourMapping, selectedMinute: $selectedMinuteMapping, source: $source, destination: $destination, idcovoiturage: $idcovoiturage)), isActive: $showPicker ) {
+                        Text("Search For Drivers")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                !Confirmdisabled
+                                    ? Color.blue.opacity(0.0) // Adjust the opacity as needed
+                                    : Color.blue
+                            )
+                            .cornerRadius(12)
+                    }
+                }
+                .padding()
+                .disabled(!Confirmdisabled)
+            
+}
                       .padding()
                       .background(Color.gray.opacity(0.1))
-                      .navigationBarTitle("Creating a Trip", displayMode: .inline)
-                      .navigationBarItems(
-                          leading: NavigationLink(
-                              destination:(CovoiturageListView() ).navigationBarBackButtonHidden(true)
-                          ) {
-                              Image(systemName: "chevron.left")
-                                  .font(.title)
-                                  .foregroundColor(.blue)
-                          },
-                          trailing: EmptyView()
-                      )
+                
+               
+                      .navigationBarTitle("searching a Trip", displayMode: .inline)
+                     
                       .onAppear {
                           source = internalsource
                           destination = internaldestination
@@ -179,7 +169,8 @@ public struct MappingView: View {
                           idcovoiturage = initialidcovoiturage
                       }
                   }
-                  .navigationViewStyle(StackNavigationViewStyle())
+            
+            
               }
               }
 
@@ -188,7 +179,7 @@ public struct MappingView: View {
     // Coordinator to handle Google Places autocomplete callbacks
     class Coordinator: NSObject, GMSAutocompleteViewControllerDelegate, ObservableObject {
         var selectedField: String = ""
-        var parent: MappingView?
+        var parent: ClientMappingView?
 
         func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
             guard let parent = parent else { return }
@@ -212,8 +203,8 @@ public struct MappingView: View {
     }
 }
 
-struct MappingView_Previews: PreviewProvider {
+struct ClientMappingView_Previews: PreviewProvider {
     static var previews: some View {
-        MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))
+        ClientMappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))
     }
 }

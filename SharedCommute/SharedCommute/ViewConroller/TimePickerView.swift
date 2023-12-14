@@ -236,12 +236,16 @@ struct TimePickerView: View {
            
             
             NavigationLink(
-                destination: CovoiturageListView(),
+                destination:( CovoiturageListView()).navigationBarBackButtonHidden(true)
+                ,
                 isActive: $isShowingPicker
+                
             ) {
                 EmptyView()
             }
             .hidden()
+            .navigationBarBackButtonHidden(true)
+            
             
 
             Button(action: {
@@ -263,7 +267,17 @@ struct TimePickerView: View {
                     .cornerRadius(8)
             }
             .padding(.top, 16)
-        }
+        } .navigationBarItems(
+            leading: NavigationLink(
+                destination:( MappingView(internalsource: $source, internaldestination: $destination, selectedHoursMapping: $selectedHour, selectedMinutesMapping: $selectedMinute, initialidcovoiturage: $idcovoiturage)).navigationBarBackButtonHidden(true)
+            ) {
+                Image(systemName: "chevron.left")
+                    .font(.title)
+                    .foregroundColor(.blue)
+            },
+            trailing: EmptyView()
+        )
+
         .padding()
         .background(Color.gray.opacity(0.1))
         .cornerRadius(16)

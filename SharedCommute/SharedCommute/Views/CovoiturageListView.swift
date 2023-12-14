@@ -36,88 +36,101 @@ struct CovoiturageListView: View {
 
     
     var body: some View {
-          NavigationView {
-              VStack {
-                  // Plus button to add a new trip
-                  HStack {
-                      Spacer()
-                      NavigationLink(destination: MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))) {
-                          Image(systemName: "plus.circle")
-                              .font(.title)
-                              .foregroundColor(.blue)
-                              .padding()
-                      }
-                  }
-                  List {
-                      ForEach(covoiturages) { covoiturage in
-                          if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage) {
-                              NavigationLink(
-                                  destination: MappingView(
-                                      internalsource: .constant(covoiturage.pointDepart),
-                                      internaldestination: .constant(covoiturage.pointArrivee),
-                                      selectedHoursMapping: .constant(reverseDate.hour),
-                                      selectedMinutesMapping: .constant(reverseDate.minute),
-                                      initialidcovoiturage: .constant(covoiturage.id!)
-                                  )    .navigationBarHidden(true)  // Hide
-                              ) {
-                                  HStack(spacing: 16) {
-                                      Image(systemName: "car.fill") // Placeholder car image, replace with an actual carpooling image
-                                          .resizable()
-                                          .aspectRatio(contentMode: .fit)
-                                          .frame(width: 40, height: 40)
-                                          .foregroundColor(.blue)
+        NavigationView {
+            VStack {
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant("")).navigationBarBackButtonHidden(true)
+                        .navigationBarBackButtonHidden(true)) {
+                        Image(systemName: "plus.circle")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                            .padding()
+                    }
+                }
+                
+                List {
+                    ForEach(covoiturages) { covoiturage in
+                        if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage) {
+                            NavigationLink(
+                                destination: MappingView(
+                                    internalsource: .constant(covoiturage.pointDepart),
+                                    internaldestination: .constant(covoiturage.pointArrivee),
+                                    selectedHoursMapping: .constant(reverseDate.hour),
+                                    selectedMinutesMapping: .constant(reverseDate.minute),
+                                    initialidcovoiturage: .constant(covoiturage.id!)
+                                )
+                                .navigationBarHidden(true)
+                            ) {
+                                HStack {
+                                    Image(systemName: "car.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 40, height: 40)
+                                        .foregroundColor(.blue)
+                                        .padding(.trailing, 8)
+                                    
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text("Departure: \(covoiturage.pointDepart)")
+                                            .font(.headline)
+                                            .foregroundColor(.black)
+                                        Text("Destination: \(covoiturage.pointArrivee)")
+                                            .font(.subheadline)
+                                            .foregroundColor(.gray)
+                                        Text("Date: \(covoiturage.dateCovoiturage)")
+                                            .font(.subheadline)
+                                            .foregroundColor(.gray)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "trash")
+                                        .foregroundColor(.red)
+                                        .onTapGesture {
+                                            withAnimation {
+                                                selectedCovoiturage = covoiturage
+                                                isShowingDeleteAlert = true
+                                            }
+                                        }
+                                }
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 3)
+                                .background(Color.gray.opacity(0.1))
+                                .cornerRadius(10)
+                                .animation(.easeInOut(duration: 0.3))
+                            }
+                        }
+                    }
+                }
+                .listStyle(PlainListStyle())
+                .navigationBarTitle("Carpooling")
+                .background(Color.blue.opacity(0.1))
+                .alert(isPresented: $isShowingDeleteAlert) {
+                    Alert(
+                        title: Text("Confirm Deletion"),
+                        message: Text("Are you sure you want to delete this Covoiturage?"),
+                        primaryButton: .destructive(Text("Delete")) {
+                            withAnimation {
+                                if let selectedCovoiturage = selectedCovoiturage {
+                                    deleteCovoiturage(covoiturage: selectedCovoiturage)
+                                }
+                            }
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
+                .onAppear {
+                    fetchCovoiturages()
+                }
+                Spacer()
+            }
+            .padding()
+            .background(Color.white)
+        }
+    }
 
-                                      VStack(alignment: .leading, spacing: 8) {
-                                          Text("Departure: \(covoiturage.pointDepart)")
-                                              .font(.headline)
-                                          Text("Destination: \(covoiturage.pointArrivee)")
-                                              .font(.subheadline)
-                                          Text("Date: \(covoiturage.dateCovoiturage)")
-                                              .font(.subheadline)
-                                      }
-
-                                      Spacer()
-
-                                      // Delete icon with confirmation alert
-                                      Image(systemName: "trash")
-                                          .foregroundColor(.red)
-                                          .onTapGesture {
-                                              selectedCovoiturage = covoiturage
-                                              isShowingDeleteAlert = true
-                                          }
-                                  }
-                                  .padding()
-                                  .background(Color.white)
-                                  .cornerRadius(10)
-                                  .shadow(radius: 3)
-                              }
-                          }
-                      }
-                      // Remove .onDelete here
-                  }
-                  .listStyle(PlainListStyle())
-                  .navigationBarTitle("Carpooling")
-                  .alert(isPresented: $isShowingDeleteAlert) {
-                      Alert(
-                          title: Text("Confirm Deletion"),
-                          message: Text("Are you sure you want to delete this Covoiturage?"),
-                          primaryButton: .destructive(Text("Delete")) {
-                              if let selectedCovoiturage = selectedCovoiturage {
-                                  deleteCovoiturage(covoiturage: selectedCovoiturage)
-                                  // Reload data after successful delete
-                              }
-                          },
-                          secondaryButton: .cancel()
-                      )
-                  }
-                  .onAppear {
-                      fetchCovoiturages()
-                  }
-                  Spacer()
-              }
-              .padding()
-          }
-      }
 
       private func deleteCovoiturage(covoiturage: Covoiturage) {
           // Make a delete request to your server
