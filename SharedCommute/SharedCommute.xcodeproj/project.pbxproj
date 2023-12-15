@@ -12,6 +12,7 @@
 		51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */; };
 		51391F452B2B7F3B00C65BA3 /* ClientListCovoiturages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */; };
 		51391F472B2C08E500C65BA3 /* Driverrelatedview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F462B2C08E500C65BA3 /* Driverrelatedview.swift */; };
+		51391F492B2C218400C65BA3 /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F482B2C218400C65BA3 /* MoyenDeTransport.swift */; };
 		513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A31A12B221DEC0043CBC9 /* TimePickerView.swift */; };
 		513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513C72B52B20B9C900E662AC /* LocationManager.swift */; };
 		513D16A72B22868D00EAC845 /* CovoiturageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D16A62B22868D00EAC845 /* CovoiturageListView.swift */; };
@@ -26,7 +27,6 @@
 		51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */; };
 		51FBFFBE2B2320BA00BAA63E /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */; };
 		51FBFFBF2B2320BA00BAA63E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */; };
-		51FBFFC52B2320D200BAA63E /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC12B2320D200BAA63E /* MoyenDeTransport.swift */; };
 		51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC22B2320D200BAA63E /* Driver.swift */; };
 		51FBFFC72B2320D200BAA63E /* EmgCovoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */; };
 		51FBFFD02B23210000BAA63E /* CarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC92B23210000BAA63E /* CarMapView.swift */; };
@@ -47,6 +47,7 @@
 		51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMappingView.swift; sourceTree = "<group>"; };
 		51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListCovoiturages.swift; sourceTree = "<group>"; };
 		51391F462B2C08E500C65BA3 /* Driverrelatedview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driverrelatedview.swift; sourceTree = "<group>"; };
+		51391F482B2C218400C65BA3 /* MoyenDeTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyenDeTransport.swift; sourceTree = "<group>"; };
 		513A31A12B221DEC0043CBC9 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		513C72B32B20A89700E662AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513C72B52B20B9C900E662AC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		51CE80862B14B5D00058BE35 /* SharedCommute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SharedCommute.xcdatamodel; sourceTree = "<group>"; };
 		51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmgDriverCell.swift; sourceTree = "<group>"; };
 		51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		51FBFFC12B2320D200BAA63E /* MoyenDeTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoyenDeTransport.swift; path = "../../../../iosRepo-rihem/ShareCommut/Models/MoyenDeTransport.swift"; sourceTree = "<group>"; };
 		51FBFFC22B2320D200BAA63E /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmgCovoiturage.swift; sourceTree = "<group>"; };
 		51FBFFC92B23210000BAA63E /* CarMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMapView.swift; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 		51A157C62B14BD0900C6F3CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				51391F482B2C218400C65BA3 /* MoyenDeTransport.swift */,
 				51FBFFC22B2320D200BAA63E /* Driver.swift */,
 				51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */,
-				51FBFFC12B2320D200BAA63E /* MoyenDeTransport.swift */,
 				51A157C92B14BD0900C6F3CD /* covoiturage.swift */,
 				51FBFFD92B23224B00BAA63E /* Users.swift */,
 			);
@@ -370,7 +370,6 @@
 				51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */,
 				51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */,
 				51FBFFD32B23210000BAA63E /* CovoiturageView.swift in Sources */,
-				51FBFFC52B2320D200BAA63E /* MoyenDeTransport.swift in Sources */,
 				51FBFFD02B23210000BAA63E /* CarMapView.swift in Sources */,
 				512A42392B22E6F2001A026C /* SharedData.swift in Sources */,
 				51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */,
@@ -381,6 +380,7 @@
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
 				51FBFFD22B23210000BAA63E /* NotificationView.swift in Sources */,
 				513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */,
+				51391F492B2C218400C65BA3 /* MoyenDeTransport.swift in Sources */,
 				51FBFFDA2B23224B00BAA63E /* Users.swift in Sources */,
 				51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */,
 			);
