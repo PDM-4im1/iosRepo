@@ -16,6 +16,8 @@ class AppDelegate: NSObject,  UIApplicationDelegate {
            GMSServices.provideAPIKey("AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74")
            GMSPlacesClient.provideAPIKey("AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74")
            let carMapView = CarMapView()
+           
+           
                  
                  // Create a UIHostingController with the CarMapView as the root view
                  let hostingController = UIHostingController(rootView: carMapView)

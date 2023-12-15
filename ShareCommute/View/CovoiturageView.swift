@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct DriverRow: View {
     var driver: Driver
     @State private var name = "No Name"
     @State private var phone = "No Number"
     @State private var car = "No Car"
-   
+    @Binding private var mail :String
+    init(driver: Driver, mail: Binding<String>) {
+            self.driver = driver
+            self._mail = mail
+        }
 
     var body: some View {
         HStack {
@@ -50,6 +55,7 @@ struct DriverRow: View {
                         print(user)
                         name = user.name + " " + user.firstName
                         phone = user.phoneNumber
+                        mail = user.email
                     }
                 } else {
                     print("User not found")
@@ -149,7 +155,9 @@ struct DriverRow: View {
 }
 
 struct CovoiturageView: View {
-    
+    @State private var isLoading = false
+    @State private var email = ""
+    @StateObject private var controller = CovoiturageController()
     @State private var drivers: [Driver] = []
     @State private var showPaymentView = false
     @Binding var Emrgency: EmgCovoiturage?
@@ -160,11 +168,32 @@ struct CovoiturageView: View {
     var body: some View {
         List {
             ForEach(drivers) { driver in
-                DriverRow(driver: driver)
+                DriverRow(driver: driver, mail: $email)
                 
                 Button(action: {
-                    showPaymentView = true
-                }) {
+                    isLoading = true
+                    controller.sendEmail(Mail: email,Covoiturage:Emrgency!)
+                    controller.fetchCovoiturage(UserId: Emrgency!.id) { covoiturage in
+                        if let covoiturage = covoiturage {
+                            switch covoiturage.statut {
+                                               case "Accept":
+                                                   showPaymentView = true
+                                               case "Refuse":
+                                isLoading = false
+                                showPaymentView = false
+                                                   print("Ride refused")
+                                               case "Active":
+                                                   isLoading = true
+                                                   print("Ride is still active")
+                                               default:
+                                                   break
+                                               }
+                        } else {
+                            print("User not found")
+                        }
+                        
+                    }
+                    }) {
                     Text("Confirm")
                         .foregroundColor(.white)
                 }
@@ -175,6 +204,7 @@ struct CovoiturageView: View {
                 .sheet(isPresented: $showPaymentView) {
                     PaymentSelectionView()
                     //badelha
+                     
                 }
             }
         }
@@ -241,14 +271,47 @@ struct CovoiturageView: View {
         }.resume()
     }
     func updateRid(Cond: String ,idCond:String){
-        let url = URL(string: "http://localhost:9090/covoiturage/edit/\(idCond)")!
+        let url = URL(string: "http://localhost:9090/covoiturage/edit/\(Emrgency!.id)")!
+        // Create the request body
+        let requestBody: [String: Any] = [
+            "id_cond": idCond
+        ]
+        
+        // Convert the request body to JSON data
+        let jsonData = try! JSONSerialization.data(withJSONObject: requestBody)
+        
+        // Create the request
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Create the URLSession task
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error fetching Transport: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received when fetching Transport.")
+                return
+            }
+            do {
+                let decodedCovoiturage = try JSONDecoder().decode(EmgCovoiturage.self, from: data)
+            } catch {
+                print("Error decoding JSON: \(error.localizedDescription)")
+            }
+        }.resume()
     }
+    
+
 }
 
 
 
 struct CovoiturageView_Previews: PreviewProvider {
     static var previews: some View {
-        CovoiturageView(Emrgency: .constant(nil))
+        CovoiturageView(Emrgency: .constant(nil)).environmentObject(CovoiturageController())
     }
 }

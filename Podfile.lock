@@ -5,52 +5,20 @@ PODS:
   - GoogleMaps/Maps (7.1.0):
     - GoogleMaps/Base
   - GooglePlaces (7.1.0)
-  - StripeApplePay (23.19.0):
-    - StripeCore (= 23.19.0)
-  - StripeCore (23.19.0)
-  - StripePayments (23.19.0):
-    - StripeCore (= 23.19.0)
-    - StripePayments/Stripe3DS2 (= 23.19.0)
-  - StripePayments/Stripe3DS2 (23.19.0):
-    - StripeCore (= 23.19.0)
-  - StripePaymentSheet (23.19.0):
-    - StripeApplePay (= 23.19.0)
-    - StripeCore (= 23.19.0)
-    - StripePayments (= 23.19.0)
-    - StripePaymentsUI (= 23.19.0)
-  - StripePaymentsUI (23.19.0):
-    - StripeCore (= 23.19.0)
-    - StripePayments (= 23.19.0)
-    - StripeUICore (= 23.19.0)
-  - StripeUICore (23.19.0):
-    - StripeCore (= 23.19.0)
 
 DEPENDENCIES:
   - GoogleMaps (= 7.1.0)
   - GooglePlaces (= 7.1.0)
-  - StripePaymentSheet
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
     - GooglePlaces
-    - StripeApplePay
-    - StripeCore
-    - StripePayments
-    - StripePaymentSheet
-    - StripePaymentsUI
-    - StripeUICore
 
 SPEC CHECKSUMS:
   GoogleMaps: bc56ffb0324e345a2d91bac1a64a920f9c8f1b20
   GooglePlaces: 187946335ec3dc624de71c0a9ddcc712f19b0ee1
-  StripeApplePay: e6cd9b5b36b5c29a0d84e52747631387fae9ad9d
-  StripeCore: e9842253b8f9f11dfac9ba29a3cc2a968b2772ed
-  StripePayments: 3df71c998a729cc329db620136705f64ca6d0a1a
-  StripePaymentSheet: 4257f11240a0b62af2e0d1a173eff4ed4ad94603
-  StripePaymentsUI: 2ae3ff7568ebd4bfde2595ef8fea709eece3efe7
-  StripeUICore: b8ffec20b6d7e9c53002f447db594b5d260345ae
 
-PODFILE CHECKSUM: abb69ea37af3b7b8f27620f6bf369b9759e616f5
+PODFILE CHECKSUM: 6de59ee45229ffac41eac549d73094db383dcd0f
 
 COCOAPODS: 1.14.3

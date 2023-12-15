@@ -99,22 +99,10 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle"
   install_resource "${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripeCore/StripeCore.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentSheet/StripePaymentSheet.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/StripePayments.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/Stripe3DS2.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentsUI/StripePaymentsUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripeUICore/StripeUICore.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle"
   install_resource "${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripeCore/StripeCore.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentSheet/StripePaymentSheet.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/StripePayments.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/Stripe3DS2.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentsUI/StripePaymentsUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/StripeUICore/StripeUICore.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
