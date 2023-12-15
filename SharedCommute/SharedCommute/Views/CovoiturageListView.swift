@@ -51,7 +51,7 @@ struct CovoiturageListView: View {
                 
                 List {
                     ForEach(covoiturages) { covoiturage in
-                        if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage) {
+                        if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage ?? "") {
                             NavigationLink(
                                 destination: MappingView(
                                     internalsource: .constant(covoiturage.pointDepart),
@@ -77,7 +77,7 @@ struct CovoiturageListView: View {
                                         Text("Destination: \(covoiturage.pointArrivee)")
                                             .font(.subheadline)
                                             .foregroundColor(.gray)
-                                        Text("Date: \(covoiturage.dateCovoiturage)")
+                                        Text("Date: \(covoiturage.dateCovoiturage!)")
                                             .font(.subheadline)
                                             .foregroundColor(.gray)
                                     }

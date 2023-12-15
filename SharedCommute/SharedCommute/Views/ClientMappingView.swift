@@ -132,12 +132,12 @@ public struct ClientMappingView: View {
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
                 
-                Button(action: {
+               Button(action: {
                     withAnimation {
                         showPicker = true
                     }
                 }) {
-                    NavigationLink(destination:( TimePickerView(selectedHour: $selectedHourMapping, selectedMinute: $selectedMinuteMapping, source: $source, destination: $destination, idcovoiturage: $idcovoiturage)), isActive: $showPicker ) {
+                    NavigationLink(destination:(ClientListCovoiturages(source: $source, destination: $destination)), isActive: $showPicker ) {
                         Text("Search For Drivers")
                             .font(.headline)
                             .foregroundColor(.white)

@@ -6,15 +6,16 @@
 //
 
 import Foundation
-struct EmgCovoiturage: Identifiable {
-    let id: String?
+struct EmgCovoiturage: Identifiable,Decodable{
+    let id: String
         let id_cond: String
         let id_user: String
         let pointDepart: String
         let pointArrivee: String
-        let dateCovoiturage: String
+        let dateCovoiturage: String?
         let Tarif: Int
-
+        let statut: String
+    let typecov : String = "Emergency"
 
         private enum CodingKeys: String, CodingKey {
             case id = "_id"
@@ -22,8 +23,9 @@ struct EmgCovoiturage: Identifiable {
             case id_user
             case pointDepart
             case pointArrivee
-            case dateCovoiturage
+            case dateCovoiturage = "Date"
             case Tarif
+            case statut
+            case typecov = "typeCov"
         }
 }
-

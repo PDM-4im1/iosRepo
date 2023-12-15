@@ -32,9 +32,15 @@ struct GoogleMapsView: UIViewRepresentable {
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.delegate = context.coordinator
         
+        // Add a green marker at the specified coordinates
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: 36.89771, longitude: 10.18962)
+        marker.icon = GMSMarker.markerImage(with: .green)
+        marker.map = mapView
         
         return mapView
     }
+
     func updateUIView(_ mapView: GMSMapView, context: UIViewRepresentableContext<GoogleMapsView>) {
         guard isButtonTapped else {
             return

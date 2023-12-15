@@ -14,14 +14,13 @@ struct Driver: Identifiable,Decodable {
        let pointArrivee: String
        let localisation: String
     
-    
     private enum CodingKeys: String, CodingKey {
            case id = "_id"
-           case idMoyenTransport
-           case idUser
-           case pointDepart
-           case pointArrivee
-           case localisation
+           case idMoyenTransport = "id_moyen_transpor"
+           case idUser = "id_user"
+           case pointDepart = "pointDepart"
+           case pointArrivee = "pointArrivee"
+           case localisation = "localisation"
        }
     
 }

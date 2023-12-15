@@ -9,41 +9,51 @@
 /* Begin PBXBuildFile section */
 		512A42392B22E6F2001A026C /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A42382B22E6F2001A026C /* SharedData.swift */; };
 		5135CB932B160A7100AA742A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CB922B160A7100AA742A /* MappingView.swift */; };
+		51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */; };
+		51391F452B2B7F3B00C65BA3 /* ClientListCovoiturages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */; };
+		51391F472B2C08E500C65BA3 /* Driverrelatedview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F462B2C08E500C65BA3 /* Driverrelatedview.swift */; };
 		513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A31A12B221DEC0043CBC9 /* TimePickerView.swift */; };
 		513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513C72B52B20B9C900E662AC /* LocationManager.swift */; };
 		513D16A72B22868D00EAC845 /* CovoiturageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D16A62B22868D00EAC845 /* CovoiturageListView.swift */; };
 		5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */; };
 		5194FAB22B18C096006B1CCC /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAB12B18C096006B1CCC /* GoogleMapView.swift */; };
-		51A157CA2B14BD0900C6F3CD /* conducteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C72B14BD0900C6F3CD /* conducteur.swift */; };
-		51A157CB2B14BD0900C6F3CD /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C82B14BD0900C6F3CD /* MoyenDeTransport.swift */; };
 		51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C92B14BD0900C6F3CD /* covoiturage.swift */; };
-		51A157CF2B14BD2000C6F3CD /* CovoiturageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157CE2B14BD1F00C6F3CD /* CovoiturageTableView.swift */; };
-		51A157D22B14C46500C6F3CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157D12B14C46500C6F3CD /* User.swift */; };
-		51A157D42B14ED6B00C6F3CD /* CovoiturageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157D32B14ED6B00C6F3CD /* CovoiturageCell.swift */; };
 		51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE807A2B14B5CF0058BE35 /* SharedCommuteApp.swift */; };
 		51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE807C2B14B5CF0058BE35 /* ContentView.swift */; };
 		51CE807F2B14B5D00058BE35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CE807E2B14B5D00058BE35 /* Assets.xcassets */; };
 		51CE80822B14B5D00058BE35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CE80812B14B5D00058BE35 /* Preview Assets.xcassets */; };
 		51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE80832B14B5D00058BE35 /* Persistence.swift */; };
 		51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */; };
+		51FBFFBE2B2320BA00BAA63E /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */; };
+		51FBFFBF2B2320BA00BAA63E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */; };
+		51FBFFC52B2320D200BAA63E /* MoyenDeTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC12B2320D200BAA63E /* MoyenDeTransport.swift */; };
+		51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC22B2320D200BAA63E /* Driver.swift */; };
+		51FBFFC72B2320D200BAA63E /* EmgCovoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */; };
+		51FBFFD02B23210000BAA63E /* CarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC92B23210000BAA63E /* CarMapView.swift */; };
+		51FBFFD12B23210000BAA63E /* EmergencyRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCA2B23210000BAA63E /* EmergencyRideView.swift */; };
+		51FBFFD22B23210000BAA63E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCB2B23210000BAA63E /* NotificationView.swift */; };
+		51FBFFD32B23210000BAA63E /* CovoiturageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCC2B23210000BAA63E /* CovoiturageView.swift */; };
+		51FBFFD42B23210000BAA63E /* PaymentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCD2B23210000BAA63E /* PaymentSelectionView.swift */; };
+		51FBFFD52B23210000BAA63E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCE2B23210000BAA63E /* PaymentView.swift */; };
+		51FBFFD62B23210000BAA63E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCF2B23210000BAA63E /* MapView.swift */; };
+		51FBFFD82B23219500BAA63E /* CarMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFD72B23219500BAA63E /* CarMapController.swift */; };
+		51FBFFDA2B23224B00BAA63E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFD92B23224B00BAA63E /* Users.swift */; };
 		CEED388E485B090201075281 /* libPods-SharedCommute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C35374BAA7196F67B64219 /* libPods-SharedCommute.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		512A42382B22E6F2001A026C /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		5135CB922B160A7100AA742A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
+		51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMappingView.swift; sourceTree = "<group>"; };
+		51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListCovoiturages.swift; sourceTree = "<group>"; };
+		51391F462B2C08E500C65BA3 /* Driverrelatedview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driverrelatedview.swift; sourceTree = "<group>"; };
 		513A31A12B221DEC0043CBC9 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		513C72B32B20A89700E662AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513C72B52B20B9C900E662AC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		513D16A62B22868D00EAC845 /* CovoiturageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageListView.swift; sourceTree = "<group>"; };
 		5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelagte.swift; sourceTree = "<group>"; };
 		5194FAB12B18C096006B1CCC /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
-		51A157C72B14BD0900C6F3CD /* conducteur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conducteur.swift; sourceTree = "<group>"; };
-		51A157C82B14BD0900C6F3CD /* MoyenDeTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyenDeTransport.swift; sourceTree = "<group>"; };
 		51A157C92B14BD0900C6F3CD /* covoiturage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = covoiturage.swift; sourceTree = "<group>"; };
-		51A157CE2B14BD1F00C6F3CD /* CovoiturageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovoiturageTableView.swift; sourceTree = "<group>"; };
-		51A157D12B14C46500C6F3CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		51A157D32B14ED6B00C6F3CD /* CovoiturageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageCell.swift; sourceTree = "<group>"; };
 		51CE80772B14B5CF0058BE35 /* SharedCommute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedCommute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CE807A2B14B5CF0058BE35 /* SharedCommuteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCommuteApp.swift; sourceTree = "<group>"; };
 		51CE807C2B14B5CF0058BE35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +61,20 @@
 		51CE80812B14B5D00058BE35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51CE80832B14B5D00058BE35 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		51CE80862B14B5D00058BE35 /* SharedCommute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SharedCommute.xcdatamodel; sourceTree = "<group>"; };
+		51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmgDriverCell.swift; sourceTree = "<group>"; };
+		51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		51FBFFC12B2320D200BAA63E /* MoyenDeTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoyenDeTransport.swift; path = "../../../../iosRepo-rihem/ShareCommut/Models/MoyenDeTransport.swift"; sourceTree = "<group>"; };
+		51FBFFC22B2320D200BAA63E /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmgCovoiturage.swift; sourceTree = "<group>"; };
+		51FBFFC92B23210000BAA63E /* CarMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMapView.swift; sourceTree = "<group>"; };
+		51FBFFCA2B23210000BAA63E /* EmergencyRideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyRideView.swift; sourceTree = "<group>"; };
+		51FBFFCB2B23210000BAA63E /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		51FBFFCC2B23210000BAA63E /* CovoiturageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovoiturageView.swift; sourceTree = "<group>"; };
+		51FBFFCD2B23210000BAA63E /* PaymentSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSelectionView.swift; sourceTree = "<group>"; };
+		51FBFFCE2B23210000BAA63E /* PaymentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		51FBFFCF2B23210000BAA63E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		51FBFFD72B23219500BAA63E /* CarMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapController.swift; sourceTree = "<group>"; };
+		51FBFFD92B23224B00BAA63E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		54C35374BAA7196F67B64219 /* libPods-SharedCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SharedCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECA26F735DD1227AE85342A /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.release.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
 		FDF3D4E8A263C7F9AF618152 /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.debug.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,10 +103,11 @@
 		51A157C62B14BD0900C6F3CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				51A157C72B14BD0900C6F3CD /* conducteur.swift */,
-				51A157C82B14BD0900C6F3CD /* MoyenDeTransport.swift */,
+				51FBFFC22B2320D200BAA63E /* Driver.swift */,
+				51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */,
+				51FBFFC12B2320D200BAA63E /* MoyenDeTransport.swift */,
 				51A157C92B14BD0900C6F3CD /* covoiturage.swift */,
-				51A157D12B14C46500C6F3CD /* User.swift */,
+				51FBFFD92B23224B00BAA63E /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,9 +115,18 @@
 		51A157CD2B14BD1F00C6F3CD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				51A157CE2B14BD1F00C6F3CD /* CovoiturageTableView.swift */,
+				51FBFFC92B23210000BAA63E /* CarMapView.swift */,
+				51FBFFCC2B23210000BAA63E /* CovoiturageView.swift */,
+				51FBFFCA2B23210000BAA63E /* EmergencyRideView.swift */,
+				51FBFFCF2B23210000BAA63E /* MapView.swift */,
+				51FBFFCB2B23210000BAA63E /* NotificationView.swift */,
+				51FBFFCD2B23210000BAA63E /* PaymentSelectionView.swift */,
+				51FBFFCE2B23210000BAA63E /* PaymentView.swift */,
 				5135CB922B160A7100AA742A /* MappingView.swift */,
 				513D16A62B22868D00EAC845 /* CovoiturageListView.swift */,
+				51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */,
+				51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */,
+				51391F462B2C08E500C65BA3 /* Driverrelatedview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,10 +135,12 @@
 			isa = PBXGroup;
 			children = (
 				5194FAB12B18C096006B1CCC /* GoogleMapView.swift */,
-				51A157D32B14ED6B00C6F3CD /* CovoiturageCell.swift */,
+				51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */,
+				51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */,
 				513C72B52B20B9C900E662AC /* LocationManager.swift */,
 				513A31A12B221DEC0043CBC9 /* TimePickerView.swift */,
 				512A42382B22E6F2001A026C /* SharedData.swift */,
+				51FBFFD72B23219500BAA63E /* CarMapController.swift */,
 			);
 			path = ViewConroller;
 			sourceTree = "<group>";
@@ -318,23 +354,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51391F452B2B7F3B00C65BA3 /* ClientListCovoiturages.swift in Sources */,
+				51391F472B2C08E500C65BA3 /* Driverrelatedview.swift in Sources */,
+				51FBFFD42B23210000BAA63E /* PaymentSelectionView.swift in Sources */,
+				51FBFFD62B23210000BAA63E /* MapView.swift in Sources */,
+				51FBFFC72B2320D200BAA63E /* EmgCovoiturage.swift in Sources */,
 				5194FAB22B18C096006B1CCC /* GoogleMapView.swift in Sources */,
 				5135CB932B160A7100AA742A /* MappingView.swift in Sources */,
-				51A157CF2B14BD2000C6F3CD /* CovoiturageTableView.swift in Sources */,
+				51FBFFBF2B2320BA00BAA63E /* MapViewController.swift in Sources */,
 				513D16A72B22868D00EAC845 /* CovoiturageListView.swift in Sources */,
+				51FBFFD82B23219500BAA63E /* CarMapController.swift in Sources */,
 				5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */,
 				51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */,
 				51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */,
 				51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */,
 				51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */,
-				51A157D22B14C46500C6F3CD /* User.swift in Sources */,
+				51FBFFD32B23210000BAA63E /* CovoiturageView.swift in Sources */,
+				51FBFFC52B2320D200BAA63E /* MoyenDeTransport.swift in Sources */,
+				51FBFFD02B23210000BAA63E /* CarMapView.swift in Sources */,
 				512A42392B22E6F2001A026C /* SharedData.swift in Sources */,
-				51A157CB2B14BD0900C6F3CD /* MoyenDeTransport.swift in Sources */,
+				51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */,
+				51FBFFD52B23210000BAA63E /* PaymentView.swift in Sources */,
+				51FBFFD12B23210000BAA63E /* EmergencyRideView.swift in Sources */,
+				51FBFFBE2B2320BA00BAA63E /* EmgDriverCell.swift in Sources */,
 				513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */,
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
-				51A157D42B14ED6B00C6F3CD /* CovoiturageCell.swift in Sources */,
+				51FBFFD22B23210000BAA63E /* NotificationView.swift in Sources */,
 				513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */,
-				51A157CA2B14BD0900C6F3CD /* conducteur.swift in Sources */,
+				51FBFFDA2B23224B00BAA63E /* Users.swift in Sources */,
+				51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

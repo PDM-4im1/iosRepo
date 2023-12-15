@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-
 struct PaymentView: View {
+    @State private var idUser = "656080221d51b314e6169893"
     var body: some View {
         VStack {
             Text("Payment Details")
@@ -59,8 +59,67 @@ struct PaymentView: View {
             }
             .padding(.horizontal, 40)
             .padding(.bottom, 40)
+            .onAppear {
+                fetchUser(UserId: idUser) { user in
+                    if let user = user {
+                        DispatchQueue.main.async {
+                            print(user)
+                           // name = user.name + " " + user.firstName
+                            //phone = user.phoneNumber
+                        }
+                    } else {
+                        print("User not found")
+                    }
+                }
+                
+            }
         }
         
+    }
+    func fetchUser(UserId userId: String, completion: @escaping (User?) -> Void) {
+        let urlString = "http://localhost:9090/covoiturage/findUser/\(userId)"
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error fetching User: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received when fetching User.")
+                completion(nil)
+                return
+            }
+       
+            
+            do {
+                // Decode the JSON data into a dictionary
+                guard let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                    print("Error converting JSON to dictionary.")
+                    completion(nil)
+                    return
+                }
+               
+                // Decode the dictionary into a User object
+                if let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary, options: []) {
+                    let decodedUser = try JSONDecoder().decode(User.self, from: jsonData)
+                    completion(decodedUser)
+                } else {
+                    print("Error decoding dictionary into User.")
+                    completion(nil)
+                }
+            } catch {
+                print("Error decoding JSON: \(error.localizedDescription)")
+                completion(nil)
+            }
+        }.resume()
     }
 }
 
@@ -82,6 +141,7 @@ struct PaymentTextField: View {
         .background(Color.gray.opacity(0.1))
         .cornerRadius(8)
     }
+    
 }
 
 struct PaymentView_Previews: PreviewProvider {

@@ -10,7 +10,7 @@ import GooglePlaces
 import GoogleMaps
 import MapKit
 
-
+    
 struct CarMapView: View {
     @State private var showCurrentLocation = false
     @State private var source: String = ""
@@ -21,6 +21,7 @@ struct CarMapView: View {
     @State private var showDoctor: Bool = false
     @State private var Traceroute: Bool = false
     @State private var showactivetrue: Bool = false
+    @State private var Emrgency: EmgCovoiturage?
 
     @State private var routes: [GMSPolyline] = []
     
@@ -151,9 +152,17 @@ struct CarMapView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: CovoiturageView(),isActive: $showactivetrue) {
+                    NavigationLink(destination: CovoiturageView(Emrgency: $Emrgency),isActive: $showactivetrue) {
                         Button(action: {
-                            controller.saveEMG(source: source, distination: destination)
+                            controller.saveCovoiturage( pointDepart: source, pointArrivee: destination, tarif: 20.5){ Covoiturage in
+                                if let Covoiturage = Covoiturage{
+                                    DispatchQueue.main.async {
+                                        Emrgency = Covoiturage
+                                    }
+                                } else {
+                                    print("Covoiturage not found")
+                                }
+                            }
                             showactivetrue = true
                                             }) {
                                                 Text("Ride")

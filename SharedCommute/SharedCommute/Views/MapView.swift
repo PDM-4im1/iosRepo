@@ -39,7 +39,7 @@ struct MapView: UIViewRepresentable {
         mapView.settings.myLocationButton = true
         mapView.settings.indoorPicker = true
         mapView.animate(toZoom: 8)
-        context.coordinator.showUserLocation(on: mapView)
+        //context.coordinator.showUserLocation(on: mapView)
         if let controller = context.coordinator.viewController {
             print("MapView - setMapView called on CarMapController: \(controller)")
         } else {
@@ -149,6 +149,7 @@ struct MapView: UIViewRepresentable {
             
             
             private func fetchRoutes(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, mapView: GMSMapView, completion: @escaping ([GMSPolyline]) -> Void) {
+                mapView.clear()
                 let origin = "\(source.latitude),\(source.longitude)"
                 let destination = "\(destination.latitude),\(destination.longitude)"
                 
@@ -350,6 +351,7 @@ struct MapView: UIViewRepresentable {
                 
                 
                 func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+                    var source:CLLocationCoordinate2D;
                     // Handle marker tap here
                     if let place = marker.userData as? NearbySearchResult.Place {
                         // You can access place details here and use them for routing
@@ -358,11 +360,28 @@ struct MapView: UIViewRepresentable {
                         destinationMarker.position = marker.position
                         destinationMarker.map = mapView
                         print("Marker tapped: \(place.name)")
-                        
-                        // Access the parent MapView and call fetchRoutes
-                        parent.fetchRoutes(from: mapView.myLocation!.coordinate, to: marker.position, mapView: mapView) { polylines in
-                            // Handle polylines, e.g., display on the map
+                        if parent.source.isEmpty {
+                            parent.source = "\(mapView.myLocation!.coordinate)"
+                            source = mapView.myLocation!.coordinate
+                            parent.fetchRoutes(from: source, to: marker.position, mapView: mapView) { polylines in
+                                // Handle polylines, e.g., display on the map
+                            }
+                        } else {
+                            parent.geocodeAddress(address: parent.source) { coordinates in
+                                guard let coordinates = coordinates else {
+                                    print("Error geocoding address")
+                                    return
+                                }
+                                
+                                
+                                self.parent.fetchRoutes(from: coordinates, to: marker.position, mapView: mapView) { polylines in
+                                    // Handle polylines, e.g., display on the map
+                                }
+                            }
                         }
+                        parent.destination = "\(marker.position)"
+                        // Access the parent MapView and call fetchRoutes
+                        
                     }
                     return true
                 }
@@ -374,4 +393,3 @@ struct MapView: UIViewRepresentable {
         
         
     
-

@@ -5,24 +5,26 @@
 //  Created by Rihem Drissi on 1/12/2023.
 //
 
+
 import Foundation
 
-struct User:Identifiable{
-    let id = UUID()
-    let email: String
+struct User: Identifiable,Decodable {
+    let id: String
+        let email: String
        let password: String
-       let phoneNumber: Int
+       let phoneNumber: String
        let role: String
        let name: String
        let firstName: String
        let age: Int
-    init(email: String, password: String, phoneNumber: Int, role: String, name: String, firstName: String, age: Int) {
-        self.email = email
-        self.password = password
-        self.phoneNumber = phoneNumber
-        self.role = role
-        self.name = name
-        self.firstName = firstName
-        self.age = age
+    private enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case email = "email"
+        case password = "password"
+        case phoneNumber = "Phone_number"
+        case role = "role"
+        case name = "name"
+        case firstName = "first_name"
+        case age = "age"
     }
 }

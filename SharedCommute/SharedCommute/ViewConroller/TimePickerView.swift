@@ -41,14 +41,14 @@ struct TimePickerView: View {
         print(dateCovoiturage)
         // Create a Covoiturage object
         let covoiturage = Covoiturage(
-            id: nil,
+            id: "",
 
-            id_cond: "1", // Update with the appropriate value
-            id_user: "2", // Update with the appropriate value
+            id_cond: "6579a783fbcad7cf05599e14", // Update with the appropriate value
+            id_user: "6553930f68eacc72a80f547a", // Update with the appropriate value
             pointDepart: source,
             pointArrivee: destination,
             dateCovoiturage: dateCovoiturage,
-            Tarif: 0 // Update with the appropriate value
+            Tarif: 0, statut: "Active" // Update with the appropriate value
         )
 
         // Convert Covoiturage object to JSON
@@ -137,13 +137,14 @@ struct TimePickerView: View {
 
         // Create a Covoiturage object with updated data
         let updatedCovoiturage = Covoiturage(
-            id: nil,
+            id: "",
             id_cond: "1", // Update with the appropriate value
             id_user: "2", // Update with the appropriate value
             pointDepart: source,
             pointArrivee: destination,
             dateCovoiturage: dateCovoiturage,
-            Tarif: 0 // Update with the appropriate value
+            Tarif: 0,
+            statut: "active"// Update with the appropriate value
         )
 
         // Convert Covoiturage object to JSON
@@ -288,3 +289,9 @@ struct TimePickerView: View {
     }
 }
     
+
+struct TimePickerView_Previews: PreviewProvider {
+    static var previews: some View {
+        TimePickerView(selectedHour: .constant(0), selectedMinute: .constant(0), source: .constant(""), destination: .constant(""), idcovoiturage:.constant("")).environmentObject(CarMapController())
+    }
+}
