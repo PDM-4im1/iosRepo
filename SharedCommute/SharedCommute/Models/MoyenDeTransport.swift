@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class MoyenDeTransport:Identifiable,Decodable {
+struct MoyenDeTransport:Identifiable,Decodable {
     let id:String
     let marque: String?
     let type: String?

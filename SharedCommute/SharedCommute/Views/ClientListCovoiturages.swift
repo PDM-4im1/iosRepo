@@ -42,14 +42,8 @@ struct ClientListCovoiturages: View {
                     ForEach(covoiturages) { covoiturage in
                         if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage ?? "") {
                             NavigationLink(
-                                destination: MappingView(
-                                    internalsource: .constant(covoiturage.pointDepart),
-                                    internaldestination: .constant(covoiturage.pointArrivee),
-                                    selectedHoursMapping: .constant(reverseDate.hour),
-                                    selectedMinutesMapping: .constant(reverseDate.minute),
-                                    initialidcovoiturage: .constant(covoiturage.id!)
-                                )
-                                .navigationBarHidden(true)
+                                destination:DriverView(driverID:covoiturage.id_cond)
+                                .navigationBarHidden(false)
                             ) {
                                 
                                     HStack {
@@ -106,7 +100,7 @@ struct ClientListCovoiturages: View {
         // Use Google Maps API to fetch nearby places based on source and destination coordinates
 
         // Example URL (replace with your API key and parameters)
-        let nearbyPlacesURL = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(source.latitude),\(source.longitude)&radius=5000&type=carpooling&key=YOUR_GOOGLE_MAPS_API_KEY")!
+        let nearbyPlacesURL = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(source.latitude),\(source.longitude)&radius=5000&type=carpooling&key=AIzaSyCmXUO6nmL7sbV1Z6UEysVERFQUtQj6i74")!
 
         URLSession.shared.dataTask(with: nearbyPlacesURL) { data, response, error in
             if let data = data {

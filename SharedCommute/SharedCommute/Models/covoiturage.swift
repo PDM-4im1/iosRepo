@@ -6,7 +6,7 @@ struct Covoiturage: Identifiable, Decodable,Encodable,Equatable {
         let pointDepart: String
         let pointArrivee: String
         let dateCovoiturage: String?
-        let Tarif: Int?
+        let Tarif: Double?
         let statut: String?
     let typecov : String = "Covoiturage"
 
