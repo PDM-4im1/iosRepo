@@ -25,6 +25,8 @@
 		51CE80822B14B5D00058BE35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CE80812B14B5D00058BE35 /* Preview Assets.xcassets */; };
 		51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE80832B14B5D00058BE35 /* Persistence.swift */; };
 		51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */; };
+		51E321632B39B19D00C5ED62 /* Loginuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E321622B39B19D00C5ED62 /* Loginuser.swift */; };
+		51E321652B39B61900C5ED62 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E321642B39B61900C5ED62 /* SignupView.swift */; };
 		51FBFFBE2B2320BA00BAA63E /* EmgDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */; };
 		51FBFFBF2B2320BA00BAA63E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */; };
 		51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC22B2320D200BAA63E /* Driver.swift */; };
@@ -62,6 +64,8 @@
 		51CE80812B14B5D00058BE35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51CE80832B14B5D00058BE35 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		51CE80862B14B5D00058BE35 /* SharedCommute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SharedCommute.xcdatamodel; sourceTree = "<group>"; };
+		51E321622B39B19D00C5ED62 /* Loginuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loginuser.swift; sourceTree = "<group>"; };
+		51E321642B39B61900C5ED62 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmgDriverCell.swift; sourceTree = "<group>"; };
 		51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		51FBFFC22B2320D200BAA63E /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */,
 				51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */,
 				51391F462B2C08E500C65BA3 /* Driverrelatedview.swift */,
+				51E321622B39B19D00C5ED62 /* Loginuser.swift */,
+				51E321642B39B61900C5ED62 /* SignupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,12 +378,14 @@
 				51FBFFD32B23210000BAA63E /* CovoiturageView.swift in Sources */,
 				51FBFFD02B23210000BAA63E /* CarMapView.swift in Sources */,
 				512A42392B22E6F2001A026C /* SharedData.swift in Sources */,
+				51E321632B39B19D00C5ED62 /* Loginuser.swift in Sources */,
 				51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */,
 				51FBFFD52B23210000BAA63E /* PaymentView.swift in Sources */,
 				51FBFFD12B23210000BAA63E /* EmergencyRideView.swift in Sources */,
 				51FBFFBE2B2320BA00BAA63E /* EmgDriverCell.swift in Sources */,
 				513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */,
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
+				51E321652B39B61900C5ED62 /* SignupView.swift in Sources */,
 				51FBFFD22B23210000BAA63E /* NotificationView.swift in Sources */,
 				513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */,
 				51391F492B2C218400C65BA3 /* MoyenDeTransport.swift in Sources */,
