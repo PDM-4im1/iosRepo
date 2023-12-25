@@ -1,6 +1,0 @@
-module Pods_ShareCommute {
-  umbrella header "Pods-ShareCommute-umbrella.h"
-
-  export *
-  module * { export * }
-}

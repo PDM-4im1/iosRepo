@@ -14,8 +14,8 @@ struct ShareCommuteApp: App {
 
     var body: some Scene {
         WindowGroup {
-            // EmergencyRideView()
-            NotificationView()
+             EmergencyRideView()
+            //NotificationView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

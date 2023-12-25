@@ -9,6 +9,7 @@ import UIKit
 import GoogleMaps
 import SwiftUI
 import GooglePlaces
+import FirebaseCore
 
 class AppDelegate: NSObject,  UIApplicationDelegate {
     var window: UIWindow?
@@ -18,7 +19,7 @@ class AppDelegate: NSObject,  UIApplicationDelegate {
            let carMapView = CarMapView()
            
            
-                 
+                FirebaseApp.configure()
                  // Create a UIHostingController with the CarMapView as the root view
                  let hostingController = UIHostingController(rootView: carMapView)
                  

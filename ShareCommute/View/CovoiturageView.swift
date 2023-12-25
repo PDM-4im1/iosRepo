@@ -172,7 +172,7 @@ struct CovoiturageView: View {
                 
                 Button(action: {
                     isLoading = true
-                    controller.sendEmail(Mail: email,Covoiturage:Emrgency!)
+                   // controller.sendEmail(Mail: email,Covoiturage:Emrgency!)
                     controller.fetchCovoiturage(UserId: Emrgency!.id) { covoiturage in
                         if let covoiturage = covoiturage {
                             switch covoiturage.statut {

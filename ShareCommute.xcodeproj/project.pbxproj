@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F169EEFC828EBE20A9A0BEB /* libPods-ShareCommute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9832093EC81884CF5277C9F /* libPods-ShareCommute.a */; };
+		CE548D5C2B39916A00970675 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE548D5B2B39916A00970675 /* GoogleService-Info.plist */; };
+		CE548D5F2B39A3E200970675 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CE548D5E2B39A3E200970675 /* FirebaseAnalytics */; };
+		CE548D612B39A3E200970675 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE548D602B39A3E200970675 /* FirebaseAnalyticsSwift */; };
 		CEBFAF992B2B793500DF40F8 /* ShareCommuteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAF982B2B793500DF40F8 /* ShareCommuteApp.swift */; };
 		CEBFAF9D2B2B793600DF40F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBFAF9C2B2B793600DF40F8 /* Assets.xcassets */; };
 		CEBFAFA02B2B793600DF40F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBFAF9F2B2B793600DF40F8 /* Preview Assets.xcassets */; };
@@ -52,9 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5FB7773293E832552BFF0243 /* libPods-ShareCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C2AAFF1D483E78935542322 /* Pods-ShareCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommute.debug.xcconfig"; path = "Target Support Files/Pods-ShareCommute/Pods-ShareCommute.debug.xcconfig"; sourceTree = "<group>"; };
-		7FED4BE824EEA11EEBF7EB74 /* Pods-ShareCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommute.release.xcconfig"; path = "Target Support Files/Pods-ShareCommute/Pods-ShareCommute.release.xcconfig"; sourceTree = "<group>"; };
+		31B517D9407C55117BA4E4E1 /* Pods-ShareCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommute.release.xcconfig"; path = "Target Support Files/Pods-ShareCommute/Pods-ShareCommute.release.xcconfig"; sourceTree = "<group>"; };
+		8CB4B322C71DC82DE2AE2C32 /* Pods-ShareCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCommute.debug.xcconfig"; path = "Target Support Files/Pods-ShareCommute/Pods-ShareCommute.debug.xcconfig"; sourceTree = "<group>"; };
+		CE548D5B2B39916A00970675 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEBFAF952B2B793500DF40F8 /* ShareCommute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCommute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBFAF982B2B793500DF40F8 /* ShareCommuteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCommuteApp.swift; sourceTree = "<group>"; };
 		CEBFAF9C2B2B793600DF40F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 		CEBFAFE72B2B7ADF00DF40F8 /* PaymentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionView.swift; sourceTree = "<group>"; };
 		CEBFAFE92B2B7AED00DF40F8 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		CECD33992B2C23CE0087D7A5 /* CovoiturageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageController.swift; sourceTree = "<group>"; };
+		E9832093EC81884CF5277C9F /* libPods-ShareCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE548D612B39A3E200970675 /* FirebaseAnalyticsSwift in Frameworks */,
+				CE548D5F2B39A3E200970675 /* FirebaseAnalytics in Frameworks */,
+				4F169EEFC828EBE20A9A0BEB /* libPods-ShareCommute.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,18 +122,10 @@
 		11598DB0A8C8AABE1273C7A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7C2AAFF1D483E78935542322 /* Pods-ShareCommute.debug.xcconfig */,
-				7FED4BE824EEA11EEBF7EB74 /* Pods-ShareCommute.release.xcconfig */,
+				8CB4B322C71DC82DE2AE2C32 /* Pods-ShareCommute.debug.xcconfig */,
+				31B517D9407C55117BA4E4E1 /* Pods-ShareCommute.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		384C3BC2D61B4BB740E372D8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5FB7773293E832552BFF0243 /* libPods-ShareCommute.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CEBFAF8C2B2B793500DF40F8 = {
@@ -136,7 +136,7 @@
 				CEBFAFB82B2B793600DF40F8 /* ShareCommuteUITests */,
 				CEBFAF962B2B793500DF40F8 /* Products */,
 				11598DB0A8C8AABE1273C7A7 /* Pods */,
-				384C3BC2D61B4BB740E372D8 /* Frameworks */,
+				F3473AB8EE9ABE2FD09FC27A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +158,7 @@
 				CEBFAFCB2B2B79B600DF40F8 /* View */,
 				CEBFAF982B2B793500DF40F8 /* ShareCommuteApp.swift */,
 				CEBFAFC82B2B797300DF40F8 /* AppDelegate.swift */,
+				CE548D5B2B39916A00970675 /* GoogleService-Info.plist */,
 				CEBFAF9C2B2B793600DF40F8 /* Assets.xcassets */,
 				CEBFAFA12B2B793600DF40F8 /* Persistence.swift */,
 				CEBFAFA62B2B793600DF40F8 /* Info.plist */,
@@ -229,6 +230,14 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		F3473AB8EE9ABE2FD09FC27A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9832093EC81884CF5277C9F /* libPods-ShareCommute.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,17 +245,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEBFAFBF2B2B793600DF40F8 /* Build configuration list for PBXNativeTarget "ShareCommute" */;
 			buildPhases = (
-				B56D13AF3C01456DC1621E81 /* [CP] Check Pods Manifest.lock */,
+				E1C2E3DCA4D04335A4B689EC /* [CP] Check Pods Manifest.lock */,
 				CEBFAF912B2B793500DF40F8 /* Sources */,
 				CEBFAF922B2B793500DF40F8 /* Frameworks */,
 				CEBFAF932B2B793500DF40F8 /* Resources */,
-				1F6E3694A94F1478D3C24303 /* [CP] Copy Pods Resources */,
+				4ABA5EE870E5A8FEFAA99F0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ShareCommute;
+			packageProductDependencies = (
+				CE548D5E2B39A3E200970675 /* FirebaseAnalytics */,
+				CE548D602B39A3E200970675 /* FirebaseAnalyticsSwift */,
+			);
 			productName = ShareCommute;
 			productReference = CEBFAF952B2B793500DF40F8 /* ShareCommute.app */;
 			productType = "com.apple.product-type.application";
@@ -319,6 +332,9 @@
 				Base,
 			);
 			mainGroup = CEBFAF8C2B2B793500DF40F8;
+			packageReferences = (
+				CE548D5D2B39A3E200970675 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CEBFAF962B2B793500DF40F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,6 +353,7 @@
 			files = (
 				CEBFAFA02B2B793600DF40F8 /* Preview Assets.xcassets in Resources */,
 				CEBFAF9D2B2B793600DF40F8 /* Assets.xcassets in Resources */,
+				CE548D5C2B39916A00970675 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +374,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1F6E3694A94F1478D3C24303 /* [CP] Copy Pods Resources */ = {
+		4ABA5EE870E5A8FEFAA99F0B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,7 +391,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShareCommute/Pods-ShareCommute-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B56D13AF3C01456DC1621E81 /* [CP] Check Pods Manifest.lock */ = {
+		E1C2E3DCA4D04335A4B689EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -575,7 +592,7 @@
 		};
 		CEBFAFC02B2B793600DF40F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C2AAFF1D483E78935542322 /* Pods-ShareCommute.debug.xcconfig */;
+			baseConfigurationReference = 8CB4B322C71DC82DE2AE2C32 /* Pods-ShareCommute.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -604,6 +621,48 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GooglePlaces\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"Metal\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -615,7 +674,7 @@
 		};
 		CEBFAFC12B2B793600DF40F8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FED4BE824EEA11EEBF7EB74 /* Pods-ShareCommute.release.xcconfig */;
+			baseConfigurationReference = 31B517D9407C55117BA4E4E1 /* Pods-ShareCommute.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -643,6 +702,48 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GooglePlaces\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"Metal\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = esprit.ShareCommute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -764,6 +865,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE548D5D2B39A3E200970675 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 10.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE548D5E2B39A3E200970675 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE548D5D2B39A3E200970675 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CE548D602B39A3E200970675 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE548D5D2B39A3E200970675 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CEBFAFA32B2B793600DF40F8 /* ShareCommute.xcdatamodeld */ = {
