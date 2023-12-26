@@ -1,3 +1,9 @@
+//
+//  HomeView.swift
+//  SharedCommute
+//
+//  Created by Nasri Mootez on 26/12/2023.
+
 import SwiftUI
 
 struct SignUpView: View {
@@ -5,16 +11,36 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var phoneNumber = ""
-    @State private var fullName = ""
+    @State private var Name = ""
+    @State private var firstName = ""
     @State private var age = ""
 
     @State private var isEmailPasswordValidated = false
     @State private var showError = false
+    @State private var showSuccessAlert = false
     @State private var errorMessage = ""
+    @State private var navigateToLogin   = false
+
 
     var body: some View {
         NavigationView {
+      
             VStack {
+                NavigationLink(
+                    destination: (LoginView()).navigationBarBackButtonHidden(true),
+                    isActive: $navigateToLogin,
+                    label: { EmptyView() }
+                ).alert(isPresented: $showSuccessAlert) {
+                    Alert(
+                        title: Text("Success"),
+                        message: Text("Sign up successful!"),
+                        dismissButton: .default(Text("OK")) {
+                            // Set the state to trigger navigation to the login view
+                            navigateToLogin = true
+                        }
+                    )
+                }
+
                 if isEmailPasswordValidated {
                       HStack {
                           Button(action: {
@@ -26,24 +52,19 @@ struct SignUpView: View {
                               Text("Back")
                                   .foregroundColor(.blue)
                                   .font(.title2)
-                                  .padding()
                           }
                           .transition(.move(edge: .top))
                           .padding(.top, 20)
                           Spacer()
                       }
                   }
-                Spacer()
 
                 Image("logo")
                     .resizable()
-                    .frame(width: 230, height: 260)
-
-                Text("Create an Account")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.bottom, 20)
-
+                    .frame(width: 170, height: 200)
+                Text("Sign Up")
+                    .font(.title)
+                Spacer(minLength: 20)
                 VStack(alignment: .leading, spacing: 10) {
                     if !isEmailPasswordValidated {
                         Text("Email")
@@ -96,11 +117,21 @@ struct SignUpView: View {
                             .keyboardType(.phonePad)
                             .opacity(1)
 
-                        Text("Full Name")
+                        Text("Name")
                             .font(.headline)
                             .opacity(1)
 
-                        TextField("Full Name", text: $fullName)
+                        TextField("Name", text: $Name)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(10)
+                            .padding(.horizontal, 20)
+                            .opacity(1)
+                        Text("First Name")
+                            .font(.headline)
+                            .opacity(1)
+
+                        TextField("First Name", text: $firstName)
                             .padding()
                             .background(Color.gray.opacity(0.2))
                             .cornerRadius(10)
@@ -126,7 +157,7 @@ struct SignUpView: View {
 
                 Button(action: {
                     if isEmailPasswordValidated {
-                        //signUp()
+                        signUp()
                     } else {
                         validateEmailPassword()
                     }
@@ -147,6 +178,7 @@ struct SignUpView: View {
                         dismissButton: .default(Text("OK"))
                     )
                 }
+                
              
 
                                Spacer()
@@ -156,6 +188,7 @@ struct SignUpView: View {
             .edgesIgnoringSafeArea(.all)
         }
     }
+    
 
     func validateEmailPassword() {
         if email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
@@ -177,7 +210,61 @@ struct SignUpView: View {
             isEmailPasswordValidated = true
         }
     }
-}
+    func signUp() {
+        let url = URL(string: "http://localhost:9090/user/signup")! // Replace with your actual server URL
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let parameters: [String: Any] = [
+            "email": email,
+            "password": password,
+            "Phone_number": phoneNumber,
+            "role": "driver", // Set the role to a default value or adjust as needed
+            "name": Name,
+            "first_name": firstName,
+            "age": Int(age) ?? 0 // Convert age to an integer; provide a default value if conversion fails
+        ]
+
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
+        } catch {
+            print("Error serializing JSON: \(error)")
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async { // Wrap UI-related code in the main thread
+                if let error = error {
+                    print("Error: \(error)")
+                    // Handle the error, show an alert, etc.
+                    return
+                }
+
+                if let data = data {
+                    do {
+                        let responseJSON = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+
+                        // Check if the signup was successful
+                        if let success = responseJSON?["success"] as? Bool, success {
+                            // Signup successful, show an alert
+                            showSuccessAlert = true
+                        } else {
+                            // Handle other cases, e.g., display an error alert
+                            errorMessage = "Sign up failed. Please try again."
+                            showError = true
+                        }
+                    } catch {
+                        print("Error parsing JSON: \(error)")
+                        errorMessage = "Sign up failed. Please try again."
+                        showError = true
+                    }
+                }
+            }
+        }.resume()
+    }
+    }
+
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {

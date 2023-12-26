@@ -18,6 +18,7 @@
 		513D16A72B22868D00EAC845 /* CovoiturageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D16A62B22868D00EAC845 /* CovoiturageListView.swift */; };
 		5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */; };
 		5194FAB22B18C096006B1CCC /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5194FAB12B18C096006B1CCC /* GoogleMapView.swift */; };
+		519E4AE32B3B3192009C8A04 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E4AE22B3B3192009C8A04 /* HomeView.swift */; };
 		51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A157C92B14BD0900C6F3CD /* covoiturage.swift */; };
 		51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE807A2B14B5CF0058BE35 /* SharedCommuteApp.swift */; };
 		51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE807C2B14B5CF0058BE35 /* ContentView.swift */; };
@@ -56,6 +57,7 @@
 		513D16A62B22868D00EAC845 /* CovoiturageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageListView.swift; sourceTree = "<group>"; };
 		5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelagte.swift; sourceTree = "<group>"; };
 		5194FAB12B18C096006B1CCC /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		519E4AE22B3B3192009C8A04 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		51A157C92B14BD0900C6F3CD /* covoiturage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = covoiturage.swift; sourceTree = "<group>"; };
 		51CE80772B14B5CF0058BE35 /* SharedCommute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedCommute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CE807A2B14B5CF0058BE35 /* SharedCommuteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCommuteApp.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				51391F462B2C08E500C65BA3 /* Driverrelatedview.swift */,
 				51E321622B39B19D00C5ED62 /* Loginuser.swift */,
 				51E321642B39B61900C5ED62 /* SignupView.swift */,
+				519E4AE22B3B3192009C8A04 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */,
 				51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */,
 				51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */,
+				519E4AE32B3B3192009C8A04 /* HomeView.swift in Sources */,
 				51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */,
 				51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */,
 				51FBFFD32B23210000BAA63E /* CovoiturageView.swift in Sources */,

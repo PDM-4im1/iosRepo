@@ -14,9 +14,9 @@ struct SharedCommuteApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //EmergencyRideView()
+            LoginView()
 //CovoiturageListView()
-            ClientMappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))
+            //ClientMappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))
             // MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))              // .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
