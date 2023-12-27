@@ -116,26 +116,20 @@ public struct MappingView: View {
                                     }
                                 }) {
                                     Text("Confirm Direction")
-                                        .font(.headline)
+                                        .font(.caption)
                                         .foregroundColor(.white)
-                                        .frame(maxWidth: .infinity)
-                                        .padding()
-                                        .background(
-                                Color.blue)
-                                        .cornerRadius(12)
-                                }
-                                .padding(.horizontal)
+                                        .padding(.vertical, 12)
+                                        .frame(width: geometry.size.width * 0.4)
+                                        .background(Color.blue)
+                                        .cornerRadius(8)
+                                            }
+                                        .padding(.horizontal)
 
                 GoogleMapsView(source: $source, destination: $destination, routes: $routes, isButtonTapped: $isButtonTapped, showAlert: $showAlert, alertText: $alertText)
-                    .frame(height: 380) // Adjust the height according to your needs
+                    .frame(height: 260) // Adjust the height according to your needs
                     .edgesIgnoringSafeArea(.all)
-                
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
-
-
-                          
-
                           Button(action: {
                               withAnimation {
                                   showPicker = true
@@ -143,31 +137,29 @@ public struct MappingView: View {
                           }) {
                               NavigationLink(destination:( TimePickerView(selectedHour: $selectedHourMapping, selectedMinute: $selectedMinuteMapping, source: $source, destination: $destination, idcovoiturage: $idcovoiturage)), isActive: $showPicker ) {
                                   Text("Confirm Your Trip")
-                                      .font(.headline)
+                                      .font(.caption)
                                       .foregroundColor(.white)
-                                      .padding()
-                                      .frame(maxWidth: .infinity)
+                                      .padding(.vertical, 12)
+                                      .frame(width: geometry.size.width * 0.4)
                                       .background(
                                           !Confirmdisabled
-                                              ? Color.blue.opacity(0.0) // Adjust the opacity as needed
-                                              : Color.blue
-                                      )
-                                      .cornerRadius(12)
-                              }
-                          }
+                                              ? Color.blue.opacity(0.0)
+                                              : Color.blue)
+                                      .cornerRadius(8)}}
                           .padding()
                           .disabled(!Confirmdisabled)
                       }
                       .padding()
                       .background(Color.gray.opacity(0.1))
-                      .navigationBarTitle("Creating a Trip", displayMode: .inline)
                       .navigationBarItems(
                           leading: NavigationLink(
                               destination:(CovoiturageListView() ).navigationBarBackButtonHidden(true)
                           ) {
                               Image(systemName: "chevron.left")
-                                  .font(.title)
+                                  .font(.system(size: 12)) // Adjust the font size here
                                   .foregroundColor(.blue)
+                              Text("Back")
+                              
                           },
                           trailing: EmptyView()
                       )

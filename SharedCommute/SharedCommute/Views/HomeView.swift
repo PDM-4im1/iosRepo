@@ -15,46 +15,10 @@ struct HomeView: View {
                 // Main content
                 VStack(spacing: 0) {
                     // Navigation bar with menu icon
-                    HStack {
-                        Button(action: {
-                            withAnimation {
-                                isSidebarVisible.toggle()
-                            }
-                        }) {
-                            Image(systemName: "list.bullet")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(.blue)
-                                .padding()
-                        }
-
-                        Spacer()
-
-                        Text("Home")
-                            .font(.title)
-                            .foregroundColor(.blue)
-                            .padding()
-                    }
-                    .background(Color.white)
-                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                    MainNavigationBar(isSidebarVisible: $isSidebarVisible)
 
                     // Main content area
-                    VStack {
-                        switch selectedMenuItem {
-                        case .dashboard:
-                            DashboardContentView()
-                        case .profile:
-                            Text("Your Profile")
-                        case .settings:
-                            Text("Settings")
-                        case .none:
-                            EmptyView()
-                        }
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.gray.opacity(0.1))
+                    MainContentView(selectedMenuItem: $selectedMenuItem)
                 }
 
                 // Sidebar
@@ -75,16 +39,63 @@ struct HomeView: View {
                 }
             }
             .navigationBarHidden(true)
-            .contentShape(Rectangle()) // Add this to make the entire content tappable
-            .onTapGesture {
-                withAnimation {
-                    isSidebarVisible = false
-                }
-            }
         }
     }
 }
 
+struct MainNavigationBar: View {
+    @Binding var isSidebarVisible: Bool
+
+    var body: some View {
+        HStack {
+            Button(action: {
+                withAnimation {
+                    isSidebarVisible.toggle()
+                }
+            }) {
+                Image(systemName: "list.bullet")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.blue)
+                    .padding()
+            }
+
+            Spacer()
+
+            Text("Home")
+                .font(.title)
+                .foregroundColor(.blue)
+                .padding()
+        }
+        .background(Color.white)
+        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+    }
+}
+
+struct MainContentView: View {
+    @Binding var selectedMenuItem: MenuItem?
+
+    var body: some View {
+        VStack {
+            switch selectedMenuItem {
+            case .dashboard:
+                DashboardContentView()
+            case .carpooling:
+                NavigationView {
+                    CovoiturageListView()
+                }
+            case .settings:
+                Text("Settings")
+            case .none:
+                DashboardContentView()
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.gray.opacity(0.1))
+    }
+}
 
 
 struct SidebarView: View {
@@ -111,10 +122,10 @@ struct SidebarView: View {
             }
 
             Button(action: {
-                selectedMenuItem = MenuItem.profile
+                selectedMenuItem = MenuItem.carpooling
                 closeSidebar()
             }) {
-                Label("Profile", systemImage: "person.fill")
+                Label("carpooling", systemImage: "car")
                     .foregroundColor(.white)
                     .padding()
             }
@@ -156,7 +167,7 @@ struct DashboardContentView: View {
 
 enum MenuItem {
     case dashboard
-    case profile
+    case carpooling
     case settings
     // Add more menu items as needed
 }

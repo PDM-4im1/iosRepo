@@ -1,9 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources.sh
 ${PODS_CONFIGURATION_BUILD_DIR}/GoogleMaps/GoogleMapsResources.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/GooglePlaces/GooglePlacesResources.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/StripeCore/StripeCore.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentSheet/StripePaymentSheet.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/StripePayments.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/Stripe3DS2.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentsUI/StripePaymentsUI.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/StripeUICore/StripeUICore.bundle

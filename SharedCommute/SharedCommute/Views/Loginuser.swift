@@ -85,13 +85,13 @@ struct LoginView: View {
             // Present the forgot password screen
             //ForgotPasswordView()
         }
-        /*.background(
+        .background(
             NavigationLink(
-                destination: HomeView(), // Replace with your home screen
+                destination:( HomeView()).navigationBarBackButtonHidden(true), // Replace with your home screen
                 isActive: $navigateToHome,
                 label: { EmptyView() }
             ))
-       */
+    
     }
     }
 

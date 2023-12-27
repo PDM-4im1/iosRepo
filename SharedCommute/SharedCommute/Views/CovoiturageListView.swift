@@ -11,7 +11,7 @@ struct CovoiturageListView: View {
     @State private var covoiturages: [Covoiturage] = []
     @State private var isShowingDeleteAlert = false
     @State private var selectedCovoiturage: Covoiturage?
-
+    @State  private var iduser : String = ""
     
     private func reverseFormattedDate(dateString: String) -> (hour: Int, minute: Int)? {
         let dateFormatter = DateFormatter()
@@ -36,12 +36,11 @@ struct CovoiturageListView: View {
 
     
     var body: some View {
-        NavigationView {
             VStack {
-                HStack {
+               HStack {
                     Spacer()
                     NavigationLink(destination: MappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant("")).navigationBarBackButtonHidden(true)
-                        .navigationBarBackButtonHidden(true)) {
+                       ) {
                         Image(systemName: "plus.circle")
                             .font(.title)
                             .foregroundColor(.blue)
@@ -50,7 +49,7 @@ struct CovoiturageListView: View {
                 }
                 
                 List {
-                    ForEach(covoiturages) { covoiturage in
+                    ForEach(covoiturages) {  covoiturage in
                         if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage ?? "") {
                             NavigationLink(
                                 destination: MappingView(
@@ -61,8 +60,10 @@ struct CovoiturageListView: View {
                                     initialidcovoiturage: .constant(covoiturage.id!)
                                 )
                                 .navigationBarHidden(true)
-                            ) {
+                            )
+                            {
                                 HStack {
+                                  
                                     Image(systemName: "car.fill")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -92,7 +93,12 @@ struct CovoiturageListView: View {
                                                 isShowingDeleteAlert = true
                                             }
                                         }
+                              
+                                      
                                 }
+                                }
+                                
+                            
                                 .padding()
                                 .background(Color.white)
                                 .cornerRadius(10)
@@ -100,12 +106,14 @@ struct CovoiturageListView: View {
                                 .background(Color.gray.opacity(0.1))
                                 .cornerRadius(10)
                                 .animation(.easeInOut(duration: 0.3))
+                            
+                           
+                            
+                                
                             }
-                        }
                     }
                 }
                 .listStyle(PlainListStyle())
-                .navigationBarTitle("Carpooling")
                 .background(Color.blue.opacity(0.1))
                 .alert(isPresented: $isShowingDeleteAlert) {
                     Alert(
@@ -124,12 +132,13 @@ struct CovoiturageListView: View {
                 .onAppear {
                     fetchCovoiturages()
                 }
+              
                 Spacer()
             }
             .padding()
             .background(Color.white)
         }
-    }
+    
 
 
       private func deleteCovoiturage(covoiturage: Covoiturage) {
@@ -161,28 +170,38 @@ struct CovoiturageListView: View {
           }.resume()
       }
     private func fetchCovoiturages() {
-            // Example URL:
-            let findAllCovoituragesURL = URL(string: "http://localhost:9090/moyenDeTransport/findAllCovoiturages/2")!
-
-            URLSession.shared.dataTask(with: findAllCovoituragesURL) { data, response, error in
-                if let data = data {
-                    do {
-                        let decoder = JSONDecoder()
-                        let covoituragesData = try decoder.decode([Covoiturage].self, from: data)
-
-                        DispatchQueue.main.async {
-                                              // Update the @State property to trigger view refresh
-                                              self.covoiturages = covoituragesData
-                                          }
-                    } catch {
-                        print("Error decoding JSON: \(error)")
-                    }
-                } else if let error = error {
-                    print("Error fetching data: \(error)")
-                }
-            }.resume()
+        if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
+            iduser = userID
+            print("User ID: \(userID)")
+        } else {
+            print("User ID not found in UserDefaults.")
         }
+
+        let findAllCovoituragesURL = URL(string: "http://localhost:9090/moyenDeTransport/findAllCovoiturages/658add5fea5153e82933d21e")!
+
+        URLSession.shared.dataTask(with: findAllCovoituragesURL) { data, response, error in
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    
+                    // Assuming your Covoiturage type has a CodingKeys enum, adapt as needed
+                    let covoituragesData = try decoder.decode([Covoiturage].self, from: data)
+
+                    // Assuming covoituragesData is an array of objects
+                    DispatchQueue.main.async {
+                        self.covoiturages = covoituragesData
+                    }
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
+            } else if let error = error {
+                print("Error fetching data: \(error)")
+            }
+        }.resume()
     }
+    }
+
+    
 
 
 struct CovoiturageListViewpreview: PreviewProvider {

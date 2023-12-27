@@ -11,12 +11,16 @@ struct TimePickerView: View {
     @Binding var source: String
     @Binding var destination: String
     @Binding var idcovoiturage : String
+ 
     @State private var isNavigationActive = false
     @State private var showAlert: Bool = false
         @State private var alertText: String = ""
         @State private var isShowingPicker: Bool = false
+        @State private var userid: String = ""
+ 
 
     func formattedDate(date: Date) -> String {
+  
           let dateFormatter = DateFormatter()
           dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // Customize the date format as per your needs
           return dateFormatter.string(from: date)
@@ -38,18 +42,24 @@ struct TimePickerView: View {
            saveTripToBackend(source: source, destination: destination, dateCovoiturage: Stringdate)
        }
     private func saveTripToBackend(source: String, destination: String, dateCovoiturage: String) {
+        if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
+            userid  =  userID
+            print("User ID: \(userID)")
+        } else {
+            // Handle the case where the user ID is not found or the type conversion fails
+            print("User ID not found in UserDefaults.")
+        }
         print(dateCovoiturage)
         // Create a Covoiturage object
         let covoiturage = Covoiturage(
             id: "",
-
             id_cond: "6579a783fbcad7cf05599e14", // Update with the appropriate value
-            id_user: "6553930f68eacc72a80f547a", // Update with the appropriate value
+            id_user: userid, // Update with the appropriate value
             pointDepart: source,
             pointArrivee: destination,
             dateCovoiturage: dateCovoiturage,
-            Tarif: 0, statut: "Active" // Update with the appropriate value
-        )
+            Tarif: 0,
+            statut: "Active"         )
 
         // Convert Covoiturage object to JSON
         let jsonEncoder = JSONEncoder()
@@ -77,14 +87,13 @@ struct TimePickerView: View {
                 // Parse the response data if needed
                 let responseString = String(data: data, encoding: .utf8) ?? ""
                 print("Response: \(responseString)")
-
+                
                 // Show success alert
                 DispatchQueue.main.async {
                     showAlert(message: "Covoiturage saved successfully!")
                 }
             } else if let error = error {
                 print("Error: \(error.localizedDescription)")
-                // Show error alert if needed
             }
         }.resume()
     }
@@ -237,7 +246,7 @@ struct TimePickerView: View {
            
             
             NavigationLink(
-                destination:( CovoiturageListView()).navigationBarBackButtonHidden(true)
+                destination:(CovoiturageListView()).navigationBarBackButtonHidden(true)
                 ,
                 isActive: $isShowingPicker
                 
