@@ -191,20 +191,31 @@ struct SignUpView: View {
     
 
     func validateEmailPassword() {
-        if email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
+        if email.isEmpty || $password.wrappedValue.isEmpty || confirmPassword.isEmpty {
             errorMessage = "Please fill in all required fields."
             showError = true
             return
         }
 
-        if password != confirmPassword {
+        if $password.wrappedValue != confirmPassword {
             errorMessage = "Passwords do not match."
             showError = true
             return
         }
 
-        // Perform other validations for email and password,
-        // such as checking email format or password strength
+        if !isValidEmail(email) {
+            errorMessage = "Please enter a valid email address."
+            showError = true
+            return
+        }
+
+        if $password.wrappedValue.count < 6 || !$password.wrappedValue.containsNumber() || !$password.wrappedValue.containsUppercase() {
+            errorMessage = "Password must be at least 6 characters long, contain 1 number, and 1 uppercase letter."
+            showError = true
+            return
+        }
+
+       
 
         withAnimation {
             isEmailPasswordValidated = true
@@ -269,5 +280,16 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
 SignUpView()
+    }
+}
+extension String {
+    func containsNumber() -> Bool {
+        let numberRange = self.rangeOfCharacter(from: .decimalDigits)
+        return numberRange != nil
+    }
+    
+    func containsUppercase() -> Bool {
+        let uppercaseRange = self.rangeOfCharacter(from: .uppercaseLetters)
+        return uppercaseRange != nil
     }
 }

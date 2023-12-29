@@ -177,7 +177,7 @@ struct CovoiturageListView: View {
             print("User ID not found in UserDefaults.")
         }
 
-        let findAllCovoituragesURL = URL(string: "http://localhost:9090/moyenDeTransport/findAllCovoiturages/658add5fea5153e82933d21e")!
+        let findAllCovoituragesURL = URL(string: "http://localhost:9090/moyenDeTransport/findAllCovoiturages/\(iduser)")!
 
         URLSession.shared.dataTask(with: findAllCovoituragesURL) { data, response, error in
             if let data = data {

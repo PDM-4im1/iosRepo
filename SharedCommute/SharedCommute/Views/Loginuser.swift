@@ -96,6 +96,11 @@ struct LoginView: View {
     }
 
     func login() {
+        if !isValidEmail(email) {
+                  errorMessage = "Please enter a valid email address"
+                  showError = true
+                  return
+              }
         let url = URL(string: "http://localhost:9090/user/signin")! // Replace with your actual server URL
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -146,7 +151,12 @@ struct LoginView: View {
         }.resume()
     }
     }
-
+func isValidEmail(_ email: String) -> Bool {
+       let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+       let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+       return emailPredicate.evaluate(with: email)
+   }
+   
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
