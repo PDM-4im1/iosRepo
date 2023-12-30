@@ -21,7 +21,8 @@ struct SignUpView: View {
     @State private var errorMessage = ""
     @State private var navigateToLogin   = false
 
-
+    @State private var isRoleSelectionPresented = false
+     @State private var selectedRole: String? = nil
     var body: some View {
         NavigationView {
       
@@ -103,7 +104,24 @@ struct SignUpView: View {
                             .textContentType(.password)
                             .opacity(1)
 
-                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                // Present the role selection sheet
+                                isRoleSelectionPresented = true
+                            }) {
+                                Text("Choose Role")
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                                    .frame(width: 140, height: 40)
+                                    .background(Color.blue)
+                                    .cornerRadius(20)
+                                    .scaleEffect(showError ? 0.8 : 1.0)
+                                    .animation(.spring())
+                            }
+                            Spacer()
+                        }
+                        
                     } else {
                         Text("Phone Number")
                             .font(.headline)
@@ -154,9 +172,14 @@ struct SignUpView: View {
                     }
                 }
                 .padding(.bottom, 20)
-
+               
+                             .sheet(isPresented: $isRoleSelectionPresented) {
+                                 RoleSelectionView(selectedRole: $selectedRole,isRoleSelectionPresented: $isRoleSelectionPresented)
+                             }
+                             
                 Button(action: {
                     if isEmailPasswordValidated {
+                        
                         signUp()
                     } else {
                         validateEmailPassword()
@@ -191,6 +214,11 @@ struct SignUpView: View {
     
 
     func validateEmailPassword() {
+        guard selectedRole != nil else {
+                errorMessage = "Please choose a role."
+                showError = true
+                return
+            }
         if email.isEmpty || $password.wrappedValue.isEmpty || confirmPassword.isEmpty {
             errorMessage = "Please fill in all required fields."
             showError = true
@@ -231,7 +259,7 @@ struct SignUpView: View {
             "email": email,
             "password": password,
             "Phone_number": phoneNumber,
-            "role": "driver", // Set the role to a default value or adjust as needed
+            "role": selectedRole!, // Set the role to a default value or adjust as needed
             "name": Name,
             "first_name": firstName,
             "age": Int(age) ?? 0 // Convert age to an integer; provide a default value if conversion fails

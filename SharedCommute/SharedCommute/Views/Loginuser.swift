@@ -12,8 +12,9 @@ struct LoginView: View {
     @State private var showForgotPassword = false
     @State private var showError = false
     @State private var errorMessage = ""
-    @State private var navigateToHome = false // Use this state to navigate to the home screen upon successful login
-
+    @State private var navigateToHome = false
+    @State private var navigateToHomeClient = false
+    @State private var navigateToHomeDelivery = false
     var body: some View {
         NavigationView{
         VStack {
@@ -91,6 +92,18 @@ struct LoginView: View {
                 isActive: $navigateToHome,
                 label: { EmptyView() }
             ))
+        .background(
+            NavigationLink(
+                destination:( ClientHomeView()).navigationBarBackButtonHidden(true), // Replace with your home screen
+                isActive: $navigateToHomeClient,
+                label: { EmptyView() }
+            ))
+        .background(
+            NavigationLink(
+                destination:( DeliverytHomeView()).navigationBarBackButtonHidden(true), // Replace with your home screen
+                isActive: $navigateToHomeDelivery,
+                label: { EmptyView() }
+            ))
     
     }
     }
@@ -138,9 +151,18 @@ struct LoginView: View {
                         // Store user ID in UserDefaults
                         UserDefaults.standard.set(user.id, forKey: "userID")
 
-                        // Navigate to the home screen
+                        if(user.role == "client"){
+                        navigateToHomeClient = true
+
+                    }
+                        if(user.role == "driver"){
                         navigateToHome = true
 
+                    }
+                        if(user.role == "delivery man"){
+                        navigateToHomeDelivery = true
+
+                    }
                     } catch {
                         print("Error decoding JSON: \(error)")
                         errorMessage = "An error occurred. Please try again."

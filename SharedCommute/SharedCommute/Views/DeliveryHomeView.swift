@@ -1,13 +1,8 @@
-//
-//  HomeView.swift
-//  SharedCommute
-//
-//  Created by Nasri Mootez on 26/12/2023.
-//
+
 import SwiftUI
-struct HomeView: View {
+struct DeliverytHomeView: View {
     @State private var isSidebarVisible = false
-    @State private var selectedMenuItem: MenuItem?
+    @State private var selectedMenuItem: MenuDeliveryItem?
 
     var body: some View {
         NavigationView {
@@ -18,12 +13,12 @@ struct HomeView: View {
                     MainNavigationBar(isSidebarVisible: $isSidebarVisible)
 
                     // Main content area
-                    MainContentView(selectedMenuItem: $selectedMenuItem)
+                    MainContentDeliveryView(selectedMenuItem: $selectedMenuItem)
                 }
 
                 // Sidebar
                 if isSidebarVisible {
-                    SidebarView(selectedMenuItem: $selectedMenuItem) {
+                    SidebarDeliveryView(selectedMenuItem: $selectedMenuItem) {
                         withAnimation {
                             isSidebarVisible = false
                         }
@@ -43,48 +38,19 @@ struct HomeView: View {
     }
 }
 
-struct MainNavigationBar: View {
-    @Binding var isSidebarVisible: Bool
-
-    var body: some View {
-        HStack {
-            Button(action: {
-                withAnimation {
-                    isSidebarVisible.toggle()
-                }
-            }) {
-                Image(systemName: "list.bullet")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.blue)
-                    .padding()
-            }
-
-            Spacer()
-
-                Image("logo")
-                    .resizable()
-                    .frame(width: 120, height: 120)
-        }
-        .background(LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.8), Color.green.opacity(0.2)]), startPoint: .top, endPoint: .bottom))
-        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
-    }
-}
 
 
-struct MainContentView: View {
-    @Binding var selectedMenuItem: MenuItem?
+struct MainContentDeliveryView: View {
+    @Binding var selectedMenuItem: MenuDeliveryItem?
 
     var body: some View {
         VStack {
             switch selectedMenuItem {
             case .dashboard:
                 DashboardContentView()
-            case .carpooling:
-                NavigationView {
-                    CovoiturageListView()
-                }
+            case .Delivery:
+                Text("Delivery")
+
             case .settings:
                 Text("Settings")
             case .none:
@@ -98,8 +64,8 @@ struct MainContentView: View {
 }
 
 
-struct SidebarView: View {
-    @Binding var selectedMenuItem: MenuItem?
+struct SidebarDeliveryView: View {
+    @Binding var selectedMenuItem: MenuDeliveryItem?
     var closeSidebar: () -> Void
 
     var body: some View {
@@ -117,7 +83,7 @@ struct SidebarView: View {
                 }
 
                 Button(action: {
-                    selectedMenuItem = MenuItem.dashboard
+                    selectedMenuItem = MenuDeliveryItem.dashboard
                     closeSidebar()
                 }) {
                     Label("Dashboard", systemImage: "house.fill")
@@ -126,16 +92,16 @@ struct SidebarView: View {
                 }
 
                 Button(action: {
-                    selectedMenuItem = MenuItem.carpooling
+                    selectedMenuItem = MenuDeliveryItem.Delivery
                     closeSidebar()
                 }) {
-                    Label("carpooling", systemImage: "car")
+                    Label("Delivery", systemImage: "car")
                         .foregroundColor(.white)
                         .padding()
                 }
 
                 Button(action: {
-                    selectedMenuItem = MenuItem.settings
+                    selectedMenuItem = MenuDeliveryItem.settings
                     closeSidebar()
                 }) {
                     Label("Settings", systemImage: "gearshape.fill")
@@ -151,35 +117,16 @@ struct SidebarView: View {
 }
 
 
-struct DashboardContentView: View {
-    var body: some View {
-        VStack {
-            Text("Welcome to the Dashboard!")
-                .font(.title)
-                .foregroundColor(.blue)
-                .padding()
 
-            Spacer()
-
-            // Add your dashboard content here
-
-            Spacer()
-        }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.gray.opacity(0.1))
-    }
-}
-
-enum MenuItem {
+enum MenuDeliveryItem {
     case dashboard
-    case carpooling
+    case Delivery
     case settings
     // Add more menu items as needed
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct DeliveryHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        DeliverytHomeView()
     }
 }

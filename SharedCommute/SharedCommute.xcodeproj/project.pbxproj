@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00DC3FCEE28E610E99A5AA24 /* libPods-SharedCommute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D206B14536E24A9D7C0F7F78 /* libPods-SharedCommute.a */; };
+		2CB8F2E72B404FF8007D0F02 /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8F2E62B404FF8007D0F02 /* RoleSelectionView.swift */; };
+		2CB8F2E92B405DC8007D0F02 /* ClientHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */; };
+		2CB8F2EB2B405DDA007D0F02 /* DeliveryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */; };
 		512A42392B22E6F2001A026C /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A42382B22E6F2001A026C /* SharedData.swift */; };
 		5135CB932B160A7100AA742A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CB922B160A7100AA742A /* MappingView.swift */; };
 		51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */; };
@@ -42,10 +44,13 @@
 		51FBFFD62B23210000BAA63E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCF2B23210000BAA63E /* MapView.swift */; };
 		51FBFFD82B23219500BAA63E /* CarMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFD72B23219500BAA63E /* CarMapController.swift */; };
 		51FBFFDA2B23224B00BAA63E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFD92B23224B00BAA63E /* Users.swift */; };
+		7455979C9A4DFA912A60077B /* libPods-SharedCommute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3FDFA47D479E40BC441828 /* libPods-SharedCommute.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E93CDF290A9092B9A07AFD6 /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.debug.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
+		2CB8F2E62B404FF8007D0F02 /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
+		2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeView.swift; sourceTree = "<group>"; };
+		2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryHomeView.swift; sourceTree = "<group>"; };
 		512A42382B22E6F2001A026C /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		5135CB922B160A7100AA742A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
 		51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMappingView.swift; sourceTree = "<group>"; };
@@ -82,8 +87,9 @@
 		51FBFFCF2B23210000BAA63E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		51FBFFD72B23219500BAA63E /* CarMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapController.swift; sourceTree = "<group>"; };
 		51FBFFD92B23224B00BAA63E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		943841D70F2BB6489DA1302F /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.release.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
-		D206B14536E24A9D7C0F7F78 /* libPods-SharedCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SharedCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A3FDFA47D479E40BC441828 /* libPods-SharedCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SharedCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CFF4698CDB691400AE51A7 /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.debug.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
+		840723A0B94B7D9EA8070FFF /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.release.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +97,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00DC3FCEE28E610E99A5AA24 /* libPods-SharedCommute.a in Frameworks */,
+				7455979C9A4DFA912A60077B /* libPods-SharedCommute.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A761EB28D8BCC0B050460A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A3FDFA47D479E40BC441828 /* libPods-SharedCommute.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		51A157C62B14BD0900C6F3CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +142,8 @@
 				51E321622B39B19D00C5ED62 /* Loginuser.swift */,
 				51E321642B39B61900C5ED62 /* SignupView.swift */,
 				519E4AE22B3B3192009C8A04 /* HomeView.swift */,
+				2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */,
+				2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +158,7 @@
 				513A31A12B221DEC0043CBC9 /* TimePickerView.swift */,
 				512A42382B22E6F2001A026C /* SharedData.swift */,
 				51FBFFD72B23219500BAA63E /* CarMapController.swift */,
+				2CB8F2E62B404FF8007D0F02 /* RoleSelectionView.swift */,
 			);
 			path = ViewConroller;
 			sourceTree = "<group>";
@@ -152,7 +169,7 @@
 				51CE80792B14B5CF0058BE35 /* SharedCommute */,
 				51CE80782B14B5CF0058BE35 /* Products */,
 				F7D9FCD3D7B6E6361BB22209 /* Pods */,
-				F23538F03E773DFD50912013 /* Frameworks */,
+				21A761EB28D8BCC0B050460A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,19 +207,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F23538F03E773DFD50912013 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D206B14536E24A9D7C0F7F78 /* libPods-SharedCommute.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F7D9FCD3D7B6E6361BB22209 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2E93CDF290A9092B9A07AFD6 /* Pods-SharedCommute.debug.xcconfig */,
-				943841D70F2BB6489DA1302F /* Pods-SharedCommute.release.xcconfig */,
+				73CFF4698CDB691400AE51A7 /* Pods-SharedCommute.debug.xcconfig */,
+				840723A0B94B7D9EA8070FFF /* Pods-SharedCommute.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -214,11 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51CE808B2B14B5D00058BE35 /* Build configuration list for PBXNativeTarget "SharedCommute" */;
 			buildPhases = (
-				907D51D16A9BBED946566526 /* [CP] Check Pods Manifest.lock */,
+				5C860E7E3FF83BBEC8DB4A91 /* [CP] Check Pods Manifest.lock */,
 				51CE80732B14B5CF0058BE35 /* Sources */,
 				51CE80742B14B5CF0058BE35 /* Frameworks */,
 				51CE80752B14B5CF0058BE35 /* Resources */,
-				7E91E36593FCC1C92D109D02 /* [CP] Copy Pods Resources */,
+				8FC215385E2204DDE1A4EC8E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,24 +325,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7E91E36593FCC1C92D109D02 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		907D51D16A9BBED946566526 /* [CP] Check Pods Manifest.lock */ = {
+		5C860E7E3FF83BBEC8DB4A91 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -355,6 +347,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8FC215385E2204DDE1A4EC8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -363,7 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				51391F452B2B7F3B00C65BA3 /* ClientListCovoiturages.swift in Sources */,
+				2CB8F2EB2B405DDA007D0F02 /* DeliveryHomeView.swift in Sources */,
 				51391F472B2C08E500C65BA3 /* Driverrelatedview.swift in Sources */,
+				2CB8F2E92B405DC8007D0F02 /* ClientHomeView.swift in Sources */,
 				51FBFFD42B23210000BAA63E /* PaymentSelectionView.swift in Sources */,
 				51FBFFD62B23210000BAA63E /* MapView.swift in Sources */,
 				51FBFFC72B2320D200BAA63E /* EmgCovoiturage.swift in Sources */,
@@ -392,6 +403,7 @@
 				51FBFFD22B23210000BAA63E /* NotificationView.swift in Sources */,
 				513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */,
 				51391F492B2C218400C65BA3 /* MoyenDeTransport.swift in Sources */,
+				2CB8F2E72B404FF8007D0F02 /* RoleSelectionView.swift in Sources */,
 				51FBFFDA2B23224B00BAA63E /* Users.swift in Sources */,
 				51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */,
 			);
@@ -521,7 +533,7 @@
 		};
 		51CE808C2B14B5D00058BE35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E93CDF290A9092B9A07AFD6 /* Pods-SharedCommute.debug.xcconfig */;
+			baseConfigurationReference = 73CFF4698CDB691400AE51A7 /* Pods-SharedCommute.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -553,7 +565,7 @@
 		};
 		51CE808D2B14B5D00058BE35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 943841D70F2BB6489DA1302F /* Pods-SharedCommute.release.xcconfig */;
+			baseConfigurationReference = 840723A0B94B7D9EA8070FFF /* Pods-SharedCommute.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
