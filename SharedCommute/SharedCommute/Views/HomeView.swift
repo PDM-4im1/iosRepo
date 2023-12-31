@@ -30,6 +30,7 @@ struct HomeView: View {
                     }
                     .frame(width: min(300, UIScreen.main.bounds.width * 0.7))
                     .background(Color.gray.opacity(0.9))
+                    
                     .transition(.move(edge: .leading))
                     .onTapGesture {
                         withAnimation {
@@ -42,7 +43,18 @@ struct HomeView: View {
         }
     }
 }
+func handleLogout() {
+        // Perform logout actions, e.g., clear user defaults
+        UserDefaults.standard.removeObject(forKey: "userID")
 
+        // Navigate to the login page
+        // Note: You may need to adjust the navigation stack based on your app's structure
+        // For example, assuming you have a LoginView:
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: LoginView())
+            window.makeKeyAndVisible()
+        }
+    }
 struct MainNavigationBar: View {
     @Binding var isSidebarVisible: Bool
 
@@ -81,12 +93,17 @@ struct MainContentView: View {
             switch selectedMenuItem {
             case .dashboard:
                 DashboardContentView()
-            case .carpooling:
+              
+            case.CarpoolingList:
                 NavigationView {
                     CovoiturageListView()
                 }
-            case .settings:
-                Text("Settings")
+            case.history:
+            Text("HISTORY")
+            case.emergency:Text("Emergency")
+            case.editInfo:
+                Text("edit")
+    
             case .none:
                 DashboardContentView()
             }
@@ -94,20 +111,26 @@ struct MainContentView: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.gray.opacity(0.1))
+        
     }
 }
 
 
 struct SidebarView: View {
     @Binding var selectedMenuItem: MenuItem?
+    @State private var showingLogoutAlert = false
+
     var closeSidebar: () -> Void
+
+    @State private var isSettingsSubmenuExpanded = false
+    @State private var isCarpoolingSubmenuExpanded = false
 
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.8), Color.green.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
 
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading) { // Set alignment to .leading
                 Button(action: {
                     closeSidebar()
                 }) {
@@ -126,30 +149,138 @@ struct SidebarView: View {
                 }
 
                 Button(action: {
-                    selectedMenuItem = MenuItem.carpooling
-                    closeSidebar()
+                    isCarpoolingSubmenuExpanded.toggle()
                 }) {
-                    Label("carpooling", systemImage: "car")
-                        .foregroundColor(.white)
-                        .padding()
+                    HStack {
+                        Label("Carpooling", systemImage: "car.fill")
+                            .foregroundColor(.white)
+                            .padding(.trailing, 10)
+
+                        Image(systemName: isCarpoolingSubmenuExpanded ? "chevron.up" : "chevron.down")
+                            .foregroundColor(.white)
+                            .font(.body)
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.green.opacity(0.6))
+                    )
+                }
+
+                if isCarpoolingSubmenuExpanded {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Button(action: {
+                            selectedMenuItem = MenuItem.CarpoolingList
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.white)
+                                Text("Carpooling List")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+
+                        Button(action: {
+                            selectedMenuItem = MenuItem.history
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "clock")
+                                    .foregroundColor(.white)
+                                Text("History")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+
+                        Button(action: {
+                            selectedMenuItem = MenuItem.emergency
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "exclamationmark.triangle")
+                                    .foregroundColor(.white)
+                                Text("Emergency")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+                    }
                 }
 
                 Button(action: {
-                    selectedMenuItem = MenuItem.settings
-                    closeSidebar()
+                    isSettingsSubmenuExpanded.toggle()
                 }) {
-                    Label("Settings", systemImage: "gearshape.fill")
-                        .foregroundColor(.white)
-                        .padding()
+                    HStack {
+                        Label("Settings", systemImage: "gearshape.fill")
+                            .foregroundColor(.white)
+                            .padding(.trailing, 10)
+
+                        Image(systemName: isSettingsSubmenuExpanded ? "chevron.up" : "chevron.down")
+                            .foregroundColor(.white)
+                            .font(.body)
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.green.opacity(0.6))
+                    )
                 }
 
+                if isSettingsSubmenuExpanded {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Button(action: {
+                            selectedMenuItem = MenuItem.editInfo
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "pencil")
+                                    .foregroundColor(.white)
+                                Text("Edit Info")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+
+                        Button(action: {
+                            showingLogoutAlert = true
+                        }) {
+                            HStack {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.white)
+                                Text("Log Out")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+
+                        }
+                        .alert(isPresented: $showingLogoutAlert) {
+                            Alert(
+                                title: Text("Logout"),
+                                message: Text("Are you sure you want to log out?"),
+                                primaryButton: .default(Text("Cancel")),
+                                secondaryButton: .destructive(Text("Logout")) {
+                                    closeSidebar()
+                                    handleLogout()
+                                }
+                            )
+                        }
+                        Spacer()
+                    }
+                    .animation(.easeOut(duration: 0.2))
+                }
                 Spacer()
             }
             .navigationBarHidden(true)
         }
     }
 }
-
 
 struct DashboardContentView: View {
     var body: some View {
@@ -173,8 +304,10 @@ struct DashboardContentView: View {
 
 enum MenuItem {
     case dashboard
-    case carpooling
-    case settings
+    case editInfo
+    case CarpoolingList
+    case history
+    case emergency
     // Add more menu items as needed
 }
 

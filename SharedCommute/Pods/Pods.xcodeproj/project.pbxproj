@@ -14,7 +14,7 @@
 				5C53F63B615C49C159CEC84184FD1687 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				F9EB1D811B56935C3C398A1AF19A809D /* PBXTargetDependency */,
+				187062CCADB1281FF7D01396DC3B8D94 /* PBXTargetDependency */,
 			);
 			name = GooglePlaces;
 		};
@@ -25,95 +25,239 @@
 				9801DC96C44A55EEBAB39A01F1BB925C /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				1108A6B20591DDF2EB7834CDB7B3AC29 /* PBXTargetDependency */,
+				F41BE848D4FE6BC8989A3FDD78276294 /* PBXTargetDependency */,
 			);
 			name = GoogleMaps;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		4D5A9F5CB6A17B37F8A309CE3C5B74A1 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C26B40F0B37532EA8DB42AC9E4CD02F /* GooglePlaces.bundle */; };
-		7E57461C41A9A538368777E7C8062F18 /* Pods-SharedCommute-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7585483254C76B26D16700AAB168B /* Pods-SharedCommute-dummy.m */; };
-		B632C1890E12CA4BED58449A7A2E1B5C /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6AEA9E88C8AE197F78D23AADCC3A8D83 /* GoogleMaps.bundle */; };
+		0FAFCC58165B66631177DC0813401EF8 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F891B42ED30696DCCD76996BEC60BEF /* Transport.swift */; };
+		1100BDA4F1D802BD8817035F2EEFA3E6 /* SocketIOStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB13FD1F78029BBEE57F2300EDD4AF5 /* SocketIOStatus.swift */; };
+		137161CD272120A6B6E40A6B03613585 /* SocketEngineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992010FBD90FA55044BF4A75087803B /* SocketEngineClient.swift */; };
+		17934C40C3F0EC17956C0325316394BB /* FrameCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0EDD589DC9CF27E77C435BC533453 /* FrameCollector.swift */; };
+		1EEE9A9FA133444DE2262FB447A606C2 /* NativeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05944BF131BD3793CE1EB6ABAAF894CF /* NativeEngine.swift */; };
+		283CEF8483006A35255E90F992DC3157 /* SocketRawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C2B15935C993ED087A1B76974CAD3 /* SocketRawView.swift */; };
+		2ACAD27803B5E2FEE2308C6DBBB77787 /* FoundationHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C60058C5E253E35D0EBC48A62CE8928 /* FoundationHTTPHandler.swift */; };
+		2C60B2E4A3675FBA4556AE8C5F8411DD /* Pods-SharedCommute-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FA0C2312192F1B4AF97EB45BC1DE59B /* Pods-SharedCommute-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2D044BDBA2CA7D7CC126BA59D01AA3A2 /* SocketIOClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5831EFAAF672CB8C2A810EC305D27 /* SocketIOClientConfiguration.swift */; };
+		36638327F9852D25889EEC7B2B74F4ED /* SocketIOClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F383F3BC402BF4AE0FAF95B50E7C0F4F /* SocketIOClientSpec.swift */; };
+		3E436DF7FD5B8734226081D284E99FB8 /* SocketParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766A09A9074C9806A2F5E7A4BA2C156 /* SocketParsable.swift */; };
+		405BE70FA961BAFE321A39973C892141 /* SocketIOClientOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5E2BA0A997A1143848DA8366F67D4B /* SocketIOClientOption.swift */; };
+		41181AD1BD219D854E0F83AAFC34988C /* SocketEngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47169BC32C7BC4122A8EDA06108ED2 /* SocketEngineSpec.swift */; };
+		4DDA244A80CEA4E5632B23B2DAE048C2 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5FC331A8A297D210833281532E5E8 /* Data+Extensions.swift */; };
+		55522CB22EA5CAFFEC01FB82B64E750F /* WSCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB37CB9FDAC22404C693F4B53FAE07 /* WSCompression.swift */; };
+		5A4C6E6327930DBD94AAE8D7B7C62038 /* SocketEnginePacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CECD4FC7906AC6F0C24A577F4A96DD /* SocketEnginePacketType.swift */; };
+		5BDBE77E81D6DB97A113DE9EAA92E2E5 /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5EB670B09F52650B4620D7930568FE /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5CB0691DBA0580DC96037DB20EAD9FFA /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B03CAFD37503BD10477CB816C958A247 /* GoogleMaps.bundle */; };
+		627BB240400111C9772AB51D4B7FAA87 /* SocketEnginePollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A04D92AF026F93D61ED2B59AB0BA80 /* SocketEnginePollable.swift */; };
+		65285EAE8084C67EA604E952F13FE3ED /* SocketPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268D9F00CC8DEDDED3795095D2777AA4 /* SocketPacket.swift */; };
+		6DC6921433F6C2E9DEDC966D2A8A46F8 /* FoundationSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15264A6FCE178BCD257B0020C772C9 /* FoundationSecurity.swift */; };
+		6EA58D9CE765AD5A2585A078A2FDD69D /* StringHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A0CF48B3EC18746D293F3A0F9009A /* StringHTTPHandler.swift */; };
+		6EA6C33022F9D94A7C900E10CABD4734 /* SocketManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7060309B1B39272304C74C43BA4BADD9 /* SocketManagerSpec.swift */; };
+		6EB3FA26E973C2CDB3860DB62FD4BFDE /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F9A81C4FB7B8138A8B168C450548E /* SocketLogger.swift */; };
+		753F4B0D094832F0AE5986D23F7CB7B5 /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD3EAD4AAE7B4EFDBEA30745DE8E86 /* HTTPHandler.swift */; };
+		75B4B94026FC9AFAC34AA49F31AEEAAE /* WebSocketServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA27B2891B4F909B3F66A16A5CA4ED /* WebSocketServer.swift */; };
+		87AB40EAA37C445E07AC6719912E7ED7 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D1BE82BBA09C7A93BD092C81D11B1 /* Security.swift */; };
+		89950D586D98000191D8C85E55DA35A7 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B9CB6719653675D10C50148695653 /* WebSocket.swift */; };
+		9222D3DC8FC5BA03CE38180310758EB3 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE2ADDB1D0DFD2E548C8839CBCEF9E /* Server.swift */; };
+		941928B56BF92EBF5FA8A4076CF0D7BB /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68812F7C0FD841F5B6021F99ADA166 /* SocketIOClient.swift */; };
+		961141A8BE1CD89289380FFA17D07392 /* SocketEngineWebsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED589FCEE27CC80A843AB2F71CE6ED20 /* SocketEngineWebsocket.swift */; };
+		9C05D7CF743FBEF78FC67653C819AC21 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1DEB07E42DCC11021AE43769716E9 /* Compression.swift */; };
+		A42C9D09545A6773143E5D1CED154F64 /* SocketStringReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFE30FCC4B8D8041F947805D7A4DD0 /* SocketStringReader.swift */; };
+		A9F714C86323B6BA492EF39A4D68F186 /* FoundationTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E6DD0B9B45D2E0560F57EBEF11938 /* FoundationTransport.swift */; };
+		ADE15E40BCFDCA92382E4547BA51A5FD /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF4221F454B6300754001195A23D03 /* SocketEventHandler.swift */; };
+		B04747409401B8E607CBFAD2A8140B0E /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 014FB3C4DFE6D49E8BD60569CE868527 /* GooglePlaces.bundle */; };
+		B3787ED7344E86A82EF5C6EB75A2114B /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D7FD9C2C620405AC62F35D9B7F9CF /* SocketAckEmitter.swift */; };
+		B3CF11358E8AB18A58AF22DC02504BE2 /* Socket.IO-Client-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69CB4C73DD44DACB6B25BC4DA586D9EC /* Socket.IO-Client-Swift-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B49975F1A051A036ED8BEDAB68BB945D /* Socket.IO-Client-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0395889F1832BD481253DFA219883B /* Socket.IO-Client-Swift-dummy.m */; };
+		B80B3413CFECC6789125A94A9A6B5641 /* WSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6F53DFBA95F3676771E0313768670 /* WSEngine.swift */; };
+		BEAC2B97858AFE46341E91F973F3761B /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC35AD43F9186D1C1310804AD9168DC /* SocketManager.swift */; };
+		C4FE99F51758E297AC4A42135465B139 /* SocketEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBF3626E80875DA3B118C261C836E0 /* SocketEngine.swift */; };
+		D318CE6668740ACEE8E9E45A61777CC2 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF5D9683062F4B89B47BCF6087C4CF8 /* SocketTypes.swift */; };
+		D563BF4922EA99050D10DE692DC58DF7 /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2CA14A6E63DC7D99EB4D047274BDCD /* SocketAnyEvent.swift */; };
+		D5B242A4EC9CA07EF2239889EC92BA04 /* TCPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FC25AB37890DF0927684FAAE359A0 /* TCPTransport.swift */; };
+		DB9D107DD54CFEA5A0140CA0C9EECD49 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEE2AE2689B40F245ACBBB94BB4A6D /* Engine.swift */; };
+		DF27839857C103944820F85014214D68 /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDFE3A841AD80649BCF26E50F1689C4 /* SocketAckManager.swift */; };
+		E094B143B9112BB296914B1B11F802C5 /* FoundationHTTPServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063D306DE8B85EF1629F50B0E5D64BF /* FoundationHTTPServerHandler.swift */; };
+		E3D2B33239F4F2B40130958777252A50 /* SocketExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCA15F0BBFA254A1EC0A20C539307FB /* SocketExtensions.swift */; };
+		E466A34B7464C88F8970D5B521D35F11 /* Pods-SharedCommute-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A53A92B91455730566DD0F51979C40D /* Pods-SharedCommute-dummy.m */; };
+		E7566CC75C614E63D95BCCEBF509A9B7 /* Framer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59395436AA1FE4AD7123A0AEEF75E980 /* Framer.swift */; };
+		EDD8967183986A519F76D3C51CC9DD20 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8393A287895B356CF81D43D243FE044 /* Starscream-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1E946E02B2A31414741FA144317296AA /* PBXContainerItemProxy */ = {
+		4EB37D66F4B101F80454FF6BF451F6E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
-			remoteInfo = GooglePlaces;
+			remoteGlobalIDString = 9B78EE4AF6AE03E79D88886319853FF7;
+			remoteInfo = Starscream;
 		};
-		1FFF6753A96666B41247D1DF18AAD395 /* PBXContainerItemProxy */ = {
+		5FA0BF5BE9FABB112AD6C76E51B61C5A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7B026DDDF280F148DD87281679B51154;
 			remoteInfo = "GoogleMaps-GoogleMapsResources";
 		};
-		64A065A08C207A7D0F30979BA63D824D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
-			remoteInfo = GoogleMaps;
-		};
-		96ED43F088CC93744358DAADAA5B612A /* PBXContainerItemProxy */ = {
+		7B5242D441AA506AD9C3278ACFDF50D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 285AAD0A8192022DACE2DAFE30D6CD52;
 			remoteInfo = "GooglePlaces-GooglePlacesResources";
 		};
+		9ABAB164777AFBF7EC9DE64C31BC9DD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
+			remoteInfo = GoogleMaps;
+		};
+		AF6DC63AB1F193EEF44568B8BD4BC318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
+			remoteInfo = GooglePlaces;
+		};
+		DC3AD3111F346E67DB670BF128238694 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A44D85440C5D58BC5C4D70A539C5EEF0;
+			remoteInfo = "Socket.IO-Client-Swift";
+		};
+		E17BF0B8745B21A118B0B1B09BE229CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B78EE4AF6AE03E79D88886319853FF7;
+			remoteInfo = Starscream;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04FBACAB5F54F643E67D2E3239ADE2A5 /* GooglePlaces.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GooglePlaces.xcframework; path = Frameworks/GooglePlaces.xcframework; sourceTree = "<group>"; };
-		0AB7585483254C76B26D16700AAB168B /* Pods-SharedCommute-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SharedCommute-dummy.m"; sourceTree = "<group>"; };
-		0FF2664DA18FBE6DCCDA756A9E9A4D73 /* dummy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dummy.h; path = Sources/dummy.h; sourceTree = "<group>"; };
+		014FB3C4DFE6D49E8BD60569CE868527 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Resources/GooglePlacesResources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		02EEE2AE2689B40F245ACBBB94BB4A6D /* Engine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Engine.swift; path = Sources/Engine/Engine.swift; sourceTree = "<group>"; };
+		04DC6E4020BBC158866724C2BA00DAD0 /* dummy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dummy.h; path = Maps/Sources/dummy.h; sourceTree = "<group>"; };
+		05944BF131BD3793CE1EB6ABAAF894CF /* NativeEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeEngine.swift; path = Sources/Engine/NativeEngine.swift; sourceTree = "<group>"; };
+		06467297B7D9579C319FD37127C1035E /* Socket.IO-Client-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-prefix.pch"; sourceTree = "<group>"; };
+		1063D306DE8B85EF1629F50B0E5D64BF /* FoundationHTTPServerHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationHTTPServerHandler.swift; path = Sources/Framer/FoundationHTTPServerHandler.swift; sourceTree = "<group>"; };
+		1101D10B003E0C2A90592BBA2CC57A8D /* Pods-SharedCommute-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SharedCommute-acknowledgements.plist"; sourceTree = "<group>"; };
+		11C6F53DFBA95F3676771E0313768670 /* WSEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WSEngine.swift; path = Sources/Engine/WSEngine.swift; sourceTree = "<group>"; };
+		13AD3EAD4AAE7B4EFDBEA30745DE8E86 /* HTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHandler.swift; path = Sources/Framer/HTTPHandler.swift; sourceTree = "<group>"; };
+		16A1DEB07E42DCC11021AE43769716E9 /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Compression/Compression.swift; sourceTree = "<group>"; };
+		17AB37CB9FDAC22404C693F4B53FAE07 /* WSCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WSCompression.swift; path = Sources/Compression/WSCompression.swift; sourceTree = "<group>"; };
+		1C60058C5E253E35D0EBC48A62CE8928 /* FoundationHTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationHTTPHandler.swift; path = Sources/Framer/FoundationHTTPHandler.swift; sourceTree = "<group>"; };
+		1DC35AD43F9186D1C1310804AD9168DC /* SocketManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketManager.swift; path = Source/SocketIO/Manager/SocketManager.swift; sourceTree = "<group>"; };
 		21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMaps-GoogleMapsResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "GoogleMaps-GoogleMapsResources"; path = GoogleMapsResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		23CDB9BFC17B05D54D17B801A8401C85 /* Pods-SharedCommute-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SharedCommute-resources.sh"; sourceTree = "<group>"; };
+		25CECD4FC7906AC6F0C24A577F4A96DD /* SocketEnginePacketType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePacketType.swift; path = Source/SocketIO/Engine/SocketEnginePacketType.swift; sourceTree = "<group>"; };
+		268D9F00CC8DEDDED3795095D2777AA4 /* SocketPacket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketPacket.swift; path = Source/SocketIO/Parse/SocketPacket.swift; sourceTree = "<group>"; };
+		2C0395889F1832BD481253DFA219883B /* Socket.IO-Client-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Socket.IO-Client-Swift-dummy.m"; sourceTree = "<group>"; };
+		2DC64587ABEB3A142E5CB92F5E33205C /* dummy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dummy.h; path = Sources/dummy.h; sourceTree = "<group>"; };
 		3114CECD12EEFF6AEF2C1AA05AE92404 /* Pods-SharedCommute */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SharedCommute"; path = "libPods-SharedCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31CC5F0B71F7F447C781C0BFA72EEF94 /* ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist"; sourceTree = "<group>"; };
-		34E4D9CD729C94F32019C6996E93A161 /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
-		3C26B40F0B37532EA8DB42AC9E4CD02F /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Resources/GooglePlacesResources/GooglePlaces.bundle; sourceTree = "<group>"; };
-		4A14F754846DF080A40F65256B197760 /* GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.debug.xcconfig; sourceTree = "<group>"; };
-		4DCE079F956A926C6082350610AE7D43 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMaps.xcframework; path = Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
-		4F4E159EA08108CD351F228C5EC9B846 /* GoogleMaps-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GoogleMaps-xcframeworks.sh"; sourceTree = "<group>"; };
-		547BF197D5F8F33A779CCC5B04DE5C6A /* GooglePlaces-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GooglePlaces-xcframeworks.sh"; sourceTree = "<group>"; };
+		3766A09A9074C9806A2F5E7A4BA2C156 /* SocketParsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketParsable.swift; path = Source/SocketIO/Parse/SocketParsable.swift; sourceTree = "<group>"; };
+		3A3FC25AB37890DF0927684FAAE359A0 /* TCPTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TCPTransport.swift; path = Sources/Transport/TCPTransport.swift; sourceTree = "<group>"; };
+		3A53A92B91455730566DD0F51979C40D /* Pods-SharedCommute-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SharedCommute-dummy.m"; sourceTree = "<group>"; };
+		3DCA15F0BBFA254A1EC0A20C539307FB /* SocketExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketExtensions.swift; path = Source/SocketIO/Util/SocketExtensions.swift; sourceTree = "<group>"; };
+		43687E87ED85F918675E6D10E3733177 /* Socket.IO-Client-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Socket.IO-Client-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		48B8BCB7AB4CB5A14EB51DF16494DA57 /* Starscream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.release.xcconfig; sourceTree = "<group>"; };
+		4992010FBD90FA55044BF4A75087803B /* SocketEngineClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineClient.swift; path = Source/SocketIO/Engine/SocketEngineClient.swift; sourceTree = "<group>"; };
+		49B5831EFAAF672CB8C2A810EC305D27 /* SocketIOClientConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientConfiguration.swift; path = Source/SocketIO/Client/SocketIOClientConfiguration.swift; sourceTree = "<group>"; };
+		4B3F824B47FFF9D68358EC67C4113329 /* GooglePlaces.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GooglePlaces.xcframework; path = Frameworks/GooglePlaces.xcframework; sourceTree = "<group>"; };
+		4BD2CF00335DD765D4D30A67D54C4C72 /* Pods-SharedCommute-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SharedCommute-resources.sh"; sourceTree = "<group>"; };
+		4FA0C2312192F1B4AF97EB45BC1DE59B /* Pods-SharedCommute-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SharedCommute-umbrella.h"; sourceTree = "<group>"; };
+		4FF5D9683062F4B89B47BCF6087C4CF8 /* SocketTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketTypes.swift; path = Source/SocketIO/Util/SocketTypes.swift; sourceTree = "<group>"; };
+		50C0B0879B7086918A819F704BF40B4B /* Socket.IO-Client-Swift */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Socket.IO-Client-Swift"; path = "libSocket.IO-Client-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F50B376BBD236E0824A005E46AD668 /* GoogleMaps-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GoogleMaps-xcframeworks.sh"; sourceTree = "<group>"; };
+		570A0CF48B3EC18746D293F3A0F9009A /* StringHTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringHTTPHandler.swift; path = Sources/Framer/StringHTTPHandler.swift; sourceTree = "<group>"; };
 		58D55567BE5BB377C4B0D89C1322D23E /* GooglePlaces-GooglePlacesResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "GooglePlaces-GooglePlacesResources"; path = GooglePlacesResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AFDC9F8D0F40153F0397BF8A9543791 /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsCore.xcframework; path = Maps/Frameworks/GoogleMapsCore.xcframework; sourceTree = "<group>"; };
-		67C962C932C250436A7A61FA0CB9F9F3 /* dummy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dummy.h; path = Maps/Sources/dummy.h; sourceTree = "<group>"; };
-		6AEA9E88C8AE197F78D23AADCC3A8D83 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Resources/GoogleMapsResources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		59395436AA1FE4AD7123A0AEEF75E980 /* Framer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Framer.swift; path = Sources/Framer/Framer.swift; sourceTree = "<group>"; };
+		59CF4221F454B6300754001195A23D03 /* SocketEventHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEventHandler.swift; path = Source/SocketIO/Client/SocketEventHandler.swift; sourceTree = "<group>"; };
+		59E0EDD589DC9CF27E77C435BC533453 /* FrameCollector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameCollector.swift; path = Sources/Framer/FrameCollector.swift; sourceTree = "<group>"; };
+		5E2CA14A6E63DC7D99EB4D047274BDCD /* SocketAnyEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAnyEvent.swift; path = Source/SocketIO/Client/SocketAnyEvent.swift; sourceTree = "<group>"; };
+		62A04D92AF026F93D61ED2B59AB0BA80 /* SocketEnginePollable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePollable.swift; path = Source/SocketIO/Engine/SocketEnginePollable.swift; sourceTree = "<group>"; };
+		640E6DD0B9B45D2E0560F57EBEF11938 /* FoundationTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationTransport.swift; path = Sources/Transport/FoundationTransport.swift; sourceTree = "<group>"; };
+		64EA27B2891B4F909B3F66A16A5CA4ED /* WebSocketServer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocketServer.swift; path = Sources/Server/WebSocketServer.swift; sourceTree = "<group>"; };
+		69CB4C73DD44DACB6B25BC4DA586D9EC /* Socket.IO-Client-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-umbrella.h"; sourceTree = "<group>"; };
+		6A2D7FD9C2C620405AC62F35D9B7F9CF /* SocketAckEmitter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckEmitter.swift; path = Source/SocketIO/Ack/SocketAckEmitter.swift; sourceTree = "<group>"; };
+		6F891B42ED30696DCCD76996BEC60BEF /* Transport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transport.swift; path = Sources/Transport/Transport.swift; sourceTree = "<group>"; };
+		7060309B1B39272304C74C43BA4BADD9 /* SocketManagerSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketManagerSpec.swift; path = Source/SocketIO/Manager/SocketManagerSpec.swift; sourceTree = "<group>"; };
+		74E9D07B27B52837B7319C9E49E771DB /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsCore.xcframework; path = Maps/Frameworks/GoogleMapsCore.xcframework; sourceTree = "<group>"; };
+		79B5DB3BE8406C22A740E998A1DE10F3 /* ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist"; sourceTree = "<group>"; };
+		7AAFE30FCC4B8D8041F947805D7A4DD0 /* SocketStringReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketStringReader.swift; path = Source/SocketIO/Util/SocketStringReader.swift; sourceTree = "<group>"; };
+		7B112C50174D3FF3FE4C43C64C6E4841 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMaps.xcframework; path = Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
+		8473AE10B630F61402EB4664E4A9367B /* Pods-SharedCommute.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SharedCommute.modulemap"; sourceTree = "<group>"; };
+		891B2270823847ED23F2ECFC28F935EC /* Starscream */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = Starscream; path = libStarscream.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		897D1BE82BBA09C7A93BD092C81D11B1 /* Security.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Security.swift; path = Sources/Security/Security.swift; sourceTree = "<group>"; };
+		8C5DE6D845DDD6AF375D176AD12B0FA7 /* GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.debug.xcconfig; sourceTree = "<group>"; };
+		8C5E2BA0A997A1143848DA8366F67D4B /* SocketIOClientOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientOption.swift; path = Source/SocketIO/Client/SocketIOClientOption.swift; sourceTree = "<group>"; };
+		8DDFE3A841AD80649BCF26E50F1689C4 /* SocketAckManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckManager.swift; path = Source/SocketIO/Ack/SocketAckManager.swift; sourceTree = "<group>"; };
+		8EF07CFCE26AEC9CA128685AF07769F9 /* ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist"; sourceTree = "<group>"; };
+		9011096E27F171E0220F8CD39E4719F0 /* Pods-SharedCommute-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SharedCommute-acknowledgements.markdown"; sourceTree = "<group>"; };
+		91F5FC331A8A297D210833281532E5E8 /* Data+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Extensions.swift"; path = "Sources/DataBytes/Data+Extensions.swift"; sourceTree = "<group>"; };
+		962F3BAEFD6B1EDE183880E72CFFDB40 /* GooglePlaces-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GooglePlaces-xcframeworks.sh"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A37A68D1FCC0BF81481848B40CCCAF2C /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
-		A4C814AC92E78677465D54E85A082E1E /* dummy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dummy.h; path = Base/Sources/dummy.h; sourceTree = "<group>"; };
-		BC8E4F124E1618B969B6203CD24D766D /* ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist"; sourceTree = "<group>"; };
-		D6DA771376168CBD3C92D14E36974743 /* Pods-SharedCommute-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SharedCommute-acknowledgements.plist"; sourceTree = "<group>"; };
-		D7E8AC92BB6CD7432651788D75551216 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsBase.xcframework; path = Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
-		E33F36C7BAFE4C0DC4853D80618E180B /* Pods-SharedCommute-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SharedCommute-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E54297CE11553593F648B680FC76C20B /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
-		ED04E264EAA5257456BE7C196D3AC8F3 /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
-		FD7B9313A5F20270E9B7CB4666FF6C99 /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
+		9EB13FD1F78029BBEE57F2300EDD4AF5 /* SocketIOStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOStatus.swift; path = Source/SocketIO/Client/SocketIOStatus.swift; sourceTree = "<group>"; };
+		9F0F9A81C4FB7B8138A8B168C450548E /* SocketLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketLogger.swift; path = Source/SocketIO/Util/SocketLogger.swift; sourceTree = "<group>"; };
+		A66A66C26C1EAE38A3CAB90E79BDE0D8 /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
+		AB15264A6FCE178BCD257B0020C772C9 /* FoundationSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationSecurity.swift; path = Sources/Security/FoundationSecurity.swift; sourceTree = "<group>"; };
+		B03CAFD37503BD10477CB816C958A247 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Resources/GoogleMapsResources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		B1A1043EA16C66B7D8479833D9A3EC35 /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
+		B435F39EC04D03984AA81946F569C600 /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
+		B8CE59CDEF85F11F54B8EE2A5ED05159 /* Socket.IO-Client-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Socket.IO-Client-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		BC9B9CB6719653675D10C50148695653 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/Starscream/WebSocket.swift; sourceTree = "<group>"; };
+		BD468D92C91F1BFE45263386CD405D5A /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
+		C27C2B15935C993ED087A1B76974CAD3 /* SocketRawView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketRawView.swift; path = Source/SocketIO/Client/SocketRawView.swift; sourceTree = "<group>"; };
+		CD68812F7C0FD841F5B6021F99ADA166 /* SocketIOClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClient.swift; path = Source/SocketIO/Client/SocketIOClient.swift; sourceTree = "<group>"; };
+		D0033F53CB81631086732151C54FE652 /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
+		D8393A287895B356CF81D43D243FE044 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		E29E480CFFF02D119DD300C8219AA388 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsBase.xcframework; path = Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
+		E8BD977740327EEE65DCD210128B6C69 /* Socket.IO-Client-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Socket.IO-Client-Swift.modulemap"; sourceTree = "<group>"; };
+		ED589FCEE27CC80A843AB2F71CE6ED20 /* SocketEngineWebsocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineWebsocket.swift; path = Source/SocketIO/Engine/SocketEngineWebsocket.swift; sourceTree = "<group>"; };
+		EECA94F46C148C08EBBCFC6CCF5B5F75 /* dummy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dummy.h; path = Base/Sources/dummy.h; sourceTree = "<group>"; };
+		EF883B5A40259F787F27325BE5B34C52 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
+		F26AAA6870F40160822C62424785AC57 /* Starscream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.debug.xcconfig; sourceTree = "<group>"; };
+		F383F3BC402BF4AE0FAF95B50E7C0F4F /* SocketIOClientSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientSpec.swift; path = Source/SocketIO/Client/SocketIOClientSpec.swift; sourceTree = "<group>"; };
+		F7EE2ADDB1D0DFD2E548C8839CBCEF9E /* Server.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Server.swift; path = Sources/Server/Server.swift; sourceTree = "<group>"; };
+		FADBF3626E80875DA3B118C261C836E0 /* SocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngine.swift; path = Source/SocketIO/Engine/SocketEngine.swift; sourceTree = "<group>"; };
+		FB47169BC32C7BC4122A8EDA06108ED2 /* SocketEngineSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineSpec.swift; path = Source/SocketIO/Engine/SocketEngineSpec.swift; sourceTree = "<group>"; };
+		FE5EB670B09F52650B4620D7930568FE /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
+		FF81481829BDA51CC6B63022E39E952A /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1F3E6D101E1FBF90C95BF33A2B1E46F8 /* Frameworks */ = {
+		168FDE0240ACFE8ACC3012D7E116E88F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		543879A80FB56D5D26841EABE9ACEFAC /* Frameworks */ = {
+		3B5E6AED8E8470B6703C7ED6D56F815D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A59149A9C281E8F74C5875CA70123F7F /* Frameworks */ = {
+		52AA7BEB76BA0CFD4A357AE34202A109 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3A7F3CBC19CE4411A8BF67055947E50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFC602134ED99434A6D51A98A3724327 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -123,140 +267,218 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2833F59606351EF2D59E4AA1B527330D /* Products */ = {
+		012113184009960573DDEF6054DB0B75 /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMaps-GoogleMapsResources */,
-				58D55567BE5BB377C4B0D89C1322D23E /* GooglePlaces-GooglePlacesResources */,
-				3114CECD12EEFF6AEF2C1AA05AE92404 /* Pods-SharedCommute */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3264AEA40847A2FDAAB288B130A6AB64 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D7E8AC92BB6CD7432651788D75551216 /* GoogleMapsBase.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4389C54A912DB3CB386709295351144E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				547BF197D5F8F33A779CCC5B04DE5C6A /* GooglePlaces-xcframeworks.sh */,
-				FD7B9313A5F20270E9B7CB4666FF6C99 /* GooglePlaces.debug.xcconfig */,
-				E54297CE11553593F648B680FC76C20B /* GooglePlaces.release.xcconfig */,
-				BC8E4F124E1618B969B6203CD24D766D /* ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GooglePlaces";
-			sourceTree = "<group>";
-		};
-		560F02C9A1E0C577F8AEE874FE31436E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6AEA9E88C8AE197F78D23AADCC3A8D83 /* GoogleMaps.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		5CF11344AB41D9B6A9E71B321DC0A46D /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AD59D9B49D751D6B07D4FC1346F56EA4 /* Pods-SharedCommute */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		5D54DDAA4EF3F25BBECF8F0067942583 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				A4C814AC92E78677465D54E85A082E1E /* dummy.h */,
-				3264AEA40847A2FDAAB288B130A6AB64 /* Frameworks */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		5FCC7ED0C30311F3ECDCB73376FC43F3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				04FBACAB5F54F643E67D2E3239ADE2A5 /* GooglePlaces.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7345E038F705E749220B95B20096E50D /* Maps */ = {
-			isa = PBXGroup;
-			children = (
-				67C962C932C250436A7A61FA0CB9F9F3 /* dummy.h */,
-				B1AE37B15703995B4A5688858CA9D238 /* Frameworks */,
-				560F02C9A1E0C577F8AEE874FE31436E /* Resources */,
-			);
-			name = Maps;
-			sourceTree = "<group>";
-		};
-		8AC0B1DBD8B6C4E31790A546A97F17C7 /* GooglePlaces */ = {
-			isa = PBXGroup;
-			children = (
-				0FF2664DA18FBE6DCCDA756A9E9A4D73 /* dummy.h */,
-				5FCC7ED0C30311F3ECDCB73376FC43F3 /* Frameworks */,
-				B694A7F3AE251EAB2FE4FF4C17511461 /* Resources */,
-				4389C54A912DB3CB386709295351144E /* Support Files */,
-			);
-			name = GooglePlaces;
-			path = GooglePlaces;
-			sourceTree = "<group>";
-		};
-		AD59D9B49D751D6B07D4FC1346F56EA4 /* Pods-SharedCommute */ = {
-			isa = PBXGroup;
-			children = (
-				E33F36C7BAFE4C0DC4853D80618E180B /* Pods-SharedCommute-acknowledgements.markdown */,
-				D6DA771376168CBD3C92D14E36974743 /* Pods-SharedCommute-acknowledgements.plist */,
-				0AB7585483254C76B26D16700AAB168B /* Pods-SharedCommute-dummy.m */,
-				23CDB9BFC17B05D54D17B801A8401C85 /* Pods-SharedCommute-resources.sh */,
-				A37A68D1FCC0BF81481848B40CCCAF2C /* Pods-SharedCommute.debug.xcconfig */,
-				34E4D9CD729C94F32019C6996E93A161 /* Pods-SharedCommute.release.xcconfig */,
-			);
-			name = "Pods-SharedCommute";
-			path = "Target Support Files/Pods-SharedCommute";
-			sourceTree = "<group>";
-		};
-		ADAFD40CDD1E1F9FDACDFA76B4333B19 /* GoogleMaps */ = {
-			isa = PBXGroup;
-			children = (
-				5D54DDAA4EF3F25BBECF8F0067942583 /* Base */,
-				7345E038F705E749220B95B20096E50D /* Maps */,
-				F0C8388571D8C55FE39738A63E5A5530 /* Support Files */,
+				636548BBAF8FADE63B5662F536B21175 /* Base */,
+				E3EF2A207AC2681C45E4DF36B80B98E9 /* Maps */,
+				9FDB83F58B4E3F32E5D6D836DEBDD6C9 /* Support Files */,
 			);
 			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
-		B1AE37B15703995B4A5688858CA9D238 /* Frameworks */ = {
+		045C00B05690CE71FDEBF59700DC9ED9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4DCE079F956A926C6082350610AE7D43 /* GoogleMaps.xcframework */,
-				5AFDC9F8D0F40153F0397BF8A9543791 /* GoogleMapsCore.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B694A7F3AE251EAB2FE4FF4C17511461 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3C26B40F0B37532EA8DB42AC9E4CD02F /* GooglePlaces.bundle */,
+				014FB3C4DFE6D49E8BD60569CE868527 /* GooglePlaces.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		BCFE8F2FBEBCCCA6CC62EE5551710F10 /* Pods */ = {
+		0E38A2B58434FF894BCB444653833AE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADAFD40CDD1E1F9FDACDFA76B4333B19 /* GoogleMaps */,
-				8AC0B1DBD8B6C4E31790A546A97F17C7 /* GooglePlaces */,
+				21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMaps-GoogleMapsResources */,
+				58D55567BE5BB377C4B0D89C1322D23E /* GooglePlaces-GooglePlacesResources */,
+				3114CECD12EEFF6AEF2C1AA05AE92404 /* Pods-SharedCommute */,
+				50C0B0879B7086918A819F704BF40B4B /* Socket.IO-Client-Swift */,
+				891B2270823847ED23F2ECFC28F935EC /* Starscream */,
 			);
-			name = Pods;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		204BF3C81337DE1A23F1CAD791408795 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF883B5A40259F787F27325BE5B34C52 /* Starscream.modulemap */,
+				D8393A287895B356CF81D43D243FE044 /* Starscream-dummy.m */,
+				B435F39EC04D03984AA81946F569C600 /* Starscream-prefix.pch */,
+				FE5EB670B09F52650B4620D7930568FE /* Starscream-umbrella.h */,
+				F26AAA6870F40160822C62424785AC57 /* Starscream.debug.xcconfig */,
+				48B8BCB7AB4CB5A14EB51DF16494DA57 /* Starscream.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Starscream";
+			sourceTree = "<group>";
+		};
+		278F46D1F6968A194C8A0619EDF04F2B /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				2DC64587ABEB3A142E5CB92F5E33205C /* dummy.h */,
+				8CA937BC0189298814F0C8B7DF1C1C21 /* Frameworks */,
+				045C00B05690CE71FDEBF59700DC9ED9 /* Resources */,
+				4E299BD307745B771CDB7725DE46C25F /* Support Files */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		2CA35CC1EE29552AAFB8D97CC5A84239 /* Socket.IO-Client-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				6A2D7FD9C2C620405AC62F35D9B7F9CF /* SocketAckEmitter.swift */,
+				8DDFE3A841AD80649BCF26E50F1689C4 /* SocketAckManager.swift */,
+				5E2CA14A6E63DC7D99EB4D047274BDCD /* SocketAnyEvent.swift */,
+				FADBF3626E80875DA3B118C261C836E0 /* SocketEngine.swift */,
+				4992010FBD90FA55044BF4A75087803B /* SocketEngineClient.swift */,
+				25CECD4FC7906AC6F0C24A577F4A96DD /* SocketEnginePacketType.swift */,
+				62A04D92AF026F93D61ED2B59AB0BA80 /* SocketEnginePollable.swift */,
+				FB47169BC32C7BC4122A8EDA06108ED2 /* SocketEngineSpec.swift */,
+				ED589FCEE27CC80A843AB2F71CE6ED20 /* SocketEngineWebsocket.swift */,
+				59CF4221F454B6300754001195A23D03 /* SocketEventHandler.swift */,
+				3DCA15F0BBFA254A1EC0A20C539307FB /* SocketExtensions.swift */,
+				CD68812F7C0FD841F5B6021F99ADA166 /* SocketIOClient.swift */,
+				49B5831EFAAF672CB8C2A810EC305D27 /* SocketIOClientConfiguration.swift */,
+				8C5E2BA0A997A1143848DA8366F67D4B /* SocketIOClientOption.swift */,
+				F383F3BC402BF4AE0FAF95B50E7C0F4F /* SocketIOClientSpec.swift */,
+				9EB13FD1F78029BBEE57F2300EDD4AF5 /* SocketIOStatus.swift */,
+				9F0F9A81C4FB7B8138A8B168C450548E /* SocketLogger.swift */,
+				1DC35AD43F9186D1C1310804AD9168DC /* SocketManager.swift */,
+				7060309B1B39272304C74C43BA4BADD9 /* SocketManagerSpec.swift */,
+				268D9F00CC8DEDDED3795095D2777AA4 /* SocketPacket.swift */,
+				3766A09A9074C9806A2F5E7A4BA2C156 /* SocketParsable.swift */,
+				C27C2B15935C993ED087A1B76974CAD3 /* SocketRawView.swift */,
+				7AAFE30FCC4B8D8041F947805D7A4DD0 /* SocketStringReader.swift */,
+				4FF5D9683062F4B89B47BCF6087C4CF8 /* SocketTypes.swift */,
+				92A5454D934C40061E51EBB6E372E936 /* Support Files */,
+			);
+			name = "Socket.IO-Client-Swift";
+			path = "Socket.IO-Client-Swift";
+			sourceTree = "<group>";
+		};
+		4E299BD307745B771CDB7725DE46C25F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				962F3BAEFD6B1EDE183880E72CFFDB40 /* GooglePlaces-xcframeworks.sh */,
+				B1A1043EA16C66B7D8479833D9A3EC35 /* GooglePlaces.debug.xcconfig */,
+				BD468D92C91F1BFE45263386CD405D5A /* GooglePlaces.release.xcconfig */,
+				79B5DB3BE8406C22A740E998A1DE10F3 /* ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
+			sourceTree = "<group>";
+		};
+		56B13F3011F661666C4B75B5A67BF09E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B03CAFD37503BD10477CB816C958A247 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		636548BBAF8FADE63B5662F536B21175 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EECA94F46C148C08EBBCFC6CCF5B5F75 /* dummy.h */,
+				93C8F8E0EBC098796D4FC407311190A3 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		683BA6577DCBB704A2559E963CA955F8 /* Pods-SharedCommute */ = {
+			isa = PBXGroup;
+			children = (
+				8473AE10B630F61402EB4664E4A9367B /* Pods-SharedCommute.modulemap */,
+				9011096E27F171E0220F8CD39E4719F0 /* Pods-SharedCommute-acknowledgements.markdown */,
+				1101D10B003E0C2A90592BBA2CC57A8D /* Pods-SharedCommute-acknowledgements.plist */,
+				3A53A92B91455730566DD0F51979C40D /* Pods-SharedCommute-dummy.m */,
+				4BD2CF00335DD765D4D30A67D54C4C72 /* Pods-SharedCommute-resources.sh */,
+				4FA0C2312192F1B4AF97EB45BC1DE59B /* Pods-SharedCommute-umbrella.h */,
+				D0033F53CB81631086732151C54FE652 /* Pods-SharedCommute.debug.xcconfig */,
+				A66A66C26C1EAE38A3CAB90E79BDE0D8 /* Pods-SharedCommute.release.xcconfig */,
+			);
+			name = "Pods-SharedCommute";
+			path = "Target Support Files/Pods-SharedCommute";
+			sourceTree = "<group>";
+		};
+		7CDA56A34F9BF6772806B31E9ADDFE09 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				683BA6577DCBB704A2559E963CA955F8 /* Pods-SharedCommute */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		86FA90A3FAEF5504EBDB12144D9F6F0A /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				16A1DEB07E42DCC11021AE43769716E9 /* Compression.swift */,
+				91F5FC331A8A297D210833281532E5E8 /* Data+Extensions.swift */,
+				02EEE2AE2689B40F245ACBBB94BB4A6D /* Engine.swift */,
+				1C60058C5E253E35D0EBC48A62CE8928 /* FoundationHTTPHandler.swift */,
+				1063D306DE8B85EF1629F50B0E5D64BF /* FoundationHTTPServerHandler.swift */,
+				AB15264A6FCE178BCD257B0020C772C9 /* FoundationSecurity.swift */,
+				640E6DD0B9B45D2E0560F57EBEF11938 /* FoundationTransport.swift */,
+				59E0EDD589DC9CF27E77C435BC533453 /* FrameCollector.swift */,
+				59395436AA1FE4AD7123A0AEEF75E980 /* Framer.swift */,
+				13AD3EAD4AAE7B4EFDBEA30745DE8E86 /* HTTPHandler.swift */,
+				05944BF131BD3793CE1EB6ABAAF894CF /* NativeEngine.swift */,
+				897D1BE82BBA09C7A93BD092C81D11B1 /* Security.swift */,
+				F7EE2ADDB1D0DFD2E548C8839CBCEF9E /* Server.swift */,
+				570A0CF48B3EC18746D293F3A0F9009A /* StringHTTPHandler.swift */,
+				3A3FC25AB37890DF0927684FAAE359A0 /* TCPTransport.swift */,
+				6F891B42ED30696DCCD76996BEC60BEF /* Transport.swift */,
+				BC9B9CB6719653675D10C50148695653 /* WebSocket.swift */,
+				64EA27B2891B4F909B3F66A16A5CA4ED /* WebSocketServer.swift */,
+				17AB37CB9FDAC22404C693F4B53FAE07 /* WSCompression.swift */,
+				11C6F53DFBA95F3676771E0313768670 /* WSEngine.swift */,
+				204BF3C81337DE1A23F1CAD791408795 /* Support Files */,
+			);
+			name = Starscream;
+			path = Starscream;
+			sourceTree = "<group>";
+		};
+		8CA937BC0189298814F0C8B7DF1C1C21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B3F824B47FFF9D68358EC67C4113329 /* GooglePlaces.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92A5454D934C40061E51EBB6E372E936 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8BD977740327EEE65DCD210128B6C69 /* Socket.IO-Client-Swift.modulemap */,
+				2C0395889F1832BD481253DFA219883B /* Socket.IO-Client-Swift-dummy.m */,
+				06467297B7D9579C319FD37127C1035E /* Socket.IO-Client-Swift-prefix.pch */,
+				69CB4C73DD44DACB6B25BC4DA586D9EC /* Socket.IO-Client-Swift-umbrella.h */,
+				B8CE59CDEF85F11F54B8EE2A5ED05159 /* Socket.IO-Client-Swift.debug.xcconfig */,
+				43687E87ED85F918675E6D10E3733177 /* Socket.IO-Client-Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Socket.IO-Client-Swift";
+			sourceTree = "<group>";
+		};
+		93C8F8E0EBC098796D4FC407311190A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E29E480CFFF02D119DD300C8219AA388 /* GoogleMapsBase.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FDB83F58B4E3F32E5D6D836DEBDD6C9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				56F50B376BBD236E0824A005E46AD668 /* GoogleMaps-xcframeworks.sh */,
+				8C5DE6D845DDD6AF375D176AD12B0FA7 /* GoogleMaps.debug.xcconfig */,
+				FF81481829BDA51CC6B63022E39E952A /* GoogleMaps.release.xcconfig */,
+				8EF07CFCE26AEC9CA128685AF07769F9 /* ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleMaps";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -264,10 +486,19 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				BCFE8F2FBEBCCCA6CC62EE5551710F10 /* Pods */,
-				2833F59606351EF2D59E4AA1B527330D /* Products */,
-				5CF11344AB41D9B6A9E71B321DC0A46D /* Targets Support Files */,
+				EB4B23A978F8817253D0273A71E6D713 /* Pods */,
+				0E38A2B58434FF894BCB444653833AE5 /* Products */,
+				7CDA56A34F9BF6772806B31E9ADDFE09 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D5134EEBB4430D0796EA3E887AE2F80C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B112C50174D3FF3FE4C43C64C6E4841 /* GoogleMaps.xcframework */,
+				74E9D07B27B52837B7319C9E49E771DB /* GoogleMapsCore.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -277,25 +508,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F0C8388571D8C55FE39738A63E5A5530 /* Support Files */ = {
+		E3EF2A207AC2681C45E4DF36B80B98E9 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				4F4E159EA08108CD351F228C5EC9B846 /* GoogleMaps-xcframeworks.sh */,
-				4A14F754846DF080A40F65256B197760 /* GoogleMaps.debug.xcconfig */,
-				ED04E264EAA5257456BE7C196D3AC8F3 /* GoogleMaps.release.xcconfig */,
-				31CC5F0B71F7F447C781C0BFA72EEF94 /* ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist */,
+				04DC6E4020BBC158866724C2BA00DAD0 /* dummy.h */,
+				D5134EEBB4430D0796EA3E887AE2F80C /* Frameworks */,
+				56B13F3011F661666C4B75B5A67BF09E /* Resources */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleMaps";
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		EB4B23A978F8817253D0273A71E6D713 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				012113184009960573DDEF6054DB0B75 /* GoogleMaps */,
+				278F46D1F6968A194C8A0619EDF04F2B /* GooglePlaces */,
+				2CA35CC1EE29552AAFB8D97CC5A84239 /* Socket.IO-Client-Swift */,
+				86FA90A3FAEF5504EBDB12144D9F6F0A /* Starscream */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AC9E3635716DD803A397A7A1DBFBE842 /* Headers */ = {
+		2E201BB608EFE0909531AE3F2D054070 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CF11358E8AB18A58AF22DC02504BE2 /* Socket.IO-Client-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A520A115567DE75BB7BE53790CABADF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BDBE77E81D6DB97A113DE9EAA92E2E5 /* Starscream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		511A9B199143E943F20396C415B78C6F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C60B2E4A3675FBA4556AE8C5F8411DD /* Pods-SharedCommute-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,11 +561,11 @@
 /* Begin PBXNativeTarget section */
 		285AAD0A8192022DACE2DAFE30D6CD52 /* GooglePlaces-GooglePlacesResources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D25B7582018ED064D0072537FA49DF30 /* Build configuration list for PBXNativeTarget "GooglePlaces-GooglePlacesResources" */;
+			buildConfigurationList = B252AC9F79BAF9F675AEF49EC705E6B1 /* Build configuration list for PBXNativeTarget "GooglePlaces-GooglePlacesResources" */;
 			buildPhases = (
-				A4F49775EAEE8AB96A7B81FC7BA72348 /* Sources */,
-				A59149A9C281E8F74C5875CA70123F7F /* Frameworks */,
-				460204779B9CDF06D123F5FFFB5CF1EA /* Resources */,
+				9E97A5A44CED24E477C9DAFF76A198C8 /* Sources */,
+				168FDE0240ACFE8ACC3012D7E116E88F /* Frameworks */,
+				83539E14B701A8A13F59289C7A7AB2D8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -321,17 +578,19 @@
 		};
 		64A881E1EA8FA573B191D1EB7369BF17 /* Pods-SharedCommute */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA82A185A10D20C55FA458B90A3EC58B /* Build configuration list for PBXNativeTarget "Pods-SharedCommute" */;
+			buildConfigurationList = 76A588A4A0913B7E94C3803C6F05A78D /* Build configuration list for PBXNativeTarget "Pods-SharedCommute" */;
 			buildPhases = (
-				AC9E3635716DD803A397A7A1DBFBE842 /* Headers */,
-				586EB745CD49EDFAFD7904D26B755907 /* Sources */,
-				1F3E6D101E1FBF90C95BF33A2B1E46F8 /* Frameworks */,
+				511A9B199143E943F20396C415B78C6F /* Headers */,
+				662F14FC8E0E0009DFF36F16EEC7BCC4 /* Sources */,
+				3B5E6AED8E8470B6703C7ED6D56F815D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				801A43BE8C45FA82CBAC447FD4633858 /* PBXTargetDependency */,
-				48D69C8B65AE794B41995AB0367B84F7 /* PBXTargetDependency */,
+				B10C65AE77C63B6EEFBD6382C66A177A /* PBXTargetDependency */,
+				1A7E8644C292FF025F5CCB53CF43A75A /* PBXTargetDependency */,
+				A508D4A55C4616362915AE1FCCDDF747 /* PBXTargetDependency */,
+				2EF1B1A3DFCDDD1A214DA067503BB9B7 /* PBXTargetDependency */,
 			);
 			name = "Pods-SharedCommute";
 			productName = "Pods-SharedCommute";
@@ -340,11 +599,11 @@
 		};
 		7B026DDDF280F148DD87281679B51154 /* GoogleMaps-GoogleMapsResources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17BC102638B69DE5006E9DFC9A4AA1B7 /* Build configuration list for PBXNativeTarget "GoogleMaps-GoogleMapsResources" */;
+			buildConfigurationList = 54EBAB936E3B91FBC9BFD95788D296B1 /* Build configuration list for PBXNativeTarget "GoogleMaps-GoogleMapsResources" */;
 			buildPhases = (
-				BA8DA9019D9400CF9F2A5C6DA6FE58DA /* Sources */,
-				543879A80FB56D5D26841EABE9ACEFAC /* Frameworks */,
-				C2E9518276069392F4AB48A05F551A74 /* Resources */,
+				A393CA9BCCE2BF5E7005C41B277E2CAD /* Sources */,
+				52AA7BEB76BA0CFD4A357AE34202A109 /* Frameworks */,
+				57E85BF5C655B5CBDCD989E835083B6D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -354,6 +613,43 @@
 			productName = GoogleMapsResources;
 			productReference = 21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMaps-GoogleMapsResources */;
 			productType = "com.apple.product-type.bundle";
+		};
+		9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF708FD1C6FD6DCCFCE59839E7154E90 /* Build configuration list for PBXNativeTarget "Starscream" */;
+			buildPhases = (
+				4A520A115567DE75BB7BE53790CABADF /* Headers */,
+				1EA9F2B0AC74DACAD0456298D06A06FC /* Sources */,
+				D3A7F3CBC19CE4411A8BF67055947E50 /* Frameworks */,
+				EA547B03CB6CE90BE3E44FD7BFC4BFD0 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starscream;
+			productName = Starscream;
+			productReference = 891B2270823847ED23F2ECFC28F935EC /* Starscream */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A44D85440C5D58BC5C4D70A539C5EEF0 /* Socket.IO-Client-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2A78909BCB0BD4BB973CFA3BED6C882 /* Build configuration list for PBXNativeTarget "Socket.IO-Client-Swift" */;
+			buildPhases = (
+				2E201BB608EFE0909531AE3F2D054070 /* Headers */,
+				F16D3B635A6B071BB844A2F00139F111 /* Sources */,
+				EFC602134ED99434A6D51A98A3724327 /* Frameworks */,
+				85BDB109EAACF448B26D9B9F175569C0 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B445C412604CA86E4C46D2009F8F66C /* PBXTargetDependency */,
+			);
+			name = "Socket.IO-Client-Swift";
+			productName = "Socket.IO-Client-Swift";
+			productReference = 50C0B0879B7086918A819F704BF40B4B /* Socket.IO-Client-Swift */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -373,7 +669,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 2833F59606351EF2D59E4AA1B527330D /* Products */;
+			productRefGroup = 0E38A2B58434FF894BCB444653833AE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -382,24 +678,26 @@
 				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
 				285AAD0A8192022DACE2DAFE30D6CD52 /* GooglePlaces-GooglePlacesResources */,
 				64A881E1EA8FA573B191D1EB7369BF17 /* Pods-SharedCommute */,
+				A44D85440C5D58BC5C4D70A539C5EEF0 /* Socket.IO-Client-Swift */,
+				9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		460204779B9CDF06D123F5FFFB5CF1EA /* Resources */ = {
+		57E85BF5C655B5CBDCD989E835083B6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D5A9F5CB6A17B37F8A309CE3C5B74A1 /* GooglePlaces.bundle in Resources */,
+				5CB0691DBA0580DC96037DB20EAD9FFA /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2E9518276069392F4AB48A05F551A74 /* Resources */ = {
+		83539E14B701A8A13F59289C7A7AB2D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B632C1890E12CA4BED58449A7A2E1B5C /* GoogleMaps.bundle in Resources */,
+				B04747409401B8E607CBFAD2A8140B0E /* GooglePlaces.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +721,30 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/GooglePlaces/GooglePlaces-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		85BDB109EAACF448B26D9B9F175569C0 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SocketIO/Socket.IO-Client-Swift.modulemap",
+				"${PODS_ROOT}/Headers/Public/SocketIO/Socket.IO-Client-Swift-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SocketIO/Socket.IO-Client-Swift.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SocketIO/Socket.IO-Client-Swift-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
 		9801DC96C44A55EEBAB39A01F1BB925C /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,98 +762,237 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/GoogleMaps/GoogleMaps-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EA547B03CB6CE90BE3E44FD7BFC4BFD0 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/Starscream/Starscream.modulemap",
+				"${PODS_ROOT}/Headers/Public/Starscream/Starscream-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/Starscream-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Starscream/Starscream.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Starscream/Starscream-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		586EB745CD49EDFAFD7904D26B755907 /* Sources */ = {
+		1EA9F2B0AC74DACAD0456298D06A06FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E57461C41A9A538368777E7C8062F18 /* Pods-SharedCommute-dummy.m in Sources */,
+				9C05D7CF743FBEF78FC67653C819AC21 /* Compression.swift in Sources */,
+				4DDA244A80CEA4E5632B23B2DAE048C2 /* Data+Extensions.swift in Sources */,
+				DB9D107DD54CFEA5A0140CA0C9EECD49 /* Engine.swift in Sources */,
+				2ACAD27803B5E2FEE2308C6DBBB77787 /* FoundationHTTPHandler.swift in Sources */,
+				E094B143B9112BB296914B1B11F802C5 /* FoundationHTTPServerHandler.swift in Sources */,
+				6DC6921433F6C2E9DEDC966D2A8A46F8 /* FoundationSecurity.swift in Sources */,
+				A9F714C86323B6BA492EF39A4D68F186 /* FoundationTransport.swift in Sources */,
+				17934C40C3F0EC17956C0325316394BB /* FrameCollector.swift in Sources */,
+				E7566CC75C614E63D95BCCEBF509A9B7 /* Framer.swift in Sources */,
+				753F4B0D094832F0AE5986D23F7CB7B5 /* HTTPHandler.swift in Sources */,
+				1EEE9A9FA133444DE2262FB447A606C2 /* NativeEngine.swift in Sources */,
+				87AB40EAA37C445E07AC6719912E7ED7 /* Security.swift in Sources */,
+				9222D3DC8FC5BA03CE38180310758EB3 /* Server.swift in Sources */,
+				EDD8967183986A519F76D3C51CC9DD20 /* Starscream-dummy.m in Sources */,
+				6EA58D9CE765AD5A2585A078A2FDD69D /* StringHTTPHandler.swift in Sources */,
+				D5B242A4EC9CA07EF2239889EC92BA04 /* TCPTransport.swift in Sources */,
+				0FAFCC58165B66631177DC0813401EF8 /* Transport.swift in Sources */,
+				89950D586D98000191D8C85E55DA35A7 /* WebSocket.swift in Sources */,
+				75B4B94026FC9AFAC34AA49F31AEEAAE /* WebSocketServer.swift in Sources */,
+				55522CB22EA5CAFFEC01FB82B64E750F /* WSCompression.swift in Sources */,
+				B80B3413CFECC6789125A94A9A6B5641 /* WSEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4F49775EAEE8AB96A7B81FC7BA72348 /* Sources */ = {
+		662F14FC8E0E0009DFF36F16EEC7BCC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E466A34B7464C88F8970D5B521D35F11 /* Pods-SharedCommute-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E97A5A44CED24E477C9DAFF76A198C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA8DA9019D9400CF9F2A5C6DA6FE58DA /* Sources */ = {
+		A393CA9BCCE2BF5E7005C41B277E2CAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16D3B635A6B071BB844A2F00139F111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49975F1A051A036ED8BEDAB68BB945D /* Socket.IO-Client-Swift-dummy.m in Sources */,
+				B3787ED7344E86A82EF5C6EB75A2114B /* SocketAckEmitter.swift in Sources */,
+				DF27839857C103944820F85014214D68 /* SocketAckManager.swift in Sources */,
+				D563BF4922EA99050D10DE692DC58DF7 /* SocketAnyEvent.swift in Sources */,
+				C4FE99F51758E297AC4A42135465B139 /* SocketEngine.swift in Sources */,
+				137161CD272120A6B6E40A6B03613585 /* SocketEngineClient.swift in Sources */,
+				5A4C6E6327930DBD94AAE8D7B7C62038 /* SocketEnginePacketType.swift in Sources */,
+				627BB240400111C9772AB51D4B7FAA87 /* SocketEnginePollable.swift in Sources */,
+				41181AD1BD219D854E0F83AAFC34988C /* SocketEngineSpec.swift in Sources */,
+				961141A8BE1CD89289380FFA17D07392 /* SocketEngineWebsocket.swift in Sources */,
+				ADE15E40BCFDCA92382E4547BA51A5FD /* SocketEventHandler.swift in Sources */,
+				E3D2B33239F4F2B40130958777252A50 /* SocketExtensions.swift in Sources */,
+				941928B56BF92EBF5FA8A4076CF0D7BB /* SocketIOClient.swift in Sources */,
+				2D044BDBA2CA7D7CC126BA59D01AA3A2 /* SocketIOClientConfiguration.swift in Sources */,
+				405BE70FA961BAFE321A39973C892141 /* SocketIOClientOption.swift in Sources */,
+				36638327F9852D25889EEC7B2B74F4ED /* SocketIOClientSpec.swift in Sources */,
+				1100BDA4F1D802BD8817035F2EEFA3E6 /* SocketIOStatus.swift in Sources */,
+				6EB3FA26E973C2CDB3860DB62FD4BFDE /* SocketLogger.swift in Sources */,
+				BEAC2B97858AFE46341E91F973F3761B /* SocketManager.swift in Sources */,
+				6EA6C33022F9D94A7C900E10CABD4734 /* SocketManagerSpec.swift in Sources */,
+				65285EAE8084C67EA604E952F13FE3ED /* SocketPacket.swift in Sources */,
+				3E436DF7FD5B8734226081D284E99FB8 /* SocketParsable.swift in Sources */,
+				283CEF8483006A35255E90F992DC3157 /* SocketRawView.swift in Sources */,
+				A42C9D09545A6773143E5D1CED154F64 /* SocketStringReader.swift in Sources */,
+				D318CE6668740ACEE8E9E45A61777CC2 /* SocketTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1108A6B20591DDF2EB7834CDB7B3AC29 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "GoogleMaps-GoogleMapsResources";
-			target = 7B026DDDF280F148DD87281679B51154 /* GoogleMaps-GoogleMapsResources */;
-			targetProxy = 1FFF6753A96666B41247D1DF18AAD395 /* PBXContainerItemProxy */;
-		};
-		48D69C8B65AE794B41995AB0367B84F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GooglePlaces;
-			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
-			targetProxy = 1E946E02B2A31414741FA144317296AA /* PBXContainerItemProxy */;
-		};
-		801A43BE8C45FA82CBAC447FD4633858 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GoogleMaps;
-			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
-			targetProxy = 64A065A08C207A7D0F30979BA63D824D /* PBXContainerItemProxy */;
-		};
-		F9EB1D811B56935C3C398A1AF19A809D /* PBXTargetDependency */ = {
+		187062CCADB1281FF7D01396DC3B8D94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "GooglePlaces-GooglePlacesResources";
 			target = 285AAD0A8192022DACE2DAFE30D6CD52 /* GooglePlaces-GooglePlacesResources */;
-			targetProxy = 96ED43F088CC93744358DAADAA5B612A /* PBXContainerItemProxy */;
+			targetProxy = 7B5242D441AA506AD9C3278ACFDF50D3 /* PBXContainerItemProxy */;
+		};
+		1A7E8644C292FF025F5CCB53CF43A75A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GooglePlaces;
+			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
+			targetProxy = AF6DC63AB1F193EEF44568B8BD4BC318 /* PBXContainerItemProxy */;
+		};
+		2EF1B1A3DFCDDD1A214DA067503BB9B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */;
+			targetProxy = E17BF0B8745B21A118B0B1B09BE229CB /* PBXContainerItemProxy */;
+		};
+		3B445C412604CA86E4C46D2009F8F66C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */;
+			targetProxy = 4EB37D66F4B101F80454FF6BF451F6E5 /* PBXContainerItemProxy */;
+		};
+		A508D4A55C4616362915AE1FCCDDF747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Socket.IO-Client-Swift";
+			target = A44D85440C5D58BC5C4D70A539C5EEF0 /* Socket.IO-Client-Swift */;
+			targetProxy = DC3AD3111F346E67DB670BF128238694 /* PBXContainerItemProxy */;
+		};
+		B10C65AE77C63B6EEFBD6382C66A177A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleMaps;
+			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
+			targetProxy = 9ABAB164777AFBF7EC9DE64C31BC9DD3 /* PBXContainerItemProxy */;
+		};
+		F41BE848D4FE6BC8989A3FDD78276294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GoogleMaps-GoogleMapsResources";
+			target = 7B026DDDF280F148DD87281679B51154 /* GoogleMaps-GoogleMapsResources */;
+			targetProxy = 5FA0BF5BE9FABB112AD6C76E51B61C5A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1FDF0909AC50967E2451D0D0969FC092 /* Debug */ = {
+		089DDC7E23D5DBF0688DDC0AD3067C15 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A14F754846DF080A40F65256B197760 /* GoogleMaps.debug.xcconfig */;
+			baseConfigurationReference = A66A66C26C1EAE38A3CAB90E79BDE0D8 /* Pods-SharedCommute.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleMaps";
-				IBSC_MODULE = GoogleMaps;
-				INFOPLIST_FILE = "Target Support Files/GoogleMaps/ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_NAME = GoogleMapsResources;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		278F6D2412A762188258D8581B5738E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0033F53CB81631086732151C54FE652 /* Pods-SharedCommute.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		35A7D141260FE13613B37E879DE42CEC /* Release */ = {
+		28FC576EFC35E530BC47C5320B1C653B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E54297CE11553593F648B680FC76C20B /* GooglePlaces.release.xcconfig */;
+			baseConfigurationReference = 48B8BCB7AB4CB5A14EB51DF16494DA57 /* Starscream.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GooglePlaces";
-				IBSC_MODULE = GooglePlaces;
-				INFOPLIST_FILE = "Target Support Files/GooglePlaces/ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_NAME = GooglePlacesResources;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = Headers/Public/Starscream/Starscream.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Starscream;
+				PRODUCT_NAME = Starscream;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		372578239686DFE74865590EF122AE82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED04E264EAA5257456BE7C196D3AC8F3 /* GoogleMaps.release.xcconfig */;
+			baseConfigurationReference = FF81481829BDA51CC6B63022E39E952A /* GoogleMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -547,9 +1008,9 @@
 			};
 			name = Release;
 		};
-		42647F600B683E1BAAD4D72C1F474D81 /* Debug */ = {
+		4B495A28BF89905B4841C9852EBEED50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD7B9313A5F20270E9B7CB4666FF6C99 /* GooglePlaces.debug.xcconfig */;
+			baseConfigurationReference = BD468D92C91F1BFE45263386CD405D5A /* GooglePlaces.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GooglePlaces";
@@ -562,7 +1023,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
 		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -630,30 +1091,9 @@
 			};
 			name = Debug;
 		};
-		569F6BF7B3ECE3CD78C40943E1891B5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37A68D1FCC0BF81481848B40CCCAF2C /* Pods-SharedCommute.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		59121C48ADA5823A5A9B83C9143D5B0A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD7B9313A5F20270E9B7CB4666FF6C99 /* GooglePlaces.debug.xcconfig */;
+			baseConfigurationReference = B1A1043EA16C66B7D8479833D9A3EC35 /* GooglePlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -670,7 +1110,7 @@
 		};
 		59CC49E4FF90DCD865050EC34933B4DC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A14F754846DF080A40F65256B197760 /* GoogleMaps.debug.xcconfig */;
+			baseConfigurationReference = 8C5DE6D845DDD6AF375D176AD12B0FA7 /* GoogleMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -685,44 +1125,30 @@
 			};
 			name = Debug;
 		};
-		61367591359C1F93D5F916A5F6B727E8 /* Release */ = {
+		8570FE4242A9AB468E1052415707F647 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34E4D9CD729C94F32019C6996E93A161 /* Pods-SharedCommute.release.xcconfig */;
+			baseConfigurationReference = F26AAA6870F40160822C62424785AC57 /* Starscream.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = Headers/Public/Starscream/Starscream.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Starscream;
+				PRODUCT_NAME = Starscream;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
-		};
-		7B8213FA7D2DF7E6845FBC713A4014C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED04E264EAA5257456BE7C196D3AC8F3 /* GoogleMaps.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleMaps";
-				IBSC_MODULE = GoogleMaps;
-				INFOPLIST_FILE = "Target Support Files/GoogleMaps/ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_NAME = GoogleMapsResources;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
+			name = Debug;
 		};
 		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -786,9 +1212,92 @@
 			};
 			name = Release;
 		};
+		A37CBDCE511C13643B9864ED15C739E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43687E87ED85F918675E6D10E3733177 /* Socket.IO-Client-Swift.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = "Headers/Public/SocketIO/Socket.IO-Client-Swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SocketIO;
+				PRODUCT_NAME = "Socket.IO-Client-Swift";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3A4A46CD53AB2953F1BF6EB2CAF0468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C5DE6D845DDD6AF375D176AD12B0FA7 /* GoogleMaps.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleMaps";
+				IBSC_MODULE = GoogleMaps;
+				INFOPLIST_FILE = "Target Support Files/GoogleMaps/ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = GoogleMapsResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A9D2807D4E840D4EC1E7DFF2D16EE6B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8CE59CDEF85F11F54B8EE2A5ED05159 /* Socket.IO-Client-Swift.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = "Headers/Public/SocketIO/Socket.IO-Client-Swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SocketIO;
+				PRODUCT_NAME = "Socket.IO-Client-Swift";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E745D897AECCE67AA54F07D9352D8F5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1A1043EA16C66B7D8479833D9A3EC35 /* GooglePlaces.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GooglePlaces";
+				IBSC_MODULE = GooglePlaces;
+				INFOPLIST_FILE = "Target Support Files/GooglePlaces/ResourceBundle-GooglePlacesResources-GooglePlaces-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = GooglePlacesResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		EF6A7A9F27ABD8D81EB56D254C8E237C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E54297CE11553593F648B680FC76C20B /* GooglePlaces.release.xcconfig */;
+			baseConfigurationReference = BD468D92C91F1BFE45263386CD405D5A /* GooglePlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -804,18 +1313,26 @@
 			};
 			name = Release;
 		};
+		F4D16ED0BFCC1F7F847FC9CEC22CAB3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF81481829BDA51CC6B63022E39E952A /* GoogleMaps.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleMaps";
+				IBSC_MODULE = GoogleMaps;
+				INFOPLIST_FILE = "Target Support Files/GoogleMaps/ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = GoogleMapsResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17BC102638B69DE5006E9DFC9A4AA1B7 /* Build configuration list for PBXNativeTarget "GoogleMaps-GoogleMapsResources" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FDF0909AC50967E2451D0D0969FC092 /* Debug */,
-				7B8213FA7D2DF7E6845FBC713A4014C3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		47C5605859EECC4DAA8398F8266E85C4 /* Build configuration list for PBXAggregateTarget "GoogleMaps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -834,11 +1351,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA82A185A10D20C55FA458B90A3EC58B /* Build configuration list for PBXNativeTarget "Pods-SharedCommute" */ = {
+		54EBAB936E3B91FBC9BFD95788D296B1 /* Build configuration list for PBXNativeTarget "GoogleMaps-GoogleMapsResources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				569F6BF7B3ECE3CD78C40943E1891B5F /* Debug */,
-				61367591359C1F93D5F916A5F6B727E8 /* Release */,
+				A3A4A46CD53AB2953F1BF6EB2CAF0468 /* Debug */,
+				F4D16ED0BFCC1F7F847FC9CEC22CAB3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A588A4A0913B7E94C3803C6F05A78D /* Build configuration list for PBXNativeTarget "Pods-SharedCommute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				278F6D2412A762188258D8581B5738E9 /* Debug */,
+				089DDC7E23D5DBF0688DDC0AD3067C15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B252AC9F79BAF9F675AEF49EC705E6B1 /* Build configuration list for PBXNativeTarget "GooglePlaces-GooglePlacesResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E745D897AECCE67AA54F07D9352D8F5F /* Debug */,
+				4B495A28BF89905B4841C9852EBEED50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -852,11 +1387,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D25B7582018ED064D0072537FA49DF30 /* Build configuration list for PBXNativeTarget "GooglePlaces-GooglePlacesResources" */ = {
+		E2A78909BCB0BD4BB973CFA3BED6C882 /* Build configuration list for PBXNativeTarget "Socket.IO-Client-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42647F600B683E1BAAD4D72C1F474D81 /* Debug */,
-				35A7D141260FE13613B37E879DE42CEC /* Release */,
+				A9D2807D4E840D4EC1E7DFF2D16EE6B6 /* Debug */,
+				A37CBDCE511C13643B9864ED15C739E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF708FD1C6FD6DCCFCE59839E7154E90 /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8570FE4242A9AB468E1052415707F647 /* Debug */,
+				28FC576EFC35E530BC47C5320B1C653B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

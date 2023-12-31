@@ -130,7 +130,6 @@
 				51FBFFC92B23210000BAA63E /* CarMapView.swift */,
 				51FBFFCC2B23210000BAA63E /* CovoiturageView.swift */,
 				51FBFFCA2B23210000BAA63E /* EmergencyRideView.swift */,
-				51FBFFCF2B23210000BAA63E /* MapView.swift */,
 				51FBFFCB2B23210000BAA63E /* NotificationView.swift */,
 				51FBFFCD2B23210000BAA63E /* PaymentSelectionView.swift */,
 				51FBFFCE2B23210000BAA63E /* PaymentView.swift */,
@@ -151,6 +150,7 @@
 		51A157D02B14BD2D00C6F3CD /* ViewConroller */ = {
 			isa = PBXGroup;
 			children = (
+				51FBFFCF2B23210000BAA63E /* MapView.swift */,
 				5194FAB12B18C096006B1CCC /* GoogleMapView.swift */,
 				51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */,
 				51FBFFBB2B2320BA00BAA63E /* MapViewController.swift */,

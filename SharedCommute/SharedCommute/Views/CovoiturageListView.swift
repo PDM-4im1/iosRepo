@@ -49,6 +49,12 @@ struct CovoiturageListView: View {
                 }
                 
                 List {
+                    
+                                  if covoiturages.isEmpty {
+                                      Text("No Carpoolings Found.")
+                                          .foregroundColor(.gray)
+                                          .padding()
+                                  }
                     ForEach(covoiturages) {  covoiturage in
                         if let reverseDate = reverseFormattedDate(dateString: covoiturage.dateCovoiturage ?? "") {
                             NavigationLink(
@@ -130,8 +136,9 @@ struct CovoiturageListView: View {
                     )
                 }
                 .onAppear {
-                    fetchCovoiturages()
-                }
+                    DispatchQueue.main.async {
+                        fetchCovoiturages()
+                    }                }
               
                 Spacer()
             }
@@ -158,7 +165,7 @@ struct CovoiturageListView: View {
                           fetchCovoiturages()
                           // Update the local array to trigger view refresh
                           DispatchQueue.main.async {
-                              covoiturages.removeAll { $0.id == covoiturage.id }
+                              self.covoiturages.removeAll { $0.id == covoiturage.id }
                           }
                       }
                   } catch {
@@ -190,6 +197,8 @@ struct CovoiturageListView: View {
                     // Assuming covoituragesData is an array of objects
                     DispatchQueue.main.async {
                         self.covoiturages = covoituragesData
+                        UITableView.appearance().reloadData()
+
                     }
                 } catch {
                     print("Error decoding JSON: \(error)")

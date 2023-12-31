@@ -6,4 +6,5 @@ target 'SharedCommute' do
   
   pod 'GoogleMaps', '8.3.0'
   pod 'GooglePlaces'
+    pod 'Socket.IO-Client-Swift', '16.1.0'
 end

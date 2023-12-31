@@ -5,20 +5,28 @@ PODS:
   - GoogleMaps/Maps (8.3.0):
     - GoogleMaps/Base
   - GooglePlaces (8.3.0)
+  - Socket.IO-Client-Swift (16.1.0):
+    - Starscream (~> 4.0.6)
+  - Starscream (4.0.6)
 
 DEPENDENCIES:
   - GoogleMaps (= 8.3.0)
   - GooglePlaces
+  - Socket.IO-Client-Swift (= 16.1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - GoogleMaps
     - GooglePlaces
+    - Socket.IO-Client-Swift
+    - Starscream
 
 SPEC CHECKSUMS:
   GoogleMaps: 54762190c9741867d03e4e4218672ab5a0a8096b
   GooglePlaces: b922e192c50994436900ef14d19f84971950250b
+  Socket.IO-Client-Swift: ee4b8f80a3db18dd7f32b266ddf273310609443c
+  Starscream: fb2c4510bebf908c62bd383bcf05e673720e91fd
 
-PODFILE CHECKSUM: a6c6b2703bd2b913231bb160fb026d3d3f3dc3bf
+PODFILE CHECKSUM: ef69ae2ebff3680bb85465c94ac682414cbe4e68
 
 COCOAPODS: 1.14.3

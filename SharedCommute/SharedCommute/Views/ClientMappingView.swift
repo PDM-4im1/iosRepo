@@ -64,115 +64,100 @@ public struct ClientMappingView: View {
         autocompleteController.delegate = coordinator
         UIApplication.shared.windows.first?.rootViewController?.present(autocompleteController, animated: true, completion: nil)
     }
-
     public var body: some View {
         NavigationView {
             GeometryReader { geometry in
-
-            VStack(spacing: 16) {
-                ZStack(alignment: .trailing) {
-                    TextField("Source", text: $source)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .id("sourceTextField")
-                        .onTapGesture {
-                            withAnimation {
-                                showAutocomplete(for: "source")
-                            }
-                        }
-
-                    Button(action: {
-                        withAnimation {
-                            getUserLocation()
-                        }
-                    }) {
-                        Image(systemName: "location.circle.fill")
-                            .foregroundColor(.green)
-                            .font(.title)
-                    }
-                }
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
-
-                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
-
-                                TextField("Destination", text: $destination)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .id("destinationTextField")
-                                    .onTapGesture {
-                                        withAnimation {
-                                            showAutocomplete(for: "destination")
-                                        }
-                                    }
-                                    .padding()
-                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
-
-                                Button(action: {
-                                    withAnimation {
-                                        Confirmdisabled = false ? (source == "" || destination == "") : true;
-
-                                        isButtonTapped = true
-                                    }
-                                }) {
-                                    Text("Confirm Direction")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                        .frame(maxWidth: .infinity)
-                                        .padding()
-                                        .background(
-                                Color.blue)
-                                        .cornerRadius(12)
+                VStack(spacing: 16) {
+                    ZStack(alignment: .trailing) {
+                        TextField("Source", text: $source)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .id("sourceTextField")
+                            .onTapGesture {
+                                withAnimation {
+                                    showAutocomplete(for: "source")
                                 }
-                
-                                .padding(.horizontal)
-
-                GoogleMapsView(source: $source, destination: $destination, routes: $routes, isButtonTapped: $isButtonTapped, showAlert: $showAlert, alertText: $alertText)
-                    .frame(height: 380) // Adjust the height according to your needs
-                    .edgesIgnoringSafeArea(.all)
-                
+                            }
+                        
+                        Button(action: {
+                            withAnimation {
+                                getUserLocation()
+                            }
+                        }) {
+                            Image(systemName: "location.circle.fill")
+                                .foregroundColor(.green)
+                                .font(.title)
+                        }
+                    }
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
-                
-               Button(action: {
-                    withAnimation {
-                        showPicker = true
-                    }
-                }) {
-                    NavigationLink(destination:(ClientListCovoiturages(source: $source, destination: $destination)), isActive: $showPicker ) {
-                        Text("Search For Drivers")
+                    
+                    TextField("Destination", text: $destination)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .id("destinationTextField")
+                        .onTapGesture {
+                            withAnimation {
+                                showAutocomplete(for: "destination")
+                            }
+                        }
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
+                    
+                    Button(action: {
+                        withAnimation {
+                            Confirmdisabled = false ? (source == "" || destination == "") : true;                           isButtonTapped = true
+                        }
+                    }) {
+                        Text("Confirm Direction")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
                             .background(
-                                !Confirmdisabled
-                                    ? Color.blue.opacity(0.0) // Adjust the opacity as needed
-                                    : Color.blue
+                             Color.blue
                             )
                             .cornerRadius(12)
                     }
+                    .padding(.horizontal)
+                    
+                    GoogleMapsView(source: $source, destination: $destination, routes: $routes, isButtonTapped: $isButtonTapped, showAlert: $showAlert, alertText: $alertText)
+                        .frame(height: 260) // Adjust the height according to your needs
+                        .edgesIgnoringSafeArea(.all)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))
+                    
+                    Button(action: {
+                        withAnimation {
+                            showPicker = true
+                        }
+                    }) {
+                        NavigationLink(destination: ClientListCovoiturages(source: $source, destination: $destination), isActive: $showPicker) {
+                            Text("Search For Drivers")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    !Confirmdisabled ? Color.blue.opacity(0.0) : Color.blue
+                                )
+                                .cornerRadius(12)
+                        }
+                    }
+                    .padding()
+                    .disabled(!Confirmdisabled)
                 }
                 .padding()
-                .disabled(!Confirmdisabled)
-            
-}
-                      .padding()
-                      .background(Color.gray.opacity(0.1))
-                
-               
-                      .navigationBarTitle("searching a Trip", displayMode: .inline)
-                     
-                      .onAppear {
-                          source = internalsource
-                          destination = internaldestination
-                          selectedHourMapping = selectedHoursMapping
-                          selectedMinuteMapping = selectedMinutesMapping
-                          idcovoiturage = initialidcovoiturage
-                      }
-                  }
-            
-            
-              }
-              }
+                .background(Color.gray.opacity(0.1))
+                .onAppear {
+                    source = internalsource
+                    destination = internaldestination
+                    selectedHourMapping = selectedHoursMapping
+                    selectedMinuteMapping = selectedMinutesMapping
+                    idcovoiturage = initialidcovoiturage
+                }
+            }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
 
    
 

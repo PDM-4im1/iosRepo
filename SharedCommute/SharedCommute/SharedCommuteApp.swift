@@ -5,6 +5,7 @@
 //  Created by Nasri Mootez on 27/11/2023.
 //
 import SwiftUI
+import SocketIO
 
 @main
 struct SharedCommuteApp: App {

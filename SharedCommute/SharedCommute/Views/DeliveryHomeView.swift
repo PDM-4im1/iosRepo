@@ -51,8 +51,10 @@ struct MainContentDeliveryView: View {
             case .Delivery:
                 Text("Delivery")
 
-            case .settings:
-                Text("Settings")
+            case.editInfo:
+                Text("edit")
+            case.logOut:
+                Text("logout")
             case .none:
                 DashboardContentView()
             }
@@ -66,6 +68,8 @@ struct MainContentDeliveryView: View {
 
 struct SidebarDeliveryView: View {
     @Binding var selectedMenuItem: MenuDeliveryItem?
+    @State private var isSettingsSubmenuExpanded = false
+
     var closeSidebar: () -> Void
 
     var body: some View {
@@ -101,13 +105,56 @@ struct SidebarDeliveryView: View {
                 }
 
                 Button(action: {
-                    selectedMenuItem = MenuDeliveryItem.settings
-                    closeSidebar()
+                    isSettingsSubmenuExpanded.toggle()
                 }) {
-                    Label("Settings", systemImage: "gearshape.fill")
-                        .foregroundColor(.white)
-                        .padding()
+                    HStack {
+                        Label("Settings", systemImage: "gearshape.fill")
+                            .foregroundColor(.white)
+                            .padding(.trailing, 10)
+                        
+                        Image(systemName: isSettingsSubmenuExpanded ? "chevron.up" : "chevron.down")
+                            .foregroundColor(.white)
+                            .font(.body)
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.green.opacity(0.6))
+                    )
                 }
+                
+                if isSettingsSubmenuExpanded {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Button(action: {
+                            selectedMenuItem = MenuDeliveryItem.editInfo
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "pencil")
+                                    .foregroundColor(.white)
+                                Text("Edit Info")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+                        
+                        Button(action: {
+                            selectedMenuItem = MenuDeliveryItem.logOut
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.white)
+                                Text("Log Out")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+                    }
+                }
+                Spacer()
 
                 Spacer()
             }
@@ -121,8 +168,8 @@ struct SidebarDeliveryView: View {
 enum MenuDeliveryItem {
     case dashboard
     case Delivery
-    case settings
-    // Add more menu items as needed
+    case editInfo
+    case logOut    // Add more menu items as needed
 }
 
 struct DeliveryHomeView_Previews: PreviewProvider {

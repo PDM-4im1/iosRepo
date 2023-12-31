@@ -36,7 +36,6 @@ struct ClientListCovoiturages: View {
     
 
     var body: some View {
-        NavigationView {
             VStack {
                 List {
                     ForEach(covoiturages) { covoiturage in
@@ -95,7 +94,7 @@ struct ClientListCovoiturages: View {
             .padding()
             .background(Color.white)
         }
-    }
+ 
     private func fetchNearbyCovoiturages(source: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) {
         // Use Google Maps API to fetch nearby places based on source and destination coordinates
 
