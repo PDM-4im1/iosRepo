@@ -15,6 +15,8 @@ struct LoginView: View {
     @State private var navigateToHome = false
     @State private var navigateToHomeClient = false
     @State private var navigateToHomeDelivery = false
+    @State private var isPasswordVisible = false
+
     var body: some View {
         NavigationView{
         VStack {
@@ -29,13 +31,35 @@ struct LoginView: View {
                 .cornerRadius(10)
                 .padding(.horizontal, 50)
                 .padding(.bottom, 20)
+                       ZStack(alignment: .trailing) {
+                           Button(action: {
+                               isPasswordVisible.toggle()
+                           }) {
+                               Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
+                                   .foregroundColor(.gray)
+                                   .padding(.trailing, 55)
+                           }
+                               .padding(.bottom, 30)
+                           .buttonStyle(PlainButtonStyle())
+                           if isPasswordVisible {
+                               TextField("Password", text: $password)
+                                   .padding()
+                                   .background(Color.gray.opacity(0.2))
+                                   .cornerRadius(10)
+                                   .padding(.horizontal, 50)
+                                   .padding(.bottom, 30)
+                           } else {
+                               SecureField("Password", text: $password)
+                                   .padding()
+                                   .background(Color.gray.opacity(0.2))
+                                   .cornerRadius(10)
+                                   .padding(.horizontal, 50)
+                                   .padding(.bottom, 30)
+                           }
 
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-                .padding(.horizontal, 50)
-                .padding(.bottom, 30)
+                        
+                       }
+              
 
             Button(action: {
                 login()
@@ -143,14 +167,17 @@ struct LoginView: View {
                 if let data = data {
                     do {
                         let decoder = JSONDecoder()
-                        let user = try decoder.decode(User.self, from: data)
-
+                        var user = try decoder.decode(User.self, from: data)
+                        user.password = password
                         // Login successful, 'user' now contains the decoded user data
                         print("Logged in as \(user.name)")
                         
                         // Store user ID in UserDefaults
                         UserDefaults.standard.set(user.id, forKey: "userID")
-
+                        // Store user in UserDefaults
+                                          let userData = try JSONEncoder().encode(user)
+                       
+                                          UserDefaults.standard.set(userData, forKey: "loggedInUser")
                         if(user.role == "client"){
                         navigateToHomeClient = true
 

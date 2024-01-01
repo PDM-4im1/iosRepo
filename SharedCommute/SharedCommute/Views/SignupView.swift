@@ -21,12 +21,14 @@ struct SignUpView: View {
     @State private var errorMessage = ""
     @State private var navigateToLogin   = false
 
+    @State private var isPasswordVisible = false
+    @State private var isConfirmPasswordVisible = false
     @State private var isRoleSelectionPresented = false
      @State private var selectedRole: String? = nil
     var body: some View {
         NavigationView {
       
-            VStack {
+            VStack{
                 NavigationLink(
                     destination: (LoginView()).navigationBarBackButtonHidden(true),
                     isActive: $navigateToLogin,
@@ -81,28 +83,70 @@ struct SignUpView: View {
                             .opacity(1)
 
                         Text("Password")
-                            .font(.headline)
-                            .opacity(1)
+                                       .font(.headline)
+                                       .opacity(1)
 
-                        SecureField("Password", text: $password)
-                            .padding()
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            .textContentType(.password)
-                            .opacity(1)
+                                   ZStack(alignment: .trailing) {
+                                       if isPasswordVisible {
+                                           TextField("Password", text: $password)
+                                               .padding()
+                                               .background(Color.gray.opacity(0.2))
+                                               .cornerRadius(10)
+                                               .padding(.horizontal, 20)
+                                               .textContentType(.password)
+                                               .opacity(1)
+                                       } else {
+                                           SecureField("Password", text: $password)
+                                               .padding()
+                                               .background(Color.gray.opacity(0.2))
+                                               .cornerRadius(10)
+                                               .padding(.horizontal, 20)
+                                               .textContentType(.password)
+                                               .opacity(1)
+                                       }
+
+                                       Button(action: {
+                                           isPasswordVisible.toggle()
+                                       }) {
+                                           Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
+                                               .foregroundColor(.gray)
+                                               .padding(.trailing, 25)
+                                       }
+                                       .buttonStyle(PlainButtonStyle())
+                                   }
+
 
                         Text("Confirm Password")
                             .font(.headline)
                             .opacity(1)
+                        ZStack(alignment: .trailing) {
+                                       if isConfirmPasswordVisible {
+                                           TextField("Confirm Password", text: $confirmPassword)
+                                               .padding()
+                                               .background(Color.gray.opacity(0.2))
+                                               .cornerRadius(10)
+                                               .padding(.horizontal, 20)
+                                               .textContentType(.password)
+                                               .opacity(1)
+                                       } else {
+                                           SecureField("Confirm Password", text: $confirmPassword)
+                                               .padding()
+                                               .background(Color.gray.opacity(0.2))
+                                               .cornerRadius(10)
+                                               .padding(.horizontal, 20)
+                                               .textContentType(.password)
+                                               .opacity(1)
+                                       }
 
-                        SecureField("Confirm Password", text: $confirmPassword)
-                            .padding()
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            .textContentType(.password)
-                            .opacity(1)
+                                       Button(action: {
+                                           isConfirmPasswordVisible.toggle()
+                                       }) {
+                                           Image(systemName: isConfirmPasswordVisible ? "eye.fill" : "eye.slash.fill")
+                                               .foregroundColor(.gray)
+                                               .padding(.trailing, 25)
+                                       }
+                                       .buttonStyle(PlainButtonStyle())
+                                   }
 
                         HStack {
                             Spacer()

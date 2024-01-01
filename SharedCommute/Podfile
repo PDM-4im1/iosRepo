@@ -1,10 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'SharedCommute' do
-  project '/Users/rihemRD/Desktop/SharedCommute/SharedCommute/SharedCommute.xcodeproj'
+  project '/Users/NasriMootez/Desktop/SharedCommute/iosRepo/SharedCommute/SharedCommute.xcodeproj'
   platform :ios, '14.0'
   
   pod 'GoogleMaps', '8.3.0'
   pod 'GooglePlaces'
-    pod 'Socket.IO-Client-Swift', '16.1.0'
 end

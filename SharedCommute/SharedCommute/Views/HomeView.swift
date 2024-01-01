@@ -46,15 +46,13 @@ struct HomeView: View {
 func handleLogout() {
         // Perform logout actions, e.g., clear user defaults
         UserDefaults.standard.removeObject(forKey: "userID")
-
-        // Navigate to the login page
-        // Note: You may need to adjust the navigation stack based on your app's structure
-        // For example, assuming you have a LoginView:
+    UserDefaults.standard.removeObject(forKey: "loggedInUser")
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = UIHostingController(rootView: LoginView())
             window.makeKeyAndVisible()
         }
     }
+
 struct MainNavigationBar: View {
     @Binding var isSidebarVisible: Bool
 
@@ -101,8 +99,12 @@ struct MainContentView: View {
             case.history:
             Text("HISTORY")
             case.emergency:Text("Emergency")
-            case.editInfo:
-                Text("edit")
+            case .editInfo:
+                          if let user = getLoggedInUser() {
+                              EditInfoView(user: user)
+                          } else {
+                              Text("User not logged in")
+                          }
     
             case .none:
                 DashboardContentView()

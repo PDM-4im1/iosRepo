@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct User: Identifiable,Decodable {
+struct User: Identifiable,Decodable,Encodable {
     let id: String
         let email: String
-       let password: String
+       var password: String
        let phoneNumber: String
        let role: String
        let name: String

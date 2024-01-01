@@ -52,9 +52,12 @@ struct MainContentClientView: View {
               
             case .delivery:
              Text("delivery")
-          
-            case.editInfo:
-                Text("edit")
+            case .editInfo:
+                          if let user = getLoggedInUser() {
+                              EditInfoView(user: user)
+                          } else {
+                              Text("User not logged in")
+                          }
             case.logOut:
                 Text("logout")
             case.search:
@@ -77,9 +80,11 @@ struct MainContentClientView: View {
 struct SidebarClientView: View {
     @Binding var selectedMenuItem: MenuClientItem?
     var closeSidebar: () -> Void
-    
+    @State private var showingLogoutAlert = false
+
     @State private var isSettingsSubmenuExpanded = false
     @State private var isCarpoolingSubmenuExpanded = false
+    @State private var isDeliveryExpanded = false
     
     var body: some View {
         ZStack {
@@ -169,16 +174,15 @@ struct SidebarClientView: View {
                         .animation(.easeOut(duration: 0.2))
                     }
                 }
-                
                 Button(action: {
-                    isSettingsSubmenuExpanded.toggle()
+                    isDeliveryExpanded.toggle()
                 }) {
                     HStack {
-                        Label("Settings", systemImage: "gearshape.fill")
+                        Label("Delivery", systemImage: "car")
                             .foregroundColor(.white)
                             .padding(.trailing, 10)
                         
-                        Image(systemName: isSettingsSubmenuExpanded ? "chevron.up" : "chevron.down")
+                        Image(systemName: isDeliveryExpanded ? "chevron.up" : "chevron.down")
                             .foregroundColor(.white)
                             .font(.body)
                     }
@@ -189,6 +193,46 @@ struct SidebarClientView: View {
                     )
                 }
                 
+                if isDeliveryExpanded {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Button(action: {
+                            selectedMenuItem = MenuClientItem.delivery
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "car")
+                                    .foregroundColor(.white)
+                                Text("Delivery")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+                        
+                        // Add more buttons for the Delivery submenu as needed
+                        
+                    }
+                }
+                
+                Button(action: {
+                    isSettingsSubmenuExpanded.toggle()
+                }) {
+                    HStack {
+                        Label("Settings", systemImage: "gearshape.fill")
+                            .foregroundColor(.white)
+                            .padding(.trailing, 10)
+
+                        Image(systemName: isSettingsSubmenuExpanded ? "chevron.up" : "chevron.down")
+                            .foregroundColor(.white)
+                            .font(.body)
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.green.opacity(0.6))
+                    )
+                }
+
                 if isSettingsSubmenuExpanded {
                     VStack(alignment: .leading, spacing: 10) {
                         Button(action: {
@@ -204,10 +248,9 @@ struct SidebarClientView: View {
                             .padding(.leading, 30)
                         }
                         .animation(.easeOut(duration: 0.2))
-                        
+
                         Button(action: {
-                            selectedMenuItem = MenuClientItem.logOut
-                            closeSidebar()
+                            showingLogoutAlert = true
                         }) {
                             HStack {
                                 Image(systemName: "square.and.arrow.up")
@@ -216,9 +259,22 @@ struct SidebarClientView: View {
                                     .foregroundColor(.white)
                             }
                             .padding(.leading, 30)
+
                         }
-                        .animation(.easeOut(duration: 0.2))
+                        .alert(isPresented: $showingLogoutAlert) {
+                            Alert(
+                                title: Text("Logout"),
+                                message: Text("Are you sure you want to log out?"),
+                                primaryButton: .default(Text("Cancel")),
+                                secondaryButton: .destructive(Text("Logout")) {
+                                    closeSidebar()
+                                    handleLogout()
+                                }
+                            )
+                        }
+                        Spacer()
                     }
+                    .animation(.easeOut(duration: 0.2))
                 }
                 Spacer()
 

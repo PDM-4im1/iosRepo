@@ -38,7 +38,13 @@ struct DeliverytHomeView: View {
     }
 }
 
-
+ func getLoggedInUser() -> User? {
+    guard let userData = UserDefaults.standard.data(forKey: "loggedInUser"),
+          let user = try? JSONDecoder().decode(User.self, from: userData) else {
+        return nil
+    }
+    return user
+}
 
 struct MainContentDeliveryView: View {
     @Binding var selectedMenuItem: MenuDeliveryItem?
@@ -50,9 +56,12 @@ struct MainContentDeliveryView: View {
                 DashboardContentView()
             case .Delivery:
                 Text("Delivery")
-
-            case.editInfo:
-                Text("edit")
+            case .editInfo:
+                          if let user = getLoggedInUser() {
+                              EditInfoView(user: user)
+                          } else {
+                              Text("User not logged in")
+                          }
             case.logOut:
                 Text("logout")
             case .none:
@@ -69,6 +78,8 @@ struct MainContentDeliveryView: View {
 struct SidebarDeliveryView: View {
     @Binding var selectedMenuItem: MenuDeliveryItem?
     @State private var isSettingsSubmenuExpanded = false
+    @State private var isDeliveryExpanded = false // Add a state for the Delivery submenu
+    @State private var showingLogoutAlert = false
 
     var closeSidebar: () -> Void
 
@@ -95,24 +106,16 @@ struct SidebarDeliveryView: View {
                         .padding()
                 }
 
+                // Add a Button for Delivery submenu
                 Button(action: {
-                    selectedMenuItem = MenuDeliveryItem.Delivery
-                    closeSidebar()
-                }) {
-                    Label("Delivery", systemImage: "car")
-                        .foregroundColor(.white)
-                        .padding()
-                }
-
-                Button(action: {
-                    isSettingsSubmenuExpanded.toggle()
+                    isDeliveryExpanded.toggle()
                 }) {
                     HStack {
-                        Label("Settings", systemImage: "gearshape.fill")
+                        Label("Delivery", systemImage: "car")
                             .foregroundColor(.white)
                             .padding(.trailing, 10)
                         
-                        Image(systemName: isSettingsSubmenuExpanded ? "chevron.up" : "chevron.down")
+                        Image(systemName: isDeliveryExpanded ? "chevron.up" : "chevron.down")
                             .foregroundColor(.white)
                             .font(.body)
                     }
@@ -123,6 +126,46 @@ struct SidebarDeliveryView: View {
                     )
                 }
                 
+                if isDeliveryExpanded {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Button(action: {
+                            selectedMenuItem = MenuDeliveryItem.Delivery
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "car")
+                                    .foregroundColor(.white)
+                                Text("Delivery")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+                        
+                        // Add more buttons for the Delivery submenu as needed
+                        
+                    }
+                }
+                
+                Button(action: {
+                    isSettingsSubmenuExpanded.toggle()
+                }) {
+                    HStack {
+                        Label("Settings", systemImage: "gearshape.fill")
+                            .foregroundColor(.white)
+                            .padding(.trailing, 10)
+
+                        Image(systemName: isSettingsSubmenuExpanded ? "chevron.up" : "chevron.down")
+                            .foregroundColor(.white)
+                            .font(.body)
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.green.opacity(0.6))
+                    )
+                }
+
                 if isSettingsSubmenuExpanded {
                     VStack(alignment: .leading, spacing: 10) {
                         Button(action: {
@@ -138,10 +181,9 @@ struct SidebarDeliveryView: View {
                             .padding(.leading, 30)
                         }
                         .animation(.easeOut(duration: 0.2))
-                        
+
                         Button(action: {
-                            selectedMenuItem = MenuDeliveryItem.logOut
-                            closeSidebar()
+                            showingLogoutAlert = true
                         }) {
                             HStack {
                                 Image(systemName: "square.and.arrow.up")
@@ -150,9 +192,22 @@ struct SidebarDeliveryView: View {
                                     .foregroundColor(.white)
                             }
                             .padding(.leading, 30)
+
                         }
-                        .animation(.easeOut(duration: 0.2))
+                        .alert(isPresented: $showingLogoutAlert) {
+                            Alert(
+                                title: Text("Logout"),
+                                message: Text("Are you sure you want to log out?"),
+                                primaryButton: .default(Text("Cancel")),
+                                secondaryButton: .destructive(Text("Logout")) {
+                                    closeSidebar()
+                                    handleLogout()
+                                }
+                            )
+                        }
+                        Spacer()
                     }
+                    .animation(.easeOut(duration: 0.2))
                 }
                 Spacer()
 
@@ -162,8 +217,6 @@ struct SidebarDeliveryView: View {
         }
     }
 }
-
-
 
 enum MenuDeliveryItem {
     case dashboard
