@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct CovoiturageListView: View {
     @State private var covoiturages: [Covoiturage] = []
@@ -139,6 +140,10 @@ struct CovoiturageListView: View {
                     DispatchQueue.main.async {
                         fetchCovoiturages()
                     }                }
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                       // This block will be executed when the app enters the foreground
+                       fetchCovoiturages()
+                   }
               
                 Spacer()
             }
@@ -176,7 +181,7 @@ struct CovoiturageListView: View {
               }
           }.resume()
       }
-    private func fetchCovoiturages() {
+     func fetchCovoiturages() {
         if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
             iduser = userID
             print("User ID: \(userID)")
@@ -197,7 +202,6 @@ struct CovoiturageListView: View {
                     // Assuming covoituragesData is an array of objects
                     DispatchQueue.main.async {
                         self.covoiturages = covoituragesData
-                        UITableView.appearance().reloadData()
 
                     }
                 } catch {

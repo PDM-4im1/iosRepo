@@ -31,35 +31,38 @@ struct LoginView: View {
                 .cornerRadius(10)
                 .padding(.horizontal, 50)
                 .padding(.bottom, 20)
-                       ZStack(alignment: .trailing) {
-                           Button(action: {
-                               isPasswordVisible.toggle()
-                           }) {
-                               Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
-                                   .foregroundColor(.gray)
-                                   .padding(.trailing, 55)
-                           }
-                               .padding(.bottom, 30)
-                           .buttonStyle(PlainButtonStyle())
-                           if isPasswordVisible {
-                               TextField("Password", text: $password)
-                                   .padding()
-                                   .background(Color.gray.opacity(0.2))
-                                   .cornerRadius(10)
-                                   .padding(.horizontal, 50)
-                                   .padding(.bottom, 30)
-                           } else {
-                               SecureField("Password", text: $password)
-                                   .padding()
-                                   .background(Color.gray.opacity(0.2))
-                                   .cornerRadius(10)
-                                   .padding(.horizontal, 50)
-                                   .padding(.bottom, 30)
-                           }
+                ZStack(alignment: .trailing) {
+                    if isPasswordVisible {
+                        TextField("Password", text: $password)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(10)
+                            .padding(.horizontal, 50)
+                    } else {
+                        SecureField("Password", text: $password)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(10)
+                            .padding(.horizontal, 50)
+                    }
+                }     .padding(.bottom, 30)
 
-                        
-                       }
-              
+                Button(action: {
+                    isPasswordVisible.toggle()
+                }) {
+                    HStack(spacing: 10) {
+                        Image(systemName: isPasswordVisible ? "checkmark.square.fill" : "square")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 12))
+                        Text("Show Password")
+                            .font(.system(size: 12))
+                            .foregroundColor(.gray)
+                    }
+                }                            .padding(.bottom, 50)
+
+                .buttonStyle(PlainButtonStyle())
+           
+            
 
             Button(action: {
                 login()
