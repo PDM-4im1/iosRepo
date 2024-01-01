@@ -158,6 +158,7 @@ struct CarMapView: View {
                                 if let Covoiturage = Covoiturage{
                                     DispatchQueue.main.async {
                                         Emrgency = Covoiturage
+                                        print("ahawa emergenci ll page: ",Emrgency)
                                     }
                                 } else {
                                     print("Covoiturage not found")

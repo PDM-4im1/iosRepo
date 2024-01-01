@@ -379,7 +379,7 @@ struct MapView: UIViewRepresentable {
                                 }
                             }
                         }
-                        parent.destination = "\(marker.position)"
+                        parent.destination = "\(place.name)"
                         // Access the parent MapView and call fetchRoutes
                         
                     }
@@ -393,3 +393,4 @@ struct MapView: UIViewRepresentable {
         
         
     
+

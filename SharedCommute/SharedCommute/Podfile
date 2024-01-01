@@ -1,0 +1,10 @@
+use_frameworks! :linkage => :static 
+target 'SharedCommute' do
+  project '/Users/mootenasri/Desktop/Mootez/iosRepo/SharedCommute/SharedCommute.xcodeproj'
+  platform :ios, '14.0'
+  
+  pod 'GoogleMaps','8.3.0'
+  pod 'GooglePlaces'
+ 
+
+end

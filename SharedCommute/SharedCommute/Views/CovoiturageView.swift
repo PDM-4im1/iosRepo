@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import MessageUI
+import Firebase
+import FirebaseFirestore
 
 struct DriverRow: View {
     var driver: Driver
     @State private var name = "No Name"
     @State private var phone = "No Number"
     @State private var car = "No Car"
-   
+    @Binding private var mail :String
+    init(driver: Driver, mail: Binding<String>) {
+            self.driver = driver
+            self._mail = mail
+        }
 
     var body: some View {
         HStack {
@@ -50,6 +57,7 @@ struct DriverRow: View {
                         print(user)
                         name = user.name + " " + user.firstName
                         phone = user.phoneNumber
+                        mail = user.email
                     }
                 } else {
                     print("User not found")
@@ -149,7 +157,14 @@ struct DriverRow: View {
 }
 
 struct CovoiturageView: View {
+    @Environment(\.presentationMode) var presentationMode
     
+    var pendingRides: ClientRequest?
+    @State private var clientRequest: ClientRequest?
+    @State private var selectedDriver: Driver? = nil
+    @State private var isLoading = false
+    @State private var email = ""
+    @StateObject private var controller = CovoiturageController()
     @State private var drivers: [Driver] = []
     @State private var showPaymentView = false
     @Binding var Emrgency: EmgCovoiturage?
@@ -160,11 +175,16 @@ struct CovoiturageView: View {
     var body: some View {
         List {
             ForEach(drivers) { driver in
-                DriverRow(driver: driver)
+                DriverRow(driver: driver, mail: $email)
                 
                 Button(action: {
-                    showPaymentView = true
-                }) {
+                   
+                    print("datacoiviturage driver :", Emrgency!)
+                    //selectedDriver = driver
+                    sendRideRequest(driver: driver)
+                    controller.updateRide(Covoiturage:Emrgency!.id! ,idcond: driver.id)
+                    isLoading = true
+                    }) {
                     Text("Confirm")
                         .foregroundColor(.white)
                 }
@@ -174,7 +194,9 @@ struct CovoiturageView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .sheet(isPresented: $showPaymentView) {
                     PaymentSelectionView()
+                    LoadingView(isLoading: $isLoading)
                     //badelha
+                     
                 }
             }
         }
@@ -183,11 +205,115 @@ struct CovoiturageView: View {
         .onAppear {
             // Fetch the list of drivers when the view appears
             fetchDrivers()
+            fetchClientRequest()
             print(drivers)
+            
+            
+        }
+        .sheet(isPresented: $isLoading) {
+            LoadingView(isLoading: $isLoading)
+                }
+               
+    }
+    func fetchClientRequest() {
+        isLoading = false
+           getClientRequest { (result, error) in
+               if let error = error {
+                   print("Error fetching client request: \(error.localizedDescription)")
+                  // isLoading = false
+                   return
+               }
+               
+               if let result = result {
+                   self.clientRequest = result
+              
+
+                   // Check the status and navigate accordingly
+                   if result.status == "Accept" {
+                       
+                       // Navigate to another view
+                       showPaymentView = true
+                   } else if result.status == "Decline" {
+                       //isLoading = false
+                       // Handle declined state or simply dismiss the view
+                       presentationMode.wrappedValue.dismiss()
+                   } else {
+                       //isLoading = false
+                       print("Unknown status: \(result.status)")
+                   }
+               } else {
+                   //isLoading = false
+                   print("No client request found.")
+               }
+           }
+       }
+    
+    func sendRideRequest(driver: Driver) {
+        let db = Firestore.firestore()
+
+        // Create a new document in "rideRequests" collection
+        db.collection("rideRequests").addDocument(data: [
+            "id": Emrgency!.id ,
+            "id_user": Emrgency!.id_user,
+            "id_cond": driver.id,
+            "pointDepart": Emrgency!.pointDepart,
+            "pointArrivee": Emrgency!.pointArrivee,
+            "Tarif": Emrgency!.Tarif,
+            "status": "pending",
+            // Add any other relevant data from EmgCovoiturage
+        ]) { err in
+            if let err = err {
+                print("Error sending ride request: \(err)")
+            } else {
+                print("Ride request sent successfully")
+               // presentationMode.wrappedValue.dismiss() // Dismiss the view after sending the request
+            }
         }
     }
 
-    
+    func getClientRequest(completion: @escaping (ClientRequest?, Error?) -> Void) {
+        let db = Firestore.firestore()
+
+        // Create a reference to the "clientrequest" collection
+        let collectionRef = db.collection("clientrequest")
+
+        // Query to fetch the document where id_user is equal to the provided user ID
+        let query = collectionRef.whereField("covoiturage", isEqualTo: Emrgency!.id)
+
+        // Execute the query
+        query.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching client request: \(error.localizedDescription)")
+                completion(nil, error)
+                return
+            }
+
+            guard let document = querySnapshot?.documents.first else {
+                print("No document found for user ID: 65798eb63ed6f3fb203527e1")
+                completion(nil, nil)
+                return
+            }
+
+            do {
+                // Attempt to decode the Firestore document into a ClientRequest object
+                if let clientRequest = try document.data(as: ClientRequest?.self) {
+                    completion(clientRequest, nil)
+                } else {
+                    // Handle the case where the decoding succeeded but the resulting object is nil
+                    print("Decoding succeeded but returned nil for ClientRequest")
+                    completion(nil, nil)
+                }
+            } catch {
+                // Handle any errors that occur during the decoding process
+                print("Error decoding ClientRequest: \(error)")
+                completion(nil, error)
+            }
+        }
+    }
+
+
+     // Ensure this is an array of ClientRequest objects
+
 
     func fetchDrivers() {
         // Replace with your actual server URL and coordinate values
@@ -221,8 +347,7 @@ struct CovoiturageView: View {
                 
                 // Decode each dictionary into a Driver object
                 let decodedDrivers = jsonArray.compactMap { dictionary -> Driver? in
-                    do {print("Dictionary before decoding: \(dictionary)")
-
+                    do {
                         let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: [])
                         return try JSONDecoder().decode(Driver.self, from: jsonData)
                     } catch {
@@ -241,15 +366,15 @@ struct CovoiturageView: View {
             }
         }.resume()
     }
-    func updateRid(Cond: String ,idCond:String){
-        _ = URL(string: "http://localhost:9090/covoiturage/edit/\(idCond)")!
-    }
+    
+    
+
 }
 
 
 
 struct CovoiturageView_Previews: PreviewProvider {
     static var previews: some View {
-        CovoiturageView(Emrgency: .constant(nil))
+        CovoiturageView(Emrgency: .constant(nil)).environmentObject(CovoiturageController())
     }
 }

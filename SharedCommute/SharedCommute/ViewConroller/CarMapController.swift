@@ -8,8 +8,10 @@
 import SwiftUI
 import UIKit
 import GooglePlaces
+import CoreLocation
 
 class CarMapController: UIViewController,ObservableObject{
+    
     
     public func saveEMG(source:String,distination:String) {
         
@@ -18,59 +20,65 @@ class CarMapController: UIViewController,ObservableObject{
             
         }
         
-            func saveCovoiturage( pointDepart: String, pointArrivee: String, tarif: Double, completion: @escaping (EmgCovoiturage?) -> Void) {
-                // Define the URL of your Node.js endpoint
-                let dateFormatter = ISO8601DateFormatter()
-                let currentDate = dateFormatter.string(from: Date())
-                
-                let url = URL(string: "http://localhost:9090/covoiturage/saveCovoiturage")! // Replace with your actual server URL
-                
-                // Create the request body
-                let requestBody: [String: Any] = [
-                    "id_cond": 0,
-                    "id_user": "656080221d51b314e6169893",
-                    "pointDepart": pointDepart,
-                    "pointArrivee": pointArrivee,
-                    "date": currentDate,
-                    "Tarif": tarif,
-                    "statut" : "Active",
-                    "typeCov": "Emergency"
-                ]
-                
-                // Convert the request body to JSON data
-                let jsonData = try! JSONSerialization.data(withJSONObject: requestBody)
-                
-                // Create the request
-                var request = URLRequest(url: url)
-                request.httpMethod = "POST"
-                request.httpBody = jsonData
-                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                
-                // Create the URLSession task
-                URLSession.shared.dataTask(with: request) { data, response, error in
-                    if let error = error {
-                        print("Error fetching Transport: \(error.localizedDescription)")
-                        completion(nil)
-                        return
-                    }
-                    
-                    guard let data = data else {
-                        print("No data received when fetching Transport.")
-                        completion(nil)
-                        return
-                    }
-                    do {
-                        let decodedCovoiturage = try JSONDecoder().decode(EmgCovoiturage.self, from: data)
-                        completion(decodedCovoiturage)
-                    } catch {
-                        print("Error decoding JSON: \(error.localizedDescription)")
-                        completion(nil)
-                    }
-                }.resume()
-            }
+    func saveCovoiturage(pointDepart: String, pointArrivee: String, tarif: Double, completion: @escaping (EmgCovoiturage?) -> Void) {
+        let dateFormatter = ISO8601DateFormatter()
+        let currentDate = dateFormatter.string(from: Date())
+
+        let url = URL(string: "http://localhost:9090/covoiturage/saveCovoiturage")!
+        
+        let requestBody: [String: Any] = [
+            "id_cond": 0,
+            "id_user": "656080221d51b314e6169893",
+            "pointDepart": pointDepart,
+            "pointArrivee": pointArrivee,
+            "dateCovoirurage": currentDate,
+            "Tarif": tarif,
+            "statut" : "Active",
+            "typeCov": "Emergency"
+        ]
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: requestBody)
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = jsonData
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            print(request)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error fetching Transport: \(error.localizedDescription)")
+                    completion(nil)
+                    return
+                }
+                print("C")
+                guard let data = data else {
+                    print("No data received when fetching Transport.")
+                    completion(nil)
+                    return
+                }
+
+                do {
+                    print("Received Saved Data:", String(data: data, encoding: .utf8) ?? "Invalid UTF-8 data")
+                    let decoder = JSONDecoder()
+                    let decodedCovoiturage = try decoder.decode(EmgCovoiturage.self, from: data)
+                    completion(decodedCovoiturage)
+
+                      print("Data saved:", decodedCovoiturage)
+                  } catch {
+                      print("Error decoding Covoiturages JSON: \(error)")
+                      completion(nil)
+                  }
+            }.resume()
+        } catch {
+            print("Error creating JSON data: \(error.localizedDescription)")
+            completion(nil)
+        }
+    }
+
             
             // Find
-        
+ 
+   
         func getListeByLocation(localisation: String, completion: @escaping (Result<[Driver], Error>) -> Void) {
             // Replace with your actual server URL
             let url = URL(string: "https://localhost:9090/covoiturage/finddriver/\(localisation)")!

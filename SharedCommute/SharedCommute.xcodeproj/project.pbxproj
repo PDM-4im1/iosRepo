@@ -44,10 +44,21 @@
 		51FBFFD62B23210000BAA63E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCF2B23210000BAA63E /* MapView.swift */; };
 		51FBFFD82B23219500BAA63E /* CarMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFD72B23219500BAA63E /* CarMapController.swift */; };
 		51FBFFDA2B23224B00BAA63E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFD92B23224B00BAA63E /* Users.swift */; };
-		7455979C9A4DFA912A60077B /* libPods-SharedCommute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3FDFA47D479E40BC441828 /* libPods-SharedCommute.a */; };
+		A60EC4EE2B42C96100DB25A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A60EC4ED2B42C96100DB25A4 /* GoogleService-Info.plist */; };
+		A65423372B42E85300F3C6D8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A65423362B42E85300F3C6D8 /* FirebaseAnalytics */; };
+		A65423392B42E85300F3C6D8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A65423382B42E85300F3C6D8 /* FirebaseFirestore */; };
+		A654233B2B42E85300F3C6D8 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A654233A2B42E85300F3C6D8 /* FirebaseFirestoreSwift */; };
+		A654233D2B42E85300F3C6D8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A654233C2B42E85300F3C6D8 /* FirebaseStorage */; };
+		A654233F2B42EE0400F3C6D8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = A654233E2B42EE0400F3C6D8 /* FirebaseMessaging */; };
+		A65423432B42EF9B00F3C6D8 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65423422B42EF9B00F3C6D8 /* FirebaseManager.swift */; };
+		A66CC8A02B43708B0080069D /* ClientRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66CC89F2B43708B0080069D /* ClientRequest.swift */; };
+		A66DB8062B418E4A0082CB1F /* CovoiturageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66DB8052B418E4A0082CB1F /* CovoiturageController.swift */; };
+		A66DB80A2B41A0B90082CB1F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66DB8092B41A0B90082CB1F /* LoadingView.swift */; };
+		D408EFD1B8EA008CE523FA56 /* Pods_SharedCommute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA24494DB02F63388D7DB88 /* Pods_SharedCommute.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FA24494DB02F63388D7DB88 /* Pods_SharedCommute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharedCommute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB8F2E62B404FF8007D0F02 /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
 		2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeView.swift; sourceTree = "<group>"; };
 		2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryHomeView.swift; sourceTree = "<group>"; };
@@ -87,9 +98,13 @@
 		51FBFFCF2B23210000BAA63E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		51FBFFD72B23219500BAA63E /* CarMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapController.swift; sourceTree = "<group>"; };
 		51FBFFD92B23224B00BAA63E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		6A3FDFA47D479E40BC441828 /* libPods-SharedCommute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SharedCommute.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		73CFF4698CDB691400AE51A7 /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.debug.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
-		840723A0B94B7D9EA8070FFF /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.release.xcconfig"; path = "Target Support Files/Pods-SharedCommute/Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
+		6E0FAA7940D0F8EE5C8DB87B /* Pods-SharedCommute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.debug.xcconfig"; path = "../SharedCommute/Pods/Target Support Files/Pods-SharedCommute/Pods-SharedCommute.debug.xcconfig"; sourceTree = "<group>"; };
+		84D0FEE7F72ADCA7F766605C /* Pods-SharedCommute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedCommute.release.xcconfig"; path = "../SharedCommute/Pods/Target Support Files/Pods-SharedCommute/Pods-SharedCommute.release.xcconfig"; sourceTree = "<group>"; };
+		A60EC4ED2B42C96100DB25A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A65423422B42EF9B00F3C6D8 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A66CC89F2B43708B0080069D /* ClientRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRequest.swift; sourceTree = "<group>"; };
+		A66DB8052B418E4A0082CB1F /* CovoiturageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageController.swift; sourceTree = "<group>"; };
+		A66DB8092B41A0B90082CB1F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,21 +112,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7455979C9A4DFA912A60077B /* libPods-SharedCommute.a in Frameworks */,
+				A654233F2B42EE0400F3C6D8 /* FirebaseMessaging in Frameworks */,
+				A65423372B42E85300F3C6D8 /* FirebaseAnalytics in Frameworks */,
+				D408EFD1B8EA008CE523FA56 /* Pods_SharedCommute.framework in Frameworks */,
+				A65423392B42E85300F3C6D8 /* FirebaseFirestore in Frameworks */,
+				A654233D2B42E85300F3C6D8 /* FirebaseStorage in Frameworks */,
+				A654233B2B42E85300F3C6D8 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		21A761EB28D8BCC0B050460A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6A3FDFA47D479E40BC441828 /* libPods-SharedCommute.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		51A157C62B14BD0900C6F3CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 				51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */,
 				51A157C92B14BD0900C6F3CD /* covoiturage.swift */,
 				51FBFFD92B23224B00BAA63E /* Users.swift */,
+				A66CC89F2B43708B0080069D /* ClientRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +157,7 @@
 				519E4AE22B3B3192009C8A04 /* HomeView.swift */,
 				2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */,
 				2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */,
+				A66DB8092B41A0B90082CB1F /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +173,8 @@
 				512A42382B22E6F2001A026C /* SharedData.swift */,
 				51FBFFD72B23219500BAA63E /* CarMapController.swift */,
 				2CB8F2E62B404FF8007D0F02 /* RoleSelectionView.swift */,
+				A66DB8052B418E4A0082CB1F /* CovoiturageController.swift */,
+				A65423422B42EF9B00F3C6D8 /* FirebaseManager.swift */,
 			);
 			path = ViewConroller;
 			sourceTree = "<group>";
@@ -169,7 +185,7 @@
 				51CE80792B14B5CF0058BE35 /* SharedCommute */,
 				51CE80782B14B5CF0058BE35 /* Products */,
 				F7D9FCD3D7B6E6361BB22209 /* Pods */,
-				21A761EB28D8BCC0B050460A /* Frameworks */,
+				CA42C7515FE03A75B3F1FB77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +209,7 @@
 				51CE807E2B14B5D00058BE35 /* Assets.xcassets */,
 				51CE80832B14B5D00058BE35 /* Persistence.swift */,
 				513C72B32B20A89700E662AC /* Info.plist */,
+				A60EC4ED2B42C96100DB25A4 /* GoogleService-Info.plist */,
 				51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */,
 				51CE80802B14B5D00058BE35 /* Preview Content */,
 			);
@@ -207,11 +224,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		CA42C7515FE03A75B3F1FB77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FA24494DB02F63388D7DB88 /* Pods_SharedCommute.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7D9FCD3D7B6E6361BB22209 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				73CFF4698CDB691400AE51A7 /* Pods-SharedCommute.debug.xcconfig */,
-				840723A0B94B7D9EA8070FFF /* Pods-SharedCommute.release.xcconfig */,
+				6E0FAA7940D0F8EE5C8DB87B /* Pods-SharedCommute.debug.xcconfig */,
+				84D0FEE7F72ADCA7F766605C /* Pods-SharedCommute.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -223,17 +248,24 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51CE808B2B14B5D00058BE35 /* Build configuration list for PBXNativeTarget "SharedCommute" */;
 			buildPhases = (
-				5C860E7E3FF83BBEC8DB4A91 /* [CP] Check Pods Manifest.lock */,
+				8D09EEE83DD0025C55469972 /* [CP] Check Pods Manifest.lock */,
 				51CE80732B14B5CF0058BE35 /* Sources */,
 				51CE80742B14B5CF0058BE35 /* Frameworks */,
 				51CE80752B14B5CF0058BE35 /* Resources */,
-				8FC215385E2204DDE1A4EC8E /* [CP] Copy Pods Resources */,
+				8BBD2912026E7E533F19828C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SharedCommute;
+			packageProductDependencies = (
+				A65423362B42E85300F3C6D8 /* FirebaseAnalytics */,
+				A65423382B42E85300F3C6D8 /* FirebaseFirestore */,
+				A654233A2B42E85300F3C6D8 /* FirebaseFirestoreSwift */,
+				A654233C2B42E85300F3C6D8 /* FirebaseStorage */,
+				A654233E2B42EE0400F3C6D8 /* FirebaseMessaging */,
+			);
 			productName = SharedCommute;
 			productReference = 51CE80772B14B5CF0058BE35 /* SharedCommute.app */;
 			productType = "com.apple.product-type.application";
@@ -303,6 +335,9 @@
 				ca,
 			);
 			mainGroup = 51CE806E2B14B5CF0058BE35;
+			packageReferences = (
+				A65423352B42E85300F3C6D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 51CE80782B14B5CF0058BE35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,13 +354,31 @@
 			files = (
 				51CE80822B14B5D00058BE35 /* Preview Assets.xcassets in Resources */,
 				51CE807F2B14B5D00058BE35 /* Assets.xcassets in Resources */,
+				A60EC4EE2B42C96100DB25A4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C860E7E3FF83BBEC8DB4A91 /* [CP] Check Pods Manifest.lock */ = {
+		8BBD2912026E7E533F19828C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D09EEE83DD0025C55469972 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -345,23 +398,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FC215385E2204DDE1A4EC8E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SharedCommute/Pods-SharedCommute-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -387,16 +423,20 @@
 				51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */,
 				51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */,
 				519E4AE32B3B3192009C8A04 /* HomeView.swift in Sources */,
+				A66DB80A2B41A0B90082CB1F /* LoadingView.swift in Sources */,
 				51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */,
 				51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */,
 				51FBFFD32B23210000BAA63E /* CovoiturageView.swift in Sources */,
 				51FBFFD02B23210000BAA63E /* CarMapView.swift in Sources */,
+				A66CC8A02B43708B0080069D /* ClientRequest.swift in Sources */,
 				512A42392B22E6F2001A026C /* SharedData.swift in Sources */,
 				51E321632B39B19D00C5ED62 /* Loginuser.swift in Sources */,
 				51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */,
 				51FBFFD52B23210000BAA63E /* PaymentView.swift in Sources */,
 				51FBFFD12B23210000BAA63E /* EmergencyRideView.swift in Sources */,
 				51FBFFBE2B2320BA00BAA63E /* EmgDriverCell.swift in Sources */,
+				A66DB8062B418E4A0082CB1F /* CovoiturageController.swift in Sources */,
+				A65423432B42EF9B00F3C6D8 /* FirebaseManager.swift in Sources */,
 				513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */,
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
 				51E321652B39B61900C5ED62 /* SignupView.swift in Sources */,
@@ -533,7 +573,7 @@
 		};
 		51CE808C2B14B5D00058BE35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73CFF4698CDB691400AE51A7 /* Pods-SharedCommute.debug.xcconfig */;
+			baseConfigurationReference = 6E0FAA7940D0F8EE5C8DB87B /* Pods-SharedCommute.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -542,6 +582,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SharedCommute/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SharedCommute/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide accurate directions";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide accurate directions";
@@ -565,7 +606,7 @@
 		};
 		51CE808D2B14B5D00058BE35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 840723A0B94B7D9EA8070FFF /* Pods-SharedCommute.release.xcconfig */;
+			baseConfigurationReference = 84D0FEE7F72ADCA7F766605C /* Pods-SharedCommute.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -574,6 +615,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SharedCommute/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SharedCommute/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide accurate directions";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide accurate directions";
@@ -617,6 +659,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A65423352B42E85300F3C6D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A65423362B42E85300F3C6D8 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A65423352B42E85300F3C6D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		A65423382B42E85300F3C6D8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A65423352B42E85300F3C6D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		A654233A2B42E85300F3C6D8 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A65423352B42E85300F3C6D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		A654233C2B42E85300F3C6D8 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A65423352B42E85300F3C6D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		A654233E2B42EE0400F3C6D8 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A65423352B42E85300F3C6D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */ = {

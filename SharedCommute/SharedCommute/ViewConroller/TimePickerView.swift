@@ -19,12 +19,6 @@ struct TimePickerView: View {
         @State private var userid: String = ""
  
 
-    func formattedDate(date: Date) -> String {
-  
-          let dateFormatter = DateFormatter()
-          dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // Customize the date format as per your needs
-          return dateFormatter.string(from: date)
-      }
     private func saveTrip() {
            // Convert selectedHourMapping and selectedMinuteMapping to a Date object
            let currentDate = Date()
@@ -304,3 +298,10 @@ struct TimePickerView_Previews: PreviewProvider {
         TimePickerView(selectedHour: .constant(0), selectedMinute: .constant(0), source: .constant(""), destination: .constant(""), idcovoiturage:.constant("")).environmentObject(CarMapController())
     }
 }
+
+func formattedDate(date: Date) -> String {
+
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // Customize the date format as per your needs
+      return dateFormatter.string(from: date)
+  }
