@@ -126,7 +126,7 @@ public struct MappingView: View {
                                         .padding(.horizontal)
 
                 GoogleMapsView(source: $source, destination: $destination, routes: $routes, isButtonTapped: $isButtonTapped, showAlert: $showAlert, alertText: $alertText)
-                    .frame(height: 260) // Adjust the height according to your needs
+                    .frame(height: 220) // Adjust the height according to your needs
                     .edgesIgnoringSafeArea(.all)
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius: 4))

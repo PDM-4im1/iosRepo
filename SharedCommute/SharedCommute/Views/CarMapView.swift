@@ -15,6 +15,7 @@ struct CarMapView: View {
     @State private var showCurrentLocation = false
     @State private var source: String = ""
     @State private var destination: String = ""
+    @State private var iduser: String = ""
     @State private var showhospitals: Bool = false
     @State private var showPharmacy: Bool = false
     @State private var showPolice: Bool = false
@@ -154,10 +155,11 @@ struct CarMapView: View {
                     
                     NavigationLink(destination: CovoiturageView(Emrgency: $Emrgency),isActive: $showactivetrue) {
                         Button(action: {
-                            controller.saveCovoiturage( pointDepart: source, pointArrivee: destination, tarif: 20.5){ Covoiturage in
+                            controller.saveCovoiturage( iduser: iduser, pointDepart: source, pointArrivee: destination, tarif: 20.5){ Covoiturage in
                                 if let Covoiturage = Covoiturage{
                                     DispatchQueue.main.async {
                                         Emrgency = Covoiturage
+                                        print("ahawa emergenci ll page: ",Emrgency!)
                                     }
                                 } else {
                                     print("Covoiturage not found")
@@ -173,7 +175,12 @@ struct CarMapView: View {
                                             }
                     }
                 }
-            }
+            }.onAppear{ if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
+                iduser = userID
+                print("User ID: \(userID)")
+            } else {
+                print("User ID not found in UserDefaults.")
+            }}
         }
         .padding(5)
         .navigationBarHidden(true)

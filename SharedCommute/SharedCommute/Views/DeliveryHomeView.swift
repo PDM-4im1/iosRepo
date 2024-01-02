@@ -47,6 +47,8 @@ struct DeliverytHomeView: View {
 }
 
 struct MainContentDeliveryView: View {
+    @StateObject private var locationViewModel = LocationSearchViewModel()
+
     @Binding var selectedMenuItem: MenuDeliveryItem?
 
     var body: some View {
@@ -54,8 +56,9 @@ struct MainContentDeliveryView: View {
             switch selectedMenuItem {
             case .dashboard:
                 DashboardContentView()
-            case .Delivery:
-                Text("Delivery")
+            case .Search:
+                UnassignedColisView()
+                    .environmentObject(locationViewModel)
             case .editInfo:
                           if let user = getLoggedInUser() {
                               EditInfoView(user: user)
@@ -129,13 +132,13 @@ struct SidebarDeliveryView: View {
                 if isDeliveryExpanded {
                     VStack(alignment: .leading, spacing: 10) {
                         Button(action: {
-                            selectedMenuItem = MenuDeliveryItem.Delivery
+                            selectedMenuItem = MenuDeliveryItem.Search
                             closeSidebar()
-                        }) {
+                        })  {
                             HStack {
-                                Image(systemName: "car")
+                                Image(systemName: "shippingbox")
                                     .foregroundColor(.white)
-                                Text("Delivery")
+                                Text("Management")
                                     .foregroundColor(.white)
                             }
                             .padding(.leading, 30)
@@ -220,7 +223,7 @@ struct SidebarDeliveryView: View {
 
 enum MenuDeliveryItem {
     case dashboard
-    case Delivery
+    case Search
     case editInfo
     case logOut    // Add more menu items as needed
 }

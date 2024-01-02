@@ -3,4 +3,70 @@
    uuid = "EB021D5B-6B2B-476D-A52C-E033C7F70A5C"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1A54AF6-48EB-4C83-B3F3-01B6E12C5CB1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SharedCommute/Views/CovoiturageListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "reverseFormattedDate(dateString:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57106D54-B0F7-4C89-9E57-25833C458981"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SharedCommute/Models/EmgCovoiturage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "EmgCovoiturage"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "57106D54-B0F7-4C89-9E57-25833C458981 - be27ee2e9fa96301"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SharedCommute.EmgCovoiturage.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;SharedCommute.EmgCovoiturage.CodingKeys&gt;"
+                  moduleName = "SharedCommute"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NasriMootez/Desktop/SharedCommute/iosRepo/SharedCommute/SharedCommute/Models/EmgCovoiturage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "57106D54-B0F7-4C89-9E57-25833C458981 - 167f9c4973b391cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SharedCommute.EmgCovoiturage.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "SharedCommute"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NasriMootez/Desktop/SharedCommute/iosRepo/SharedCommute/SharedCommute/Models/EmgCovoiturage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

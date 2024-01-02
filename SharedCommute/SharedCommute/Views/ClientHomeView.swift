@@ -42,6 +42,7 @@ struct ClientHomeView: View {
 
 struct MainContentClientView: View {
     @Binding var selectedMenuItem: MenuClientItem?
+    @StateObject private var locationViewModel = LocationSearchViewModel()
 
     var body: some View {
         VStack {
@@ -49,9 +50,10 @@ struct MainContentClientView: View {
             case .dashboard:
                 DashboardContentView()
         
-              
+            case.transaction :
+                ColisView()
             case .delivery:
-             Text("delivery")
+                UserCreateColisView() .environmentObject(locationViewModel)
             case .editInfo:
                           if let user = getLoggedInUser() {
                               EditInfoView(user: user)
@@ -63,7 +65,7 @@ struct MainContentClientView: View {
             case.search:
                 ClientMappingView(internalsource: .constant(""), internaldestination: .constant(""), selectedHoursMapping: .constant(0), selectedMinutesMapping: .constant(0), initialidcovoiturage: .constant(""))
             case.emergency:
-                Text("emrgency")
+                EmergencyRideView()
             case.history:
                 Text("history")
             case .none:
@@ -200,9 +202,9 @@ struct SidebarClientView: View {
                             closeSidebar()
                         }) {
                             HStack {
-                                Image(systemName: "car")
+                                Image(systemName: "magnifyingglass")
                                     .foregroundColor(.white)
-                                Text("Delivery")
+                                Text("Search")
                                     .foregroundColor(.white)
                             }
                             .padding(.leading, 30)
@@ -211,7 +213,25 @@ struct SidebarClientView: View {
                         
                         // Add more buttons for the Delivery submenu as needed
                         
-                    }
+                   
+                        Button(action: {
+                            selectedMenuItem = MenuClientItem.transaction
+                            closeSidebar()
+                        }) {
+                            HStack {
+                                Image(systemName: "shippingbox")
+                                    .foregroundColor(.white)
+                                Text("tracking")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.leading, 30)
+                        }
+                        .animation(.easeOut(duration: 0.2))
+                        
+                        // Add more buttons for the Delivery submenu as needed
+                        
+                    
+                }
                 }
                 
                 Button(action: {
@@ -294,6 +314,7 @@ struct SubmenuOffsetPreferenceKey: PreferenceKey {
 enum MenuClientItem {
     case dashboard
     case delivery
+    case transaction
     case editInfo
     case logOut
     case search
@@ -304,5 +325,6 @@ enum MenuClientItem {
 struct ClientHomeView_Previews: PreviewProvider {
     static var previews: some View {
         ClientHomeView()
+        
     }
 }

@@ -11,6 +11,37 @@
 		2CB8F2E92B405DC8007D0F02 /* ClientHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */; };
 		2CB8F2EB2B405DDA007D0F02 /* DeliveryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */; };
 		512A42392B22E6F2001A026C /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A42382B22E6F2001A026C /* SharedData.swift */; };
+		5133B3EB2B43884A0009E782 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3EA2B43884A0009E782 /* MapViewState.swift */; };
+		5133B3ED2B4388610009E782 /* DeliveryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3EC2B4388610009E782 /* DeliveryType.swift */; };
+		5133B3EF2B4388720009E782 /* Delivry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3EE2B4388720009E782 /* Delivry.swift */; };
+		5133B3F12B43888E0009E782 /* DeliveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3F02B43888E0009E782 /* DeliveryResponse.swift */; };
+		5133B3F42B43893D0009E782 /* DeliveryRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3F32B43893D0009E782 /* DeliveryRequestView.swift */; };
+		5133B3F62B4389770009E782 /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3F52B4389770009E782 /* LocationSearchActivationView.swift */; };
+		5133B3F82B4389850009E782 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3F72B4389850009E782 /* LocationSearchView.swift */; };
+		5133B3FA2B43899D0009E782 /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3F92B43899D0009E782 /* LocationSearchResultCell.swift */; };
+		5133B3FC2B4389B60009E782 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3FB2B4389B60009E782 /* LocationSearchViewModel.swift */; };
+		5133B3FE2B4389DA0009E782 /* ColisModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3FD2B4389DA0009E782 /* ColisModelViewModel.swift */; };
+		5133B4002B438A1A0009E782 /* ColisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B3FF2B438A1A0009E782 /* ColisModel.swift */; };
+		5133B4022B438A3B0009E782 /* ColisApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4012B438A3B0009E782 /* ColisApiManager.swift */; };
+		5133B4052B438A560009E782 /* HomeDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4042B438A560009E782 /* HomeDeliveryView.swift */; };
+		5133B4072B438ADA0009E782 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4062B438ADA0009E782 /* MapViewRepresentable.swift */; };
+		5133B4092B438AFB0009E782 /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4082B438AFB0009E782 /* MapViewActionButton.swift */; };
+		5133B40B2B438B120009E782 /* UnassignedColisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B40A2B438B120009E782 /* UnassignedColisView.swift */; };
+		5133B40D2B438B2C0009E782 /* LivreurColisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B40C2B438B2C0009E782 /* LivreurColisView.swift */; };
+		5133B40F2B438B400009E782 /* UserCreateColisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B40E2B438B400009E782 /* UserCreateColisView.swift */; };
+		5133B4112B438BA90009E782 /* ColisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4102B438BA90009E782 /* ColisView.swift */; };
+		5133B4132B438BC90009E782 /* ColisViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4122B438BC90009E782 /* ColisViewState.swift */; };
+		5133B4202B43B1E40009E782 /* ClientRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B41F2B43B1E40009E782 /* ClientRequest.swift */; };
+		5133B4222B43B2DF0009E782 /* CovoiturageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4212B43B2DF0009E782 /* CovoiturageController.swift */; };
+		5133B4242B43B3060009E782 /* Firebaseswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4232B43B3060009E782 /* Firebaseswift.swift */; };
+		5133B4262B43B43C0009E782 /* isLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4252B43B43C0009E782 /* isLoading.swift */; };
+		5133B4292B43B5730009E782 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5133B4282B43B5730009E782 /* FirebaseDatabase */; };
+		5133B42B2B43B5730009E782 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5133B42A2B43B5730009E782 /* FirebaseFirestore */; };
+		5133B42D2B43B5730009E782 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5133B42C2B43B5730009E782 /* FirebaseFirestoreSwift */; };
+		5133B42F2B43B5730009E782 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5133B42E2B43B5730009E782 /* FirebaseStorage */; };
+		5133B4312B43B5F70009E782 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4302B43B5F70009E782 /* NotificationView.swift */; };
+		5133B4332B43B68A0009E782 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5133B4322B43B68A0009E782 /* GoogleService-Info.plist */; };
+		5133B4352B43B80F0009E782 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5133B4342B43B80F0009E782 /* FirebaseMessaging */; };
 		5135CB932B160A7100AA742A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CB922B160A7100AA742A /* MappingView.swift */; };
 		51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */; };
 		51391F452B2B7F3B00C65BA3 /* ClientListCovoiturages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */; };
@@ -39,7 +70,6 @@
 		51FBFFC72B2320D200BAA63E /* EmgCovoiturage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */; };
 		51FBFFD02B23210000BAA63E /* CarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFC92B23210000BAA63E /* CarMapView.swift */; };
 		51FBFFD12B23210000BAA63E /* EmergencyRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCA2B23210000BAA63E /* EmergencyRideView.swift */; };
-		51FBFFD22B23210000BAA63E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCB2B23210000BAA63E /* NotificationView.swift */; };
 		51FBFFD32B23210000BAA63E /* CovoiturageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCC2B23210000BAA63E /* CovoiturageView.swift */; };
 		51FBFFD42B23210000BAA63E /* PaymentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCD2B23210000BAA63E /* PaymentSelectionView.swift */; };
 		51FBFFD52B23210000BAA63E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFFCE2B23210000BAA63E /* PaymentView.swift */; };
@@ -55,6 +85,32 @@
 		2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeView.swift; sourceTree = "<group>"; };
 		2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryHomeView.swift; sourceTree = "<group>"; };
 		512A42382B22E6F2001A026C /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		5133B3EA2B43884A0009E782 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		5133B3EC2B4388610009E782 /* DeliveryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryType.swift; sourceTree = "<group>"; };
+		5133B3EE2B4388720009E782 /* Delivry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivry.swift; sourceTree = "<group>"; };
+		5133B3F02B43888E0009E782 /* DeliveryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryResponse.swift; sourceTree = "<group>"; };
+		5133B3F32B43893D0009E782 /* DeliveryRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRequestView.swift; sourceTree = "<group>"; };
+		5133B3F52B4389770009E782 /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
+		5133B3F72B4389850009E782 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		5133B3F92B43899D0009E782 /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		5133B3FB2B4389B60009E782 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
+		5133B3FD2B4389DA0009E782 /* ColisModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColisModelViewModel.swift; sourceTree = "<group>"; };
+		5133B3FF2B438A1A0009E782 /* ColisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColisModel.swift; sourceTree = "<group>"; };
+		5133B4012B438A3B0009E782 /* ColisApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColisApiManager.swift; sourceTree = "<group>"; };
+		5133B4042B438A560009E782 /* HomeDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDeliveryView.swift; sourceTree = "<group>"; };
+		5133B4062B438ADA0009E782 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		5133B4082B438AFB0009E782 /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
+		5133B40A2B438B120009E782 /* UnassignedColisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnassignedColisView.swift; sourceTree = "<group>"; };
+		5133B40C2B438B2C0009E782 /* LivreurColisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivreurColisView.swift; sourceTree = "<group>"; };
+		5133B40E2B438B400009E782 /* UserCreateColisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreateColisView.swift; sourceTree = "<group>"; };
+		5133B4102B438BA90009E782 /* ColisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColisView.swift; sourceTree = "<group>"; };
+		5133B4122B438BC90009E782 /* ColisViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColisViewState.swift; sourceTree = "<group>"; };
+		5133B41F2B43B1E40009E782 /* ClientRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRequest.swift; sourceTree = "<group>"; };
+		5133B4212B43B2DF0009E782 /* CovoiturageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageController.swift; sourceTree = "<group>"; };
+		5133B4232B43B3060009E782 /* Firebaseswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebaseswift.swift; sourceTree = "<group>"; };
+		5133B4252B43B43C0009E782 /* isLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isLoading.swift; sourceTree = "<group>"; };
+		5133B4302B43B5F70009E782 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		5133B4322B43B68A0009E782 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5135CB922B160A7100AA742A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
 		51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMappingView.swift; sourceTree = "<group>"; };
 		51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListCovoiturages.swift; sourceTree = "<group>"; };
@@ -85,7 +141,6 @@
 		51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmgCovoiturage.swift; sourceTree = "<group>"; };
 		51FBFFC92B23210000BAA63E /* CarMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMapView.swift; sourceTree = "<group>"; };
 		51FBFFCA2B23210000BAA63E /* EmergencyRideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyRideView.swift; sourceTree = "<group>"; };
-		51FBFFCB2B23210000BAA63E /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		51FBFFCC2B23210000BAA63E /* CovoiturageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovoiturageView.swift; sourceTree = "<group>"; };
 		51FBFFCD2B23210000BAA63E /* PaymentSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSelectionView.swift; sourceTree = "<group>"; };
 		51FBFFCE2B23210000BAA63E /* PaymentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
@@ -101,22 +156,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5133B4352B43B80F0009E782 /* FirebaseMessaging in Frameworks */,
+				5133B4292B43B5730009E782 /* FirebaseDatabase in Frameworks */,
 				6E2191A2E9E844AAC1272A0A /* libPods-SharedCommute.a in Frameworks */,
+				5133B42B2B43B5730009E782 /* FirebaseFirestore in Frameworks */,
+				5133B42F2B43B5730009E782 /* FirebaseStorage in Frameworks */,
+				5133B42D2B43B5730009E782 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5133B3E92B4388370009E782 /* Colis */ = {
+			isa = PBXGroup;
+			children = (
+				5133B3EA2B43884A0009E782 /* MapViewState.swift */,
+				5133B3EC2B4388610009E782 /* DeliveryType.swift */,
+				5133B3EE2B4388720009E782 /* Delivry.swift */,
+				5133B3F02B43888E0009E782 /* DeliveryResponse.swift */,
+				5133B3FF2B438A1A0009E782 /* ColisModel.swift */,
+				5133B4122B438BC90009E782 /* ColisViewState.swift */,
+			);
+			path = Colis;
+			sourceTree = "<group>";
+		};
+		5133B3F22B43892B0009E782 /* Colis */ = {
+			isa = PBXGroup;
+			children = (
+				5133B3F32B43893D0009E782 /* DeliveryRequestView.swift */,
+				5133B3F52B4389770009E782 /* LocationSearchActivationView.swift */,
+				5133B3F72B4389850009E782 /* LocationSearchView.swift */,
+				5133B3F92B43899D0009E782 /* LocationSearchResultCell.swift */,
+				5133B3FB2B4389B60009E782 /* LocationSearchViewModel.swift */,
+				5133B3FD2B4389DA0009E782 /* ColisModelViewModel.swift */,
+				5133B4012B438A3B0009E782 /* ColisApiManager.swift */,
+				5133B4062B438ADA0009E782 /* MapViewRepresentable.swift */,
+			);
+			path = Colis;
+			sourceTree = "<group>";
+		};
+		5133B4032B438A490009E782 /* Colis */ = {
+			isa = PBXGroup;
+			children = (
+				5133B4042B438A560009E782 /* HomeDeliveryView.swift */,
+				5133B4082B438AFB0009E782 /* MapViewActionButton.swift */,
+				5133B40A2B438B120009E782 /* UnassignedColisView.swift */,
+				5133B40C2B438B2C0009E782 /* LivreurColisView.swift */,
+				5133B40E2B438B400009E782 /* UserCreateColisView.swift */,
+				5133B4102B438BA90009E782 /* ColisView.swift */,
+			);
+			path = Colis;
+			sourceTree = "<group>";
+		};
 		51A157C62B14BD0900C6F3CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5133B3E92B4388370009E782 /* Colis */,
 				51391F482B2C218400C65BA3 /* MoyenDeTransport.swift */,
 				51FBFFC22B2320D200BAA63E /* Driver.swift */,
 				51FBFFC32B2320D200BAA63E /* EmgCovoiturage.swift */,
 				51A157C92B14BD0900C6F3CD /* covoiturage.swift */,
 				51FBFFD92B23224B00BAA63E /* Users.swift */,
 				5167F5322B42F04D002630C0 /* UserMutable.swift */,
+				5133B41F2B43B1E40009E782 /* ClientRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,10 +227,10 @@
 		51A157CD2B14BD1F00C6F3CD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5133B4032B438A490009E782 /* Colis */,
 				51FBFFC92B23210000BAA63E /* CarMapView.swift */,
 				51FBFFCC2B23210000BAA63E /* CovoiturageView.swift */,
 				51FBFFCA2B23210000BAA63E /* EmergencyRideView.swift */,
-				51FBFFCB2B23210000BAA63E /* NotificationView.swift */,
 				51FBFFCD2B23210000BAA63E /* PaymentSelectionView.swift */,
 				51FBFFCE2B23210000BAA63E /* PaymentView.swift */,
 				5135CB922B160A7100AA742A /* MappingView.swift */,
@@ -140,6 +243,8 @@
 				519E4AE22B3B3192009C8A04 /* HomeView.swift */,
 				2CB8F2E82B405DC8007D0F02 /* ClientHomeView.swift */,
 				2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */,
+				5133B4252B43B43C0009E782 /* isLoading.swift */,
+				5133B4302B43B5F70009E782 /* NotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +252,7 @@
 		51A157D02B14BD2D00C6F3CD /* ViewConroller */ = {
 			isa = PBXGroup;
 			children = (
+				5133B3F22B43892B0009E782 /* Colis */,
 				51FBFFCF2B23210000BAA63E /* MapView.swift */,
 				5194FAB12B18C096006B1CCC /* GoogleMapView.swift */,
 				51FBFFBA2B2320BA00BAA63E /* EmgDriverCell.swift */,
@@ -157,6 +263,8 @@
 				51FBFFD72B23219500BAA63E /* CarMapController.swift */,
 				2CB8F2E62B404FF8007D0F02 /* RoleSelectionView.swift */,
 				5167F5302B42EFC9002630C0 /* EditInfo.swift */,
+				5133B4212B43B2DF0009E782 /* CovoiturageController.swift */,
+				5133B4232B43B3060009E782 /* Firebaseswift.swift */,
 			);
 			path = ViewConroller;
 			sourceTree = "<group>";
@@ -188,6 +296,7 @@
 				51CE807A2B14B5CF0058BE35 /* SharedCommuteApp.swift */,
 				5194FAAF2B18BFED006B1CCC /* AppDelagte.swift */,
 				51CE807C2B14B5CF0058BE35 /* ContentView.swift */,
+				5133B4322B43B68A0009E782 /* GoogleService-Info.plist */,
 				51CE807E2B14B5D00058BE35 /* Assets.xcassets */,
 				51CE80832B14B5D00058BE35 /* Persistence.swift */,
 				513C72B32B20A89700E662AC /* Info.plist */,
@@ -240,6 +349,13 @@
 			dependencies = (
 			);
 			name = SharedCommute;
+			packageProductDependencies = (
+				5133B4282B43B5730009E782 /* FirebaseDatabase */,
+				5133B42A2B43B5730009E782 /* FirebaseFirestore */,
+				5133B42C2B43B5730009E782 /* FirebaseFirestoreSwift */,
+				5133B42E2B43B5730009E782 /* FirebaseStorage */,
+				5133B4342B43B80F0009E782 /* FirebaseMessaging */,
+			);
 			productName = SharedCommute;
 			productReference = 51CE80772B14B5CF0058BE35 /* SharedCommute.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +425,9 @@
 				ca,
 			);
 			mainGroup = 51CE806E2B14B5CF0058BE35;
+			packageReferences = (
+				5133B4272B43B5730009E782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 51CE80782B14B5CF0058BE35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,6 +444,7 @@
 			files = (
 				51CE80822B14B5D00058BE35 /* Preview Assets.xcassets in Resources */,
 				51CE807F2B14B5D00058BE35 /* Assets.xcassets in Resources */,
+				5133B4332B43B68A0009E782 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,22 +498,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				51391F452B2B7F3B00C65BA3 /* ClientListCovoiturages.swift in Sources */,
+				5133B4312B43B5F70009E782 /* NotificationView.swift in Sources */,
+				5133B4052B438A560009E782 /* HomeDeliveryView.swift in Sources */,
 				2CB8F2EB2B405DDA007D0F02 /* DeliveryHomeView.swift in Sources */,
+				5133B3F42B43893D0009E782 /* DeliveryRequestView.swift in Sources */,
 				51391F472B2C08E500C65BA3 /* Driverrelatedview.swift in Sources */,
 				5167F5312B42EFC9002630C0 /* EditInfo.swift in Sources */,
+				5133B3F12B43888E0009E782 /* DeliveryResponse.swift in Sources */,
+				5133B3ED2B4388610009E782 /* DeliveryType.swift in Sources */,
 				2CB8F2E92B405DC8007D0F02 /* ClientHomeView.swift in Sources */,
 				51FBFFD42B23210000BAA63E /* PaymentSelectionView.swift in Sources */,
 				51FBFFD62B23210000BAA63E /* MapView.swift in Sources */,
+				5133B4092B438AFB0009E782 /* MapViewActionButton.swift in Sources */,
 				51FBFFC72B2320D200BAA63E /* EmgCovoiturage.swift in Sources */,
 				5194FAB22B18C096006B1CCC /* GoogleMapView.swift in Sources */,
+				5133B40B2B438B120009E782 /* UnassignedColisView.swift in Sources */,
 				5135CB932B160A7100AA742A /* MappingView.swift in Sources */,
+				5133B4262B43B43C0009E782 /* isLoading.swift in Sources */,
+				5133B4242B43B3060009E782 /* Firebaseswift.swift in Sources */,
+				5133B4202B43B1E40009E782 /* ClientRequest.swift in Sources */,
 				51FBFFBF2B2320BA00BAA63E /* MapViewController.swift in Sources */,
 				513D16A72B22868D00EAC845 /* CovoiturageListView.swift in Sources */,
+				5133B3FA2B43899D0009E782 /* LocationSearchResultCell.swift in Sources */,
 				51FBFFD82B23219500BAA63E /* CarMapController.swift in Sources */,
 				5194FAB02B18BFED006B1CCC /* AppDelagte.swift in Sources */,
+				5133B3EF2B4388720009E782 /* Delivry.swift in Sources */,
 				51CE80842B14B5D00058BE35 /* Persistence.swift in Sources */,
+				5133B4112B438BA90009E782 /* ColisView.swift in Sources */,
+				5133B3EB2B43884A0009E782 /* MapViewState.swift in Sources */,
 				51CE807D2B14B5CF0058BE35 /* ContentView.swift in Sources */,
+				5133B4002B438A1A0009E782 /* ColisModel.swift in Sources */,
+				5133B4022B438A3B0009E782 /* ColisApiManager.swift in Sources */,
 				519E4AE32B3B3192009C8A04 /* HomeView.swift in Sources */,
+				5133B3FC2B4389B60009E782 /* LocationSearchViewModel.swift in Sources */,
+				5133B40D2B438B2C0009E782 /* LivreurColisView.swift in Sources */,
 				51CE807B2B14B5CF0058BE35 /* SharedCommuteApp.swift in Sources */,
 				5167F5332B42F04D002630C0 /* UserMutable.swift in Sources */,
 				51A157CC2B14BD0900C6F3CD /* covoiturage.swift in Sources */,
@@ -404,14 +542,20 @@
 				51FBFFC62B2320D200BAA63E /* Driver.swift in Sources */,
 				51FBFFD52B23210000BAA63E /* PaymentView.swift in Sources */,
 				51FBFFD12B23210000BAA63E /* EmergencyRideView.swift in Sources */,
+				5133B3F62B4389770009E782 /* LocationSearchActivationView.swift in Sources */,
+				5133B40F2B438B400009E782 /* UserCreateColisView.swift in Sources */,
 				51FBFFBE2B2320BA00BAA63E /* EmgDriverCell.swift in Sources */,
 				513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */,
+				5133B4072B438ADA0009E782 /* MapViewRepresentable.swift in Sources */,
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
 				51E321652B39B61900C5ED62 /* SignupView.swift in Sources */,
-				51FBFFD22B23210000BAA63E /* NotificationView.swift in Sources */,
+				5133B3F82B4389850009E782 /* LocationSearchView.swift in Sources */,
 				513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */,
 				51391F492B2C218400C65BA3 /* MoyenDeTransport.swift in Sources */,
+				5133B4132B438BC90009E782 /* ColisViewState.swift in Sources */,
+				5133B4222B43B2DF0009E782 /* CovoiturageController.swift in Sources */,
 				2CB8F2E72B404FF8007D0F02 /* RoleSelectionView.swift in Sources */,
+				5133B3FE2B4389DA0009E782 /* ColisModelViewModel.swift in Sources */,
 				51FBFFDA2B23224B00BAA63E /* Users.swift in Sources */,
 				51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */,
 			);
@@ -625,6 +769,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5133B4272B43B5730009E782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5133B4282B43B5730009E782 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5133B4272B43B5730009E782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		5133B42A2B43B5730009E782 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5133B4272B43B5730009E782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5133B42C2B43B5730009E782 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5133B4272B43B5730009E782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		5133B42E2B43B5730009E782 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5133B4272B43B5730009E782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		5133B4342B43B80F0009E782 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5133B4272B43B5730009E782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		51CE80852B14B5D00058BE35 /* SharedCommute.xcdatamodeld */ = {

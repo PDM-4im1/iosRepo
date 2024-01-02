@@ -98,7 +98,7 @@ struct MainContentView: View {
                 }
             case.history:
             Text("HISTORY")
-            case.emergency:Text("Emergency")
+            case.emergency:NotificationView()
             case .editInfo:
                           if let user = getLoggedInUser() {
                               EditInfoView(user: user)
