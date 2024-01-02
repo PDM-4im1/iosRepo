@@ -205,7 +205,7 @@ struct CovoiturageView: View {
         .onAppear {
             // Fetch the list of drivers when the view appears
             fetchDrivers()
-            fetchClientRequest()
+            retryFetchingClientRequest()
             print(drivers)
             
             
@@ -214,6 +214,23 @@ struct CovoiturageView: View {
             LoadingView(isLoading: $isLoading)
                 }
                
+    }
+    func retryFetchingClientRequest() {
+        getClientRequest { [self] (clientRequest, error) in
+            if let error = error {
+                print("Error fetching client request: \(error.localizedDescription)")
+                // Handle the error as needed
+            } else if clientRequest == nil {
+                // If no client request is found, retry after a delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    retryFetchingClientRequest()
+                }
+            } else {
+                isLoading = false
+                print("Client request found: \(clientRequest)")
+                // Do something with the client request
+            }
+        }
     }
     func fetchClientRequest() {
         isLoading = false
@@ -278,7 +295,7 @@ print(Emrgency?.id)
         let collectionRef = db.collection("clientrequest")
 
         // Query to fetch the document where id_user is equal to the provided user ID
-        let query = collectionRef.whereField("covoiturage", isEqualTo: Emrgency?.id )
+        let query = collectionRef.whereField("covoiturage", isEqualTo: Emrgency?.id)
 
         // Execute the query
         query.getDocuments { (querySnapshot, error) in
@@ -289,7 +306,7 @@ print(Emrgency?.id)
             }
 
             guard let document = querySnapshot?.documents.first else {
-                print("No document found for user ID: 65798eb63ed6f3fb203527e1")
+                print("No document found for user ID: ")
                 completion(nil, nil)
                 return
             }

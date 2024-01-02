@@ -96,8 +96,7 @@ struct MainContentView: View {
                 NavigationView {
                     CovoiturageListView()
                 }
-            case.history:
-            Text("HISTORY")
+            case.history:CovoiturageHistory()
             case.emergency:NotificationView()
             case .editInfo:
                           if let user = getLoggedInUser() {

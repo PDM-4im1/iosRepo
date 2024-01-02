@@ -42,6 +42,7 @@
 		5133B4312B43B5F70009E782 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4302B43B5F70009E782 /* NotificationView.swift */; };
 		5133B4332B43B68A0009E782 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5133B4322B43B68A0009E782 /* GoogleService-Info.plist */; };
 		5133B4352B43B80F0009E782 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5133B4342B43B80F0009E782 /* FirebaseMessaging */; };
+		5133B4372B4415FC0009E782 /* CovoiturageHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133B4362B4415FC0009E782 /* CovoiturageHistory.swift */; };
 		5135CB932B160A7100AA742A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CB922B160A7100AA742A /* MappingView.swift */; };
 		51391F432B2B6C1F00C65BA3 /* ClientMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */; };
 		51391F452B2B7F3B00C65BA3 /* ClientListCovoiturages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */; };
@@ -111,6 +112,7 @@
 		5133B4252B43B43C0009E782 /* isLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isLoading.swift; sourceTree = "<group>"; };
 		5133B4302B43B5F70009E782 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		5133B4322B43B68A0009E782 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5133B4362B4415FC0009E782 /* CovoiturageHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovoiturageHistory.swift; sourceTree = "<group>"; };
 		5135CB922B160A7100AA742A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
 		51391F422B2B6C1F00C65BA3 /* ClientMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMappingView.swift; sourceTree = "<group>"; };
 		51391F442B2B7F3B00C65BA3 /* ClientListCovoiturages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListCovoiturages.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				2CB8F2EA2B405DDA007D0F02 /* DeliveryHomeView.swift */,
 				5133B4252B43B43C0009E782 /* isLoading.swift */,
 				5133B4302B43B5F70009E782 /* NotificationView.swift */,
+				5133B4362B4415FC0009E782 /* CovoiturageHistory.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				513C72B62B20B9C900E662AC /* LocationManager.swift in Sources */,
 				5133B4072B438ADA0009E782 /* MapViewRepresentable.swift in Sources */,
 				51CE80872B14B5D00058BE35 /* SharedCommute.xcdatamodeld in Sources */,
+				5133B4372B4415FC0009E782 /* CovoiturageHistory.swift in Sources */,
 				51E321652B39B61900C5ED62 /* SignupView.swift in Sources */,
 				5133B3F82B4389850009E782 /* LocationSearchView.swift in Sources */,
 				513A31A22B221DEC0043CBC9 /* TimePickerView.swift in Sources */,
